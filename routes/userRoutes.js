@@ -2,7 +2,6 @@ const { Router } = require('express');
 const {
     getProductTitle,
     getProductsSubtitle,
-    getProductsList,
     getProductInfo,
     getNews,
     updateUser,
@@ -22,12 +21,12 @@ const router = Router();
 
 
 router.get('/getProductTitle', (req, res) => {
-    
-    getProductTitle().then((r)=>{
+
+    getProductTitle().then((r) => {
         if (r) {
             res.json(r);
         } else {
-            res.json({err:false,status:404,comment:"Error"});
+            res.json({ err: false, status: 404, comment: "Error" });
         }
     })
 })
@@ -35,11 +34,11 @@ router.get('/getProductTitle', (req, res) => {
 router.get('/getProductsSubtitle/:id', (req, res) => {
     const id = req.params.id.slice(1);
 
-    getProductsSubtitle(id).then((r)=>{
+    getProductsSubtitle(id).then((r) => {
         if (r) {
             res.json(r);
         } else {
-            res.json({err:false,status:404,comment:"Error"});
+            res.json({ err: false, status: 404, comment: "Error" });
         }
     })
 })
@@ -59,22 +58,22 @@ router.get('/getProductsSubtitle/:id', (req, res) => {
 router.get('/getProduct/:id', (req, res) => {
     const id = req.params.id.slice(1);
 
-    getProductInfo(id).then((r)=>{
+    getProductInfo(id).then((r) => {
         if (r) {
             res.json(r);
         } else {
-            res.json({user:false,status:404,comment:"Not found this product"});
+            res.json({ user: false, status: 404, comment: "Not found this product" });
         }
     })
 })
 
 
-router.get('/isAuth',(req,res)=>{
-        if(req.session.passport === undefined){
-             res.json({status:400})
-        }else if (req.session.passport.user !== undefined){
-            res.json({status:200,user:req.session.passport.user})
-        }
+router.get('/isAuth', (req, res) => {
+    if (req.session.passport === undefined) {
+        res.json({ status: 400 })
+    } else if (req.session.passport.user !== undefined) {
+        res.json({ status: 200, user: req.session.passport.user })
+    }
 })
 
 
@@ -84,14 +83,14 @@ router.post('/sendText/', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'chatHi.help@gmail.com',
-          pass: 'qwerty123456!@#Q' // naturally, replace both with your real credentials or an application-specific password
+            user: process.env.EMAIL_ADRESS ,
+            pass: process.env.EMAIL_PASSWORD 
         }
-      });
-      
-      const mailOptions = {
-        from: 'chathi.help@gmail.com',
-        to: 'chathi.help@gmail.com',
+    });
+
+    const mailOptions = {
+        from: rocess.env.EMAIL_ADRESS ,
+        to: rocess.env.EMAIL_ADRESS ,
         subject: 'Help',
         html: `
         <p>Hi Messsege</p>
@@ -100,121 +99,121 @@ router.post('/sendText/', (req, res) => {
         <p>Title: ${options.title}</p>
         <p>Text: ${options.text}</p>
         `
-      };
-      transporter.sendMail(mailOptions, function(error, info){
+    };
+    transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log(error)
-            res.json({err:true,status:404,comment:error});
+            res.json({ err: true, status: 404, comment: error });
         } else {
-            res.json({success:true});
+            res.json({ success: true });
         }
-      });
+    });
 
 })
 
 
 router.get('/getNews/:number', (req, res) => {
-    const number =req.params.number
-    getNews(number).then((r)=>{
+    const number = req.params.number
+    getNews(number).then((r) => {
         if (r) {
             res.json(r);
         } else {
-            res.json({err:false,status:404,comment:"User not found"});
+            res.json({ err: false, status: 404, comment: "User not found" });
         }
     })
 })
 
-router.put("/changeInfo", (req, res)=>{
+router.put("/changeInfo", (req, res) => {
     const name = req.body.name
     const phone = req.body.phone
     const gender = req.body.gender
     const surname = req.body.surname
     const age = req.body.age
     const id = req.body.id
-    updateUser(name,phone,gender,surname,age,id).then((r)=>{
+    updateUser(name, phone, gender, surname, age, id).then((r) => {
         if (r) {
             res.json(r);
         } else {
-            res.json({err:false,status:404,comment:"User not found"});
+            res.json({ err: false, status: 404, comment: "User not found" });
         }
     })
 });
 
 
 router.get('/getNewsID/:id', (req, res) => {
-    const id =req.params.id
-    getNewsID(id).then((r)=>{
+    const id = req.params.id
+    getNewsID(id).then((r) => {
         if (r) {
             res.json(r);
         } else {
-            res.json({err:false,status:404,comment:"User not found"});
+            res.json({ err: false, status: 404, comment: "User not found" });
         }
     })
 })
 
 
 router.get('/getProductListSearch/:id', (req, res) => {
-    const id =req.params.id
-    getProductListSearch(id).then((r)=>{
+    const id = req.params.id
+    getProductListSearch(id).then((r) => {
         if (r) {
             res.json(r);
         } else {
-            res.json({user:false,status:404,comment:"User not found"});
+            res.json({ user: false, status: 404, comment: "User not found" });
         }
     })
 })
 router.get('/getProductListSearch/', (req, res) => {
-    getProductListSearchAll().then((r)=>{
+    getProductListSearchAll().then((r) => {
         if (r) {
             res.json(r);
         } else {
-            res.json({user:false,status:404,comment:"User not found"});
+            res.json({ user: false, status: 404, comment: "User not found" });
         }
     })
 })
 
 router.get('/getProductList/:id', (req, res) => {
     const id = req.params.id;
-    getProductList(id).then((r)=>{
+    getProductList(id).then((r) => {
         if (r) {
             res.json(r);
         } else {
-            res.json({user:false,status:404,comment:"User not found"});
+            res.json({ user: false, status: 404, comment: "User not found" });
         }
     })
 })
 
-router.put("/addProduct", (req, res)=>{
+router.put("/addProduct", (req, res) => {
     const newLikeProducts = req.body.newLikeProducts
     const set = new Set(newLikeProducts)
     const id = req.body.id;
-    addProduct(id,[...set]).then((r)=>{
+    addProduct(id, [...set]).then((r) => {
         if (r) {
             res.json(r);
         } else {
-            res.json({comment:"User not found",status:500});
+            res.json({ comment: "User not found", status: 500 });
         }
     })
 });
 
 router.post('/getProductsLike/', (req, res) => {
     const ids = req.body.ids;
-    getProductsLikeOrBuy(ids).then((r)=>{
+    getProductsLikeOrBuy(ids).then((r) => {
         if (r) {
             res.json(r);
         } else {
-            res.json({user:false,status:404,comment:"User not found"});
+            res.json({ user: false, status: 404, comment: "User not found" });
         }
     })
 })
 
 router.post('/getProductsBucket/', (req, res) => {
     const ids = req.body.ids;
-    getProductsLikeOrBuy(ids).then((r)=>{
+    getProductsLikeOrBuy(ids).then((r) => {
         if (r) {
             res.json(r);
         } else {
-            res.json({user:false,status:404,comment:"User not found"});
+            res.json({ user: false, status: 404, comment: "User not found" });
         }
     })
 })
@@ -226,14 +225,14 @@ router.post('/buyProducts/', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'chatHi.help@gmail.com',
-          pass: 'qwerty123456!@#Q' // naturally, replace both with your real credentials or an application-specific password
+            user: process.env.EMAIL_ADRESS,
+            pass: process.env.EMAIL_PASSWORD 
         }
-      });
-      
-      const mailOptions = {
-        from: 'chathi.help@gmail.com',
-        to: `${options.email},chathi.help@gmail.com`,
+    });
+
+    const mailOptions = {
+        from: process.env.EMAIL_ADRESS,
+        to: `${options.email},${process.env.EMAIL_ADRESS}`,
         subject: 'Buy Check',
         html: `
         <p>Hi this is your check list</p>
@@ -244,9 +243,8 @@ router.post('/buyProducts/', (req, res) => {
         <p>Poshta ${options.novaPosta}</p>
         <p>Note ${options.note}</p>
         <p>You Buy</p>
-        ${
-            products.productsBucket.map(el=>{
-                return (`
+        ${products.productsBucket.map(el => {
+            return (`
                     <div>
                         <p>Name ${el.name}</p>
                         <p>Price ${el.price}</p>
@@ -254,34 +252,34 @@ router.post('/buyProducts/', (req, res) => {
                         <a href=http://localhost:3000/product/:${el.idProduct}/:FromMyBilling/:${el.name}>More</a>
                     </div>
                     `
-                )
-            })
-        }
+            )
+        })
+            }
         `
-      };
+    };
 
-      createBuyListSell(options.email,products.productsBucket)
+    createBuyListSell(options.email, products.productsBucket)
 
-      sellCountCalculate(products)
+    sellCountCalculate(products)
 
-      transporter.sendMail(mailOptions, function(error, info){
+    transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log(error)
-            res.json({err:false,status:404,comment:"User not found"});
+            res.json({ err: false, status: 404, comment: "User not found" });
         } else {
-            res.json({success:true});
+            res.json({ success: true });
         }
-      });
+    });
 
 })
 
 router.get('/getCountSellProducts/:email', (req, res) => {
     const email = req.params.email;
-    getProductsSell(email).then((r)=>{
+    getProductsSell(email).then((r) => {
         if (r) {
             res.json(r);
         } else {
-            res.json({user:false,status:404,comment:"With this Email not found products"});
+            res.json({ user: false, status: 404, comment: "With this Email not found products" });
         }
     })
 })
@@ -293,41 +291,41 @@ router.post('/emailVerify/', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'chatHi.help@gmail.com',
-          pass: 'qwerty123456!@#Q'
+            user: process.env.EMAIL_ADRESS,
+            pass: process.env.EMAIL_PASSWORD 
         }
-      });
-      
-      const mailOptions = {
-        from: 'chathi.help@gmail.com',
+    });
+
+    const mailOptions = {
+        from: process.env.EMAIL_ADRESS,
         to: `${email}`,
         subject: 'Verify Email',
         html: `
         <p>Hi please verify email</p>
         <a href=http://localhost:3000/callback/:${id}>Verify</a>
         `
-      };
+    };
 
-      transporter.sendMail(mailOptions, function(error, info){
+    transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log(error)
-            res.json({err:false,status:404,comment:"User not found"});
+            res.json({ err: false, status: 404, comment: "User not found" });
         } else {
-            res.json({success:true});
+            res.json({ success: true });
         }
-      });
+    });
 
 })
 
 
-router.put("/verify", (req, res)=>{
+router.put("/verify", (req, res) => {
     const id = req.body.id
-    
-    verifyUser(id).then((r)=>{
+
+    verifyUser(id).then((r) => {
         if (r) {
             res.json(r);
         } else {
-            res.json({err:false,status:404,comment:"User not found"});
+            res.json({ err: false, status: 404, comment: "User not found" });
         }
     })
 });
