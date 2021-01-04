@@ -1,0 +1,94 @@
+body{
+    font-family: 'Roboto',sans-serif;
+}
+.shop-about{
+    padding: 30px 0;
+}
+.welcome__about{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.shop-categorie,.welcome__partners{
+    background-color: #F6F6F6;
+    padding: 50px 0;
+}
+.welcome__shop__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.welcome-title{
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+.welcome__shop__box{
+    background-color: #ffffff;
+    
+    min-width: 300px;
+}
+.welcome-box-text{
+    text-align: center;
+    padding: 20px 0;
+    font-size: 15px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px 4px rgba(0,0,0,0.78)
+}
+.welcome-box-text a{
+    text-decoration: none;
+    color:#000000;
+}
+.welcome-box-text:hover{
+    box-shadow: 0px 12px 7px 4px rgba(0,0,0,0.78);
+    background-color: #1d1d1d;
+    
+}
+.welcome-box-text:hover a{
+    color:#ffffff
+}
+.welcome-box-text a:hover{
+    padding: 5px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    color:#000000
+}
+.welcome__options{
+    max-width: 80%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.welcome__partners-img{
+    max-width: 200px;
+    max-height: 100px;
+}
+.welcome__partners__text{
+    text-align: center;
+}
+
+.welcome__partners__container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.welcome__partners__container .welcome__partners-img:nth-child(4){
+    height: 50px;
+}
+
+@media screen and (max-width: 800px) {
+    .welcome__partners-img{
+        max-width: 100px;
+        max-height: 50px;
+    }
+    .welcome__partners__container .welcome__partners-img:nth-child(4){
+        height: 30px;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .welcome__shop__box{
+        min-width: 200px;
+    }
+}

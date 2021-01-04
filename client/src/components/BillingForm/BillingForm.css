@@ -1,0 +1,35 @@
+
+.billing-user-name,
+.billing-user-surname,
+.billing-user-email,
+.billing-user-city,
+.billing-user-novaPosta,
+.billing-user-phone,
+.billing-user-note{
+    display: flex;
+    min-width: 400px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+.billing-error{
+    background-color: rgb(196, 84, 84);
+    color:rgb(92, 37, 37);
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+}
+.billing-submit{
+    padding: 10px 20px;
+    margin: 15px auto;
+    font-weight: 600;
+    width: 200px;
+    text-align: center;
+    border:1px solid #000000;
+}
+.billing-submit:hover{
+    background-color: #00C48C;
+    color: #ffffff;
+    border:1px solid #ffffff;
+    cursor: pointer;
+}

@@ -1,0 +1,23 @@
+.blog__list{
+    width: 80%;
+    margin: 20px auto;
+}
+.blog-list__load{
+    margin: 0 auto;
+    min-width: 200px;
+    max-width: 800px;
+    text-align: center;
+    background-color: rgb(99, 99, 99);
+}
+.blog-list__load:hover{
+    cursor:pointer;
+    color: #ffffff;
+}
+.blog-list-load-text{
+    text-transform: uppercase;
+    font-size: 30px;    
+    text-align: center;
+}
+.load-list-max{
+    display: none;
+}

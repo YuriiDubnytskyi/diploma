@@ -1,0 +1,25 @@
+.account-switch{
+    background-color: #ffffff;
+}
+.content{
+    padding: 20px;
+    min-width: 300px;
+}
+.content-title{
+    font-weight: 700;
+}
+.content-subtitle{
+    color: #969696;
+    padding: 5px 0 20px;
+}
+.content-btn{
+    padding: 10px 0 ;
+    font-weight: 600;
+    max-width: 100px;
+}
+.content-btn:hover{
+    cursor: pointer;   
+}
+.active-content-btn{
+    color:#00C48C;
+}

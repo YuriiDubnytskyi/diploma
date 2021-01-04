@@ -1,0 +1,44 @@
+.wrapper-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+.fancy-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+}
+.fancy-spinner div {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+.fancy-spinner div.ring {
+    border-width: 0.5rem;
+    border-style: solid;
+    border-color: transparent;
+    animation: 2s fancy infinite alternate;
+}
+.fancy-spinner div.ring:nth-child(1) {
+    border-left-color: #979fd0;
+    border-right-color: #979fd0;
+}
+.fancy-spinner div.ring:nth-child(2) {
+    border-top-color: #979fd0;
+    border-bottom-color: #979fd0;
+    animation-delay: 1s;
+}
+.fancy-spinner .dot {
+    width: 1rem;
+    height: 1rem;
+    background: #979fd0;
+}
+@keyframes fancy {
+    to {
+        transform: rotate(360deg) scale(0.5);
+   }
+}

@@ -1,0 +1,10 @@
+.account-wrapper{
+    background-color: #F6F6F6;
+
+}
+.account__container{
+    margin: 20px auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}

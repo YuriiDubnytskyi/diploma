@@ -1,0 +1,19 @@
+.categorie-item{
+    background-color: #e0e0e0;
+    padding: 20px 60px;
+    border-radius: 20px;
+    max-width: 250px;
+    margin: 10px 30px;
+}
+.categories-item-link{
+    text-decoration: none;
+    color:#000000;
+    font-weight: 500;
+}
+.categories-item-link:hover{
+    font-weight: 200;
+    font-style: italic;
+    font-size: 20px;
+    color: #000000;
+    border-bottom: 1px solid #000000;
+}

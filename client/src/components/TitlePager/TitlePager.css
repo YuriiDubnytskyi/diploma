@@ -1,0 +1,9 @@
+.title-wrapper{
+    background-color: #F6F6F6;
+    text-align: center;
+    padding: 25px;
+}
+.title-text{
+    font-weight: 600;
+    font-size: 30px;
+}

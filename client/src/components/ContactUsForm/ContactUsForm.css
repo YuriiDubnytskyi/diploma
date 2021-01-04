@@ -1,0 +1,74 @@
+.contact__conatiner{
+    width: 80%;
+    margin: 30px auto;
+}
+.contact-user{
+    display: flex;
+}
+.contact-user-name,.contact-user-email{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.input--contact-name{
+    width: 90%;
+}
+.contact-subject,.contact-text{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.input--contact-text{
+    height: 150px;
+}
+.input{
+    background-color: rgb(153, 153, 153);
+    color:white;
+    padding: 10px;
+    border:none
+}
+.contact-user,.contact-subject,.contact-text{
+    margin: 20px 0;
+}
+.contact-btn{
+    width: 100px;
+    text-align: center;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #00C48C;
+}
+.contact-btn:hover{
+    color: #00C48C;
+    border:1px solid #00C48C;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+.contact-info{
+    display: flex;
+}
+.contact-info-success,.contact-info-error{
+    width: 100px;
+    text-align: center;
+    padding: 10px 20px;
+    color: #ffffff;
+    margin: 0 20px;
+}
+.contact-info-success{
+    background-color: #00C48C;
+}
+.contact-info-error{
+    background-color: #881111;
+}
+@media screen and (max-width:600px){
+    .contact-user{
+       flex-direction: column;
+    }
+    .contact-user-name,.contact-user-email{
+        width: 100%;
+    }
+    .input--contact-name{
+        width: 100%;
+    }
+}

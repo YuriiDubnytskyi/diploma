@@ -1,0 +1,47 @@
+.login__container{
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+}
+.line-login{
+    height: 300px;
+
+}
+.login-user-email,.login-user-password,
+.sign-user-email,.sign-user-name,.sign-user-password{
+    display: flex;
+    flex-direction: column;
+}
+.login-submit,.sign-submit{
+    margin-top: 20px;
+    max-width: 100px;
+    text-align: center;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #00C48C;
+    transition: 2s;
+}
+.login-submit:hover,.sign-submit:hover{
+    color: #00C48C;
+    border:1px solid #00C48C;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+.login-error,.sign-error{
+    margin: 10px 0;
+    padding: 5px;
+    color:#ffffff;
+    background-color: rgb(131, 15, 15);
+}
+@media screen and (max-width:501px){
+    .login__container{
+        flex-direction: column;
+    }
+    .line-login{
+        height: 1px;
+        margin: 10px 0;
+    }
+}

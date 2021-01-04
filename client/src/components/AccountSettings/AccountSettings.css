@@ -1,0 +1,64 @@
+.account__settings{
+    width: 65%;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.settings-box{
+    padding: 20px;
+    min-width: 50%;
+}
+.settings-title{
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: 700;
+
+}
+.settings-submit{
+    background-color: #00C48C;
+    max-width: 200px;
+    padding: 10px  20px;
+    text-align: center;
+    color:#ffffff;
+}
+.settings-submit:hover{
+    cursor: pointer;
+    color:#00c48c;
+    background-color: #ffffff;
+    font-weight: 600;
+    padding: 9px  20px ;
+    border: 1px solid #00c48c;
+}
+.settings-user-name,
+.settings-user-surename,
+.settings-user-email,
+.settings-user-age,
+.settings-user-phone,
+.settings-user-gender{
+    margin: 10px 0;
+    min-width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.setting-box-options{
+    display: flex;
+    flex-direction: column;
+    max-width: 35%;
+    width: 100%;
+    margin: 30px 0  10px;
+}
+.settings-box-danger{
+    margin-top: 30px;
+    border:1px solid rgb(207, 0, 0);
+    padding: 10px;
+    background-color:  rgba(235, 0, 0, 0.678);
+}
+.delete-account-btn{
+    background-color: rgb(105, 17, 17);
+    color:#ffffff;
+}
+.settings-box-email{
+    background-color: rgb(81, 55, 124);
+}
