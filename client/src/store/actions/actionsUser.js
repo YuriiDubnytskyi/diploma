@@ -1,35 +1,33 @@
 import * as actionTypes from './actionTypes';
-import axios from 'axios'
+import API from './../../API/API'
 
 export const logout = () => {
   
   return function (dispatch) {
     dispatch(removeUser())
-    return axios.get('/api/auth/signout')
+    return API.get('/auth/signout')
   }
 }
 
 
 export const fetchUserSign = (email,password,name) => {
-    
- 
     return function (dispatch) {
       dispatch(addUser())
-      return axios.post('/api/auth/sign',{email,password,name,username:'q'})
+      return API.post('/auth/sign',{email,password,name,username:'q'})
         .then( (user) => {
             if(user.data.err){
-              dispatch(addUserFail(user.data.message))
+              dispatch(addUserFail(user.data.errMess))
             }else{
               dispatch(addUserSuccess({
-                email:user.data.email,
-                likeProducts:user.data.likeProducts,
-                id:user.data._id,
-                gender:user.data.gender,
-                name:user.data.name,
-                surname:user.data.surname,
-                phone:user.data.phone,
-                age:user.data.age,
-                emailVerify:user.data.emailVerify
+                email:user.data.data.email,
+                likeProducts:user.data.data.likeProducts,
+                id:user.data.data._id,
+                gender:user.data.data.gender,
+                name:user.data.data.name,
+                surname:user.data.data.surname,
+                phone:user.data.data.phone,
+                age:user.data.data.age,
+                emailVerify:user.data.data.emailVerify
               }))
             }
         })
@@ -40,21 +38,21 @@ export const fetchUserLogin = (email,password) => {
 
     return function (dispatch) {
       dispatch(addUser())
-      return axios.post('/api/auth/login',{email,password,username:'q'})
+      return API.post('/auth/login',{email,password,username:'q'})
         .then( (user) => {
           if(user.data.err){
-            dispatch(addUserFail(user.data.message))
+            dispatch(addUserFail(user.data.errMess))
           }else{
             dispatch(addUserSuccess({
-				        email:user.data.email,
-                likeProducts:user.data.likeProducts,
-                id:user.data._id,
-                gender:user.data.gender,
-                name:user.data.name,
-                surname:user.data.surname,
-                phone:user.data.phone,
-                age:user.data.age,
-                emailVerify:user.data.emailVerify
+                email:user.data.data.email,
+                likeProducts:user.data.data.likeProducts,
+                id:user.data.data._id,
+                gender:user.data.data.gender,
+                name:user.data.data.name,
+                surname:user.data.data.surname,
+                phone:user.data.data.phone,
+                age:user.data.data.age,
+                emailVerify:user.data.data.emailVerify
 			      }))
           }
         })
@@ -90,12 +88,12 @@ export const fetchAddLikeProduct = (id,newLikeProducts) => {
     
     return function (dispatch) {
       dispatch(addLikeProduct())
-      return axios.put('/api/user/addProduct',{id,newLikeProducts})
+      return API.put('/user/addProduct',{id,newLikeProducts})
         .then( (user) => {
             if(user.data.err){
-              dispatch(addLikeProductFail(user.data.message))
+              dispatch(addLikeProductFail(user.data.errMess))
             }else{
-              dispatch(addLikeProductrSuccess(user.data.likeProducts))
+              dispatch(addLikeProductrSuccess(user.data.data.likeProducts))
             }
         })
 

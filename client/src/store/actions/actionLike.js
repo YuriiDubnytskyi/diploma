@@ -1,16 +1,16 @@
 import * as actionTypes from './actionTypes';
-import axios from 'axios'
+import API from './../../API/API'
 
 export const fetchGetProductsLike = (data) => {
     return function (dispatch) {
       dispatch(getProductsLikeInitial())
       
-      return axios.post('/api/user/getProductsLike',{ids:data})
+      return API.post('/user/getProductsLike',{ids:data})
         .then( (products) => {
             if(products.data.err){
-              dispatch(getProductsLikeFail(products.data.mess))
+              dispatch(getProductsLikeFail(products.data.errMess))
             }else{
-              dispatch(getProductsLikeSuccess(products.data))
+              dispatch(getProductsLikeSuccess(products.data.data))
             }
         })
 

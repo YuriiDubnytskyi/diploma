@@ -11,9 +11,9 @@ const CategorieTitle = () => {
     useEffect(()=>{
         setLoading(true)
         API.get('/user/getProductTitle').then(data=>{
-            setData(data.data)
+            setData(data.data.data)
             setLoading(false)
-            console.log(data.data)
+            console.log(data.data.data)
         })
     },[])
 

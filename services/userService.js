@@ -8,137 +8,119 @@ const newsSchema = require("../models/news")
 const buyListSellSchema = require("../models/buyList")
 
 const getProductTitle = async () => {
-    const Title = productTitleSchema
-    return await Title.find({}, (err, list)=>{ 
-            if(err) return console.log(err);
-            return list;
-    });
+    try {
+        const Title = productTitleSchema
+        const titleList = await Title.find({})
+        return {err:false,data:titleList}
+    } catch (error) {
+        return {err:true,errMess:error}
+    }
 }
-const getProductsSubtitle = async (id) => {
-    const SubTitle = productSubTitleSchema
-    return await SubTitle.find({idProductTitle:{ $in:`${id}`}}, (err, list)=>{ 
-            if(err) return console.log(err);
-            return list;
-    });
-}
-//Why it this ??
-// const getProductsList = (id) => {
-//     console.log('here')
-//     const List = productListSchema
-//     return new Promise((res,rej)=>{
-//          List.aggregate([ 
-//                 { $match: { idSubProduct: id } },
-//                 { "$lookup": {
-//                     from: 'wereHouse',
-//                     localField: 'idProduct',
-//                     foreignField: 'idWereHouse',
-//                     as: 'count'
-//                 }
-//                 }
-//             ]).exec((e,r)=>{
-//                 res(r)
-//             })
-//      }) 
-// }
 
+const getProductsSubtitle = async (id) => {
+    try {
+        const SubTitle = productSubTitleSchema
+        const subTitleList = await SubTitle.find({idProductTitle:{ $in:`${id}`}})
+        return {err:false,data:subTitleList}
+    } catch (error) {
+        return {err:true,errMess:error}
+    }
+}
 
 const getProductInfo = async (id) => {
-    const Product = productInfoSchema
-    return new Promise((res,rej)=>{
-        Product.aggregate([ 
-            { $match: { idProduct: id } },
-            {
-                $lookup:
-                {
-                    from: 'wereHouse',
-                    localField: 'idProduct',
-                    foreignField: 'idWereHouse',
-                    as: 'count'
-                }
-            }
-        ]).exec((e,r)=>{
-            res(r)
-        })
-    }) 
+    try {
+        const Product = productInfoSchema
+        const product = await Product.aggregate([ 
+                        { $match: { idProduct: id } },
+                        {
+                            $lookup:
+                            {
+                                from: 'wereHouse',
+                                localField: 'idProduct',
+                                foreignField: 'idWereHouse',
+                                as: 'count'
+                            }
+                        }
+                    ])
+        return {err:false,data:product}
+    } catch (error) {
+        return {err:true,errMess:error}
+    }
 }
 
 const getNews = async (number) =>{
-    return new Promise((res,rej)=>{
+    try {
         const News = newsSchema
-        News.find()
-            .skip(number-2)
-            .limit(2)
-            .exec((err,news)=>{
-                if (err) rej(err)
-                res(news)
-            })
-    })
+        const newsList = await News.find().skip(number-2).limit(2)
+        return {err:false,data:newsList}
+    } catch (error) {
+        return {err:true,errMess:error}
+    }
 }
 
 const updateUser = async (name,phone,gender,surname,age,id) =>{
-    return new Promise((res,rej)=>{
+    try {
         const User = userSchema
-        User.findOneAndUpdate({_id:id},{name,phone,gender,surname,age},{new:true , useFindAndModify: false},(err,user)=>{
-            if(err) return console.log(err);
-            res(user)
-        })
-    }) 
+        const update = await User.findOneAndUpdate({_id:id},{name,phone,gender,surname,age},{new:true , useFindAndModify: false})
+        return {err:false,data:update,successUpdate:true}
+    } catch (error) {
+        return {err:true,errMess:error}
+    } 
 }
 
 const getNewsID = async (id) =>{
-    return new Promise((res,rej)=>{
+    try {
         const News = newsSchema
-        News.findOne({_id:id},((err,news)=>{
-            if(err) return console.log(err);
-            res(news)
-        }))
-        
-    })
+        const news = await News.findOne({_id:id})
+        return {err:false,data:news}
+    } catch (error) {
+        return {err:true,errMess:error}
+    }
 }
 
 const getProductListSearch = async (str) => {
-    return new Promise((res,rej)=>{
+    try {
         const List = productListSchema
-        List.find({name:{$regex:'.*'+str+'.*'}}, (err, list)=>{ 
-            if(err) return console.log(err);
-            res(list);
-        });
-    }) 
+        const searchList = await List.find({name:{$regex:'.*'+str+'.*'}});
+        return {err:false,data:searchList}
+    } catch (error) {
+        return {err:true,errMess:error}
+    }
 }
 
 const getProductListSearchAll = async () => {
-    return new Promise((res,rej)=>{
+    try {
         const List = productListSchema
-        List.find({}, (err, list)=>{ 
-            if(err) return console.log(err);
-            res(list);
-        });
-    }) 
+        const searchList = await List.find({});
+        return {err:false,data:searchList}
+    } catch (error) {
+        return {err:true,errMess:error}
+    }
 }
 
 const getProductList = async (id) => {
-    return new Promise((res,rej)=>{
+    try {
         const List = productListSchema
-        List.find({idSubProduct:{ $in:`${id}`}}, function(err, list){ 
-            if(err) return console.log(err);
-            res(list);
-        });
-    }) 
+        const productList = await List.find({idSubProduct:{ $in:`${id}`}});
+        return {err:false,data:productList}
+    } catch (error) {
+        return {err:true,errMess:error}
+    }
 }
 
 const addProduct = async (id,newLikeProducts) =>{
-    return new Promise((res,rej)=>{
+    try {
         const User = userSchema
-        User.findOneAndUpdate({_id:id},{likeProducts:newLikeProducts},{new:true , useFindAndModify: false},function(err,user){
-            if(err) return console.log(err);
-            res(user)
-        })
-    })
+        const addLike = await User.findOneAndUpdate({_id:id},{likeProducts:newLikeProducts},{new:true , useFindAndModify: false})
+        return {err:false,data:addLike,success:true}
+    } catch (error) {
+        return {err:true,errMess:error}
+    }
 }
 const getProductsLikeOrBuy = async (ids) => {
-    return new Promise((res,rej)=>{
+    try {
         const List = productListSchema
-        List.aggregate([ 
+        const likeBuyList = await List.aggregate([ 
             { $match: { idProduct:{ $in:ids} } },
             {
                 $lookup:
@@ -149,64 +131,69 @@ const getProductsLikeOrBuy = async (ids) => {
                     as: 'countOfProduct'
                 }
             }
-        ]).exec((e,r)=>{
-            res(r)
-        })
-    }) 
+        ])
+        return {err:false,data:likeBuyList}
+    } catch (error) {
+        return {err:true,errMess:error}
+    }
 }
 
 
 const createBuyListSell = async (email,product) => {
-    return new Promise((res,rej)=>{
+    try {
         const BuyListSell = new buyListSellSchema({email,product,time:new Date()})
-        BuyListSell.save((err)=>{
-            if(err) return console.log(err);
-        }) 
-    })
+        await BuyListSell.save() 
+        return {err:false,success:false}
+    } catch (error) {
+        return {err:true,errMess:error}
+    }
 }
 
 const sellCountCalculate = async (products) => {
-    const wereHouse = wereHouseSchema
-    products.productsBucket.map((el)=>{
-        wereHouse.find({idWereHouse:el.idProduct}, function(err, product){ 
-            if(err) return console.log(err);
-            let sell = Number(product[0].sell)
-            let count = Number(product[0].count)
-            sell+=el.count
-            count-=el.count
-            wereHouse.findOneAndUpdate({idWereHouse:el.idProduct},{count:count,sell:sell},{new:true , useFindAndModify: false},function(err){
+    try {
+        const wereHouse = wereHouseSchema
+        await products.productsBucket.map((el)=>{
+            wereHouse.find({idWereHouse:el.idProduct}, function(err, product){ 
                 if(err) return console.log(err);
-            })
-        });
-    })
+                let sell = Number(product[0].sell)
+                let count = Number(product[0].count)
+                sell+=el.count
+                count-=el.count
+                wereHouse.findOneAndUpdate({idWereHouse:el.idProduct},{count:count,sell:sell},{new:true , useFindAndModify: false},function(err){
+                    if(err) return console.log(err);
+                })
+            });
+        })
+        return {err:false,success:true}
+    } catch (error) {
+        return {err:true,errMess:error}
+    }
 }
 
 const getProductsSell = async (email) => {
-    return new Promise((res,rej)=>{
+    try {
         const BuyListSell = buyListSellSchema
-        BuyListSell.find({email:{ $in:`${email}`}},(err,list)=>{
-            if(err) return console.log(err);
-            console.log(list)
-            res(list)
-        }) 
-    }) 
+        const buyProduct = await BuyListSell.find({email:{ $in:`${email}`}})
+        return {err:false,data:buyProduct}
+    } catch (error) {
+        return {err:true,errMess:error}
+    }
 }
 
 
 const verifyUser = async (id) =>{
-    return new Promise((res,rej)=>{
+    try {
         const User = userSchema
-        User.findOneAndUpdate({_id:id},{emailVerify:true},{new:true , useFindAndModify: false},(err,user)=>{
-            if(err) return console.log(err);
-            res(user)
-        })
-    }) 
+        const verify = await User.findOneAndUpdate({_id:id},{emailVerify:true},{new:true , useFindAndModify: false})
+        return {err:false,data:verify,successVerify:true}
+    } catch (error) {
+        return {err:true,errMess:error}
+    }
 }
 
 module.exports = {
     getProductTitle,
     getProductsSubtitle,
-    getProductsList,
     getProductInfo,
     getNews,
     updateUser,

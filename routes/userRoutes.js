@@ -21,12 +21,11 @@ const router = Router();
 
 
 router.get('/getProductTitle', (req, res) => {
-
-    getProductTitle().then((r) => {
-        if (r) {
-            res.json(r);
+    getProductTitle().then((data) => {
+        if (data.err) {
+            res.json({err:true,errMess:data.errMess});
         } else {
-            res.json({ err: false, status: 404, comment: "Error" });
+            res.json(data);
         }
     })
 })
@@ -34,35 +33,23 @@ router.get('/getProductTitle', (req, res) => {
 router.get('/getProductsSubtitle/:id', (req, res) => {
     const id = req.params.id.slice(1);
 
-    getProductsSubtitle(id).then((r) => {
-        if (r) {
-            res.json(r);
+    getProductsSubtitle(id).then((data) => {
+        if (data.err) {
+            res.json({err:true,errMess:data.errMess});
         } else {
-            res.json({ err: false, status: 404, comment: "Error" });
+            res.json(data);
         }
     })
 })
-//Why it this ??
-// router.get('/getProductsList/:id', (req, res) => {
-//     const id = req.params.id.slice(1);
-//     console.log('here33')
-//     getProductsList(id).then((r)=>{
-//         if (r) {
-//             res.json(r);
-//         } else {
-//             res.json({err:false,status:404,comment:"Error"});
-//         }
-//     })
-// })
 
 router.get('/getProduct/:id', (req, res) => {
     const id = req.params.id.slice(1);
 
-    getProductInfo(id).then((r) => {
-        if (r) {
-            res.json(r);
+    getProductInfo(id).then((data) => {
+        if (data.err) {
+            res.json({err:true,errMess:data.errMess});
         } else {
-            res.json({ user: false, status: 404, comment: "Not found this product" });
+            res.json(data);
         }
     })
 })
@@ -114,11 +101,11 @@ router.post('/sendText/', (req, res) => {
 
 router.get('/getNews/:number', (req, res) => {
     const number = req.params.number
-    getNews(number).then((r) => {
-        if (r) {
-            res.json(r);
+    getNews(number).then((data) => {
+        if (data.err) {
+            res.json({err:true,errMess:data.errMess});
         } else {
-            res.json({ err: false, status: 404, comment: "User not found" });
+            res.json(data);
         }
     })
 })
@@ -130,11 +117,11 @@ router.put("/changeInfo", (req, res) => {
     const surname = req.body.surname
     const age = req.body.age
     const id = req.body.id
-    updateUser(name, phone, gender, surname, age, id).then((r) => {
-        if (r) {
-            res.json(r);
+    updateUser(name, phone, gender, surname, age, id).then((data) => {
+        if (data.err) {
+            res.json({err:true,errMess:data.errMess});
         } else {
-            res.json({ err: false, status: 404, comment: "User not found" });
+            res.json(data);
         }
     })
 });
@@ -142,11 +129,11 @@ router.put("/changeInfo", (req, res) => {
 
 router.get('/getNewsID/:id', (req, res) => {
     const id = req.params.id
-    getNewsID(id).then((r) => {
-        if (r) {
-            res.json(r);
+    getNewsID(id).then((data) => {
+        if (data.err) {
+            res.json({err:true,errMess:data.errMess});
         } else {
-            res.json({ err: false, status: 404, comment: "User not found" });
+            res.json(data);
         }
     })
 })
@@ -154,31 +141,31 @@ router.get('/getNewsID/:id', (req, res) => {
 
 router.get('/getProductListSearch/:id', (req, res) => {
     const id = req.params.id
-    getProductListSearch(id).then((r) => {
-        if (r) {
-            res.json(r);
+    getProductListSearch(id).then((data) => {
+        if (data.err) {
+            res.json({err:true,errMess:data.errMess});
         } else {
-            res.json({ user: false, status: 404, comment: "User not found" });
+            res.json(data);
         }
     })
 })
 router.get('/getProductListSearch/', (req, res) => {
-    getProductListSearchAll().then((r) => {
-        if (r) {
-            res.json(r);
+    getProductListSearchAll().then((data) => {
+        if (data.err) {
+            res.json({err:true,errMess:data.errMess});
         } else {
-            res.json({ user: false, status: 404, comment: "User not found" });
+            res.json(data);
         }
     })
 })
 
 router.get('/getProductList/:id', (req, res) => {
     const id = req.params.id;
-    getProductList(id).then((r) => {
-        if (r) {
-            res.json(r);
+    getProductList(id).then((data) => {
+        if (data.err) {
+            res.json({err:true,errMess:data.errMess});
         } else {
-            res.json({ user: false, status: 404, comment: "User not found" });
+            res.json(data);
         }
     })
 })
@@ -187,33 +174,33 @@ router.put("/addProduct", (req, res) => {
     const newLikeProducts = req.body.newLikeProducts
     const set = new Set(newLikeProducts)
     const id = req.body.id;
-    addProduct(id, [...set]).then((r) => {
-        if (r) {
-            res.json(r);
+    addProduct(id, [...set]).then((data) => {
+        if (data.err) {
+            res.json({err:true,errMess:data.errMess});
         } else {
-            res.json({ comment: "User not found", status: 500 });
+            res.json(data);
         }
     })
 });
 
 router.post('/getProductsLike/', (req, res) => {
     const ids = req.body.ids;
-    getProductsLikeOrBuy(ids).then((r) => {
-        if (r) {
-            res.json(r);
+    getProductsLikeOrBuy(ids).then((data) => {
+        if (data.err) {
+            res.json({err:true,errMess:data.errMess});
         } else {
-            res.json({ user: false, status: 404, comment: "User not found" });
+            res.json(data);
         }
     })
 })
 
 router.post('/getProductsBucket/', (req, res) => {
     const ids = req.body.ids;
-    getProductsLikeOrBuy(ids).then((r) => {
-        if (r) {
-            res.json(r);
+    getProductsLikeOrBuy(ids).then((data) => {
+        if (data.err) {
+            res.json({err:true,errMess:data.errMess});
         } else {
-            res.json({ user: false, status: 404, comment: "User not found" });
+            res.json(data);
         }
     })
 })
@@ -275,11 +262,11 @@ router.post('/buyProducts/', (req, res) => {
 
 router.get('/getCountSellProducts/:email', (req, res) => {
     const email = req.params.email;
-    getProductsSell(email).then((r) => {
-        if (r) {
-            res.json(r);
+    getProductsSell(email).then((data) => {
+        if (data.err) {
+            res.json({err:true,errMess:data.errMess});
         } else {
-            res.json({ user: false, status: 404, comment: "With this Email not found products" });
+            res.json(data);
         }
     })
 })
@@ -321,11 +308,11 @@ router.post('/emailVerify/', (req, res) => {
 router.put("/verify", (req, res) => {
     const id = req.body.id
 
-    verifyUser(id).then((r) => {
-        if (r) {
-            res.json(r);
+    verifyUser(id).then((data) => {
+        if (data.err) {
+            res.json({err:true,errMess:data.errMess});
         } else {
-            res.json({ err: false, status: 404, comment: "User not found" });
+            res.json(data);
         }
     })
 });

@@ -21,7 +21,7 @@ const Account = () => {
             history.push('/')
         }else{
             API.get('/user/getCountSellProducts/'+email).then(res=>{
-                setData(res.data)
+                setData(res.data.data)
             })
         }
     },[auth])
@@ -64,8 +64,7 @@ const Account = () => {
         }
 
         API.put('/user/changeInfo',user).then(res=>{
-            dispatch(addUserSuccess(res.data))
-            console.log(res)
+            dispatch(addUserSuccess(res.data.data))
         })
     }
 

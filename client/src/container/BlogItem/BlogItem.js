@@ -11,8 +11,8 @@ const BlogItem = () => {
 
     useEffect(()=>{
         API.get('/user/getNewsID/'+id).then(res=>{
-            setTitle(res.data.title)
-            setDescription(res.data.description)
+            setTitle(res.data.data.title)
+            setDescription(res.data.data.description)
         })
     },[])
 

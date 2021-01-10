@@ -1,13 +1,14 @@
 import * as actionTypes from './actionTypes';
-import axios from 'axios'
+import API from './../../API/API'
+
 export const fetchGetProductListSearch = (str) => {
     return function (dispatch) {
       dispatch(getProductList())
       
-      return axios.get('/api/user/getProductListSearch/'+str)
+      return API.get('/user/getProductListSearch/'+str)
         .then( (list) => {
             if(!list.data.err){
-              dispatch(getProductListSearchSuccess(list.data))
+              dispatch(getProductListSearchSuccess(list.data.data))
             }
         })
   

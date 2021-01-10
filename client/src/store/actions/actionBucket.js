@@ -1,16 +1,16 @@
 import * as actionTypes from './actionTypes';
-import axios from 'axios'
+import API from './../../API/API'
 
 export const fetchGetProductsBucket = (data) => {
     return function (dispatch) {
       dispatch(getProductsBucketInitial())
       
-      return axios.post('/api/user/getProductsBucket',{ids:data})
+      return API.post('/user/getProductsBucket',{ids:data})
         .then( (products) => {
             if(products.data.err){
-              dispatch(getProductsBucketFail(products.data.mess))
+              dispatch(getProductsBucketFail(products.data.errMess))
             }else{
-              dispatch(getProductsBucketSuccess(products.data))
+              dispatch(getProductsBucketSuccess(products.data.data))
               
             }
         })

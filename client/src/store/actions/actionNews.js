@@ -1,18 +1,18 @@
 import * as actionTypes from './actionTypes';
-import axios from 'axios'
+import API from './../../API/API'
 
 export const fetchGetNews = (number,variant) => {
     return function (dispatch) {
       dispatch(getNewsInitial())
       
-      return axios.get('/api/user/getNews/'+number)
+      return API.get('/user/getNews/'+number)
         .then( (news) => {
             if(news.data.err){
-              dispatch(getNewsFail(news.data.mess))
+              dispatch(getNewsFail(news.data.errMess))
             }else{
 				variant == 1 ?
-			  	dispatch(getNewsSuccess(news.data))
-			  :	dispatch(getNewsSuccessMore(news.data))
+			  	dispatch(getNewsSuccess(news.data.data))
+			  :	dispatch(getNewsSuccessMore(news.data.data))
             }
         })
 

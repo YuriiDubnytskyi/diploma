@@ -19,9 +19,9 @@ const ProductInfo = () => {
     useEffect(() => {
         setLoading(true)
         API.get('/user/getProduct/' + id).then(data => {
-            setData(data.data[0])
+            setData(data.data.data[0])
             setLoading(false)
-            console.log(data.data[0])
+            console.log(data.data.data[0])
         })
     }, [])
 
