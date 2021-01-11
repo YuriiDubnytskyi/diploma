@@ -50,9 +50,7 @@
     "verbose": true,
     "clearMocks": true,
     "collectCoverage": true,
-    "setupFilesAfterEnv": [
-      "./config/setupTest.js"
-    ],
+
     "snapshotSerializers": [
       "./node_modules/enzyme-to-json/serializer"
     ],
