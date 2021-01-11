@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./BlogItem.css";
+import "./BlogItem.scss";
 import TitlePager from "../../components/TitlePager/TitlePager";
 import API from "../../API/API";
 import { useParams } from "react-router-dom";

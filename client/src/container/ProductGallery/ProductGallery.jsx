@@ -1,6 +1,6 @@
 import React from "react";
 import ImageGallery from "react-image-gallery";
-import "./ProductGallery.css";
+import "./ProductGallery.scss";
 
 class App extends React.Component {
     constructor(props) {
@@ -20,7 +20,7 @@ class App extends React.Component {
             slideOnThumbnailOver: false,
             thumbnailPosition: "left",
         };
-        this.images = props.images.map((el, i) => {
+        this.images = props.images.map((el) => {
             return { original: el, thumbnail: el };
         });
     }

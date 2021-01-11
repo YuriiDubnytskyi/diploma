@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import "./Login.css";
+import "./Login.scss";
 import TitlePager from "./../../components/TitlePager/TitlePager";
 import LoginForm from "./../../components/LoginForm/LoginForm";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUserSign, fetchUserLogin } from "./../../store/actions/actionsUser";
+import { emailTest } from "./../../helpers/helpers";
 
 const Login = () => {
     const user = useSelector((state) => state.user);
@@ -24,9 +25,8 @@ const Login = () => {
     const [localErrS, setLocalErrS] = useState(false);
     const [localErrTextS, setLocalErrTextS] = useState("");
     //------login submit
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const loginSubmit = () => {
-        if (!re.test(String(loginEmail).toLowerCase())) {
+        if (!emailTest.test(String(loginEmail).toLowerCase())) {
             setLocalErrL(true);
             setLocalErrTextL("Your Email Fail");
         } else if (loginPass != loginPassAgain) {
@@ -40,7 +40,7 @@ const Login = () => {
         }
     };
     const signSubmit = () => {
-        if (!re.test(String(signEmail).toLowerCase())) {
+        if (!emailTest.test(String(signEmail).toLowerCase())) {
             setLocalErrS(true);
             setLocalErrTextS("Your Email Fail");
         } else if (signName == "" || signPass == "" || signPassAgain == "" || signEmail == "") {

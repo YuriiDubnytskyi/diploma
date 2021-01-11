@@ -1,5 +1,5 @@
 import React from "react";
-import "./AccountOrders.css";
+import "./AccountOrders.scss";
 
 import { Link } from "react-router-dom";
 

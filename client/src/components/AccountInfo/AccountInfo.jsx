@@ -1,5 +1,5 @@
 import React from "react";
-import "./AccountInfo.css";
+import "./AccountInfo.scss";
 
 const AccountInfo = ({ email, name, surname, gender, age, phone }) => {
     return (

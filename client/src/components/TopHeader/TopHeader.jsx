@@ -1,5 +1,5 @@
 import React from "react";
-import "./TopHeader.css";
+import "./TopHeader.scss";
 import { Link } from "react-router-dom";
 
 const TopHeader = (props) => {

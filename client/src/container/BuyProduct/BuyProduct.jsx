@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { clearBucket } from "./../../store/actions/actionBucket";
 import { clearBucketUser } from "./../../store/actions/actionsUser";
 import API from "./../../API/API";
-import "./BuyProduct.css";
+import "./BuyProduct.scss";
 import BillingForm from "./../../components/BillingForm/BillingForm";
 
 const BuyProduct = () => {

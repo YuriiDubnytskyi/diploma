@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import "./CallbackPage.css";
+import "./CallbackPage.scss";
 import { useParams } from "react-router-dom";
 import TitlePager from "./../../components/TitlePager/TitlePager";
 import { useSelector } from "react-redux";
 import API from "./../../API/API";
 import CallbackPageForm from "./../../components/CallbackPageForm/CallbackPageForm";
+import { emailTest } from "./../../helpers/helpers";
 
 const CallbackPage = () => {
     const { id } = useParams();
@@ -15,9 +16,8 @@ const CallbackPage = () => {
     const [loginPassAgain, setLoginPassAgain] = useState("");
     const [localErrL, setLocalErrL] = useState(false);
     const [localErrTextL, setLocalErrTextL] = useState("");
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const loginSubmit = () => {
-        if (!re.test(String(loginEmail).toLowerCase())) {
+        if (!emailTest.test(String(loginEmail).toLowerCase())) {
             setLocalErrL(true);
             setLocalErrTextL("Your Email Fail");
         } else if (loginPass != loginPassAgain) {

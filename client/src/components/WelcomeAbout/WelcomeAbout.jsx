@@ -1,5 +1,5 @@
 import React from "react";
-import "./WelcomeAbout.css";
+import "./WelcomeAbout.scss";
 import img from "./../../image/background.jpg";
 
 const WelcomeAbout = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./ContactUsForm.css";
+import "./ContactUsForm.scss";
 
 const ContactUsForm = ({ name, email, title, text, success, err, sendEmail, setName, setEmail, setTitle, setText }) => {
     return (

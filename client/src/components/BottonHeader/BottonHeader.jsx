@@ -1,5 +1,5 @@
 import React from "react";
-import "./BottonHeader.css";
+import "./BottonHeader.scss";
 import { Link } from "react-router-dom";
 
 const BottonHeader = (props) => {

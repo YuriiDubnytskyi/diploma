@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./CategoriTitleItem.css";
+import "./CategoriTitleItem.scss";
 
 const CategoriTitleItem = ({ idProductTitle, productTitle }) => {
     return (

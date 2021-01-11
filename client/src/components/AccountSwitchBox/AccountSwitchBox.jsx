@@ -1,5 +1,5 @@
 import React from "react";
-import "./AccountSwitchBox.css";
+import "./AccountSwitchBox.scss";
 
 const AccountSwitchBox = ({ showInfo, showSettings, showOrder, showInfoBox, showSettingsBox, showOrderBox }) => {
     return (

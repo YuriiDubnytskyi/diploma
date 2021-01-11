@@ -1,5 +1,5 @@
 import React from "react";
-import "./Welcome.css";
+import "./Welcome.scss";
 import WelcomeAbout from "../../components/WelcomeAbout/WelcomeAbout";
 import WelcomeOptions from "../../components/WelcomeOptions/WelcomeOptions";
 import { Link } from "react-router-dom";

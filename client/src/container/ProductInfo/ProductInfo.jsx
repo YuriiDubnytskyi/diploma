@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./ProductInfo.css";
+import "./ProductInfo.scss";
 import { useParams } from "react-router-dom";
 import Slider from "../../components/Slider/Slider";
 import API from "../../API/API";

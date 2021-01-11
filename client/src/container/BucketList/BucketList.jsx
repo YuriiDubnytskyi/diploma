@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./BucketList.css";
+import "./BucketList.scss";
 import TitlePager from "../../components/TitlePager/TitlePager";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";

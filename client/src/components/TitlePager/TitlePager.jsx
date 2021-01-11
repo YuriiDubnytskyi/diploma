@@ -1,5 +1,5 @@
 import React from "react";
-import "./TitlePager.css";
+import "./TitlePager.scss";
 
 const TitlePager = ({ title }) => {
     return (

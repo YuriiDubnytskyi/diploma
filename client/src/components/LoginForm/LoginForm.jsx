@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./LoginForm.css";
+import "./LoginForm.scss";
 import { useHistory } from "react-router-dom";
 
 const LoginForm = (props) => {

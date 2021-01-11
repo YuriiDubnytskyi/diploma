@@ -1,5 +1,5 @@
 import React from "react";
-import "./BillingForm.css";
+import "./BillingForm.scss";
 
 const BillingForm = ({
     name,

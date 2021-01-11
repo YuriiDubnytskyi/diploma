@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slider from "./../../components/Slider/Slider";
 import API from "./../../API/API";
-import "./CategorieTitle.css";
+import "./CategorieTitle.scss";
 import CategoriTitleItem from "./../../components/CategoriTitleItem/CategoriTitleItem";
 
 const CategorieTitle = () => {

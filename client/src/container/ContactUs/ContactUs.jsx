@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TitlePager from "../../components/TitlePager/TitlePager";
-import "./ContactUs.css";
+import "./ContactUs.scss";
 import API from "./../../API/API";
 import ContactUsForm from "./../../components/ContactUsForm/ContactUsForm";
 

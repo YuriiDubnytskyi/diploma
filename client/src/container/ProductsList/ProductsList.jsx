@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./ProductsList.css";
+import "./ProductsList.scss";
 import { useParams, useHistory } from "react-router-dom";
 import Slider from "../../components/Slider/Slider";
 import TitlePager from "../../components/TitlePager/TitlePager";

@@ -1,5 +1,5 @@
 import React from "react";
-import "./BucketItem.css";
+import "./BucketItem.scss";
 
 const BucketItem = ({ img, name, price, count, plus, minus, key }) => {
     return (

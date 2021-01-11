@@ -4,7 +4,7 @@ import AccountOrders from "../../components/AccountOrders/AccountOrders";
 import AccountSettings from "../../components/AccountSettings/AccountSettings";
 import AccountSwitchBox from "../../components/AccountSwitchBox/AccountSwitchBox";
 import TitlePager from "../../components/TitlePager/TitlePager";
-import "./Account.css";
+import "./Account.scss";
 import { useSelector, useDispatch } from "react-redux";
 import API from "../../API/API";
 import { addUserSuccess } from "../../store/actions/actionsUser";

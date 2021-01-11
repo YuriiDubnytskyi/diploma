@@ -1,5 +1,5 @@
 import React from "react";
-import "./CallbackPageForm.css";
+import "./CallbackPageForm.scss";
 
 const CallbackPageForm = ({
     loginSubmit,

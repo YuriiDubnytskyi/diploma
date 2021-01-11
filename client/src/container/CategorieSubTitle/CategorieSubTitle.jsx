@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Slider from "./../../components/Slider/Slider";
 import API from "./../../API/API";
-import "./CategorieSubTitle.css";
+import "./CategorieSubTitle.scss";
 import { clearProductList } from "./../../store/actions/actionList";
 import { useDispatch } from "react-redux";
 import SubTitleItem from "./../../components/SubTitleItem/SubTitleItem";

@@ -1,5 +1,5 @@
 import React from "react";
-import "./BlogListIte.css";
+import "./BlogListIte.scss";
 import { useHistory } from "react-router-dom";
 
 const BlogListItem = ({ title, description, id }) => {

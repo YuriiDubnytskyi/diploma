@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import BlogListItem from "../../components/BlogListItem/BlogListItem";
 import TitlePager from "../../components/TitlePager/TitlePager";
-import "./Blog.css";
+import "./Blog.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGetNews, getNewsMore } from "../../store/actions/actionNews";
 import Slider from "../../components/Slider/Slider";

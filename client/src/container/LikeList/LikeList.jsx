@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./LikeList.css";
+import "./LikeList.scss";
 import TitlePager from "./../../components/TitlePager/TitlePager";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
