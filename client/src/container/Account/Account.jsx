@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import AccountInfo from "../../components/AccountInfo/AccountInfo";
 import AccountOrders from "../../components/AccountOrders/AccountOrders";
 import AccountSettings from "../../components/AccountSettings/AccountSettings";
@@ -7,7 +7,7 @@ import TitlePager from "../../components/TitlePager/TitlePager";
 import "./Account.scss";
 import { useSelector, useDispatch } from "react-redux";
 import API from "../../API/API";
-import { addUserSuccess } from "../../store/actions/actionsUser";
+import { addUserSuccess, removeUser } from "../../store/actions/actionsUser";
 import { useHistory } from "react-router-dom";
 
 const Account = () => {
@@ -30,21 +30,21 @@ const Account = () => {
     const [showSettings, setShowSetings] = useState(false);
     const [showOrder, setShowOrder] = useState(false);
 
-    const showInfoBox = () => {
+    const showInfoBox = useCallback(() => {
         setShowInfo(true);
         setShowOrder(false);
         setShowSetings(false);
-    };
-    const showSettingsBox = () => {
+    }, []);
+    const showSettingsBox = useCallback(() => {
         setShowInfo(false);
         setShowOrder(false);
         setShowSetings(true);
-    };
-    const showOrderBox = () => {
+    }, []);
+    const showOrderBox = useCallback(() => {
         setShowInfo(false);
         setShowOrder(true);
         setShowSetings(false);
-    };
+    }, []);
 
     const [newName, setNewName] = useState(name);
     const [newSurname, setNewSurname] = useState(surname);
@@ -52,7 +52,7 @@ const Account = () => {
     const [newAge, setNewAge] = useState(age);
     const [newPhone, setNewPhone] = useState(phone);
 
-    const saveChange = () => {
+    const saveChange = useCallback(() => {
         const user = {
             name: newName || name,
             surname: newSurname || surname,
@@ -65,14 +65,33 @@ const Account = () => {
         API.put("/user/changeInfo", user).then((res) => {
             dispatch(addUserSuccess(res.data.data));
         });
-    };
+    }, []);
+
+    const resetChange = useCallback(() => {
+        setNewName(name);
+        setNewSurname(surname);
+        setNewGender(gender);
+        setNewAge(age);
+        setNewPhone(phone);
+    }, []);
 
     const [sendEmail, setSetEmail] = useState(false);
 
-    const goVerify = () => {
+    const goVerify = useCallback(() => {
         setSetEmail(true);
         API.post("/user/emailVerify", { email, id });
-    };
+    }, []);
+
+    const deleteAccount = useCallback(() => {
+        API.delete("/user/deleteAccount/" + id);
+        dispatch(removeUser());
+    }, []);
+
+    const setNewNameChange = useCallback((e) => setNewName(e.target.value), []);
+    const setNewSurnameChange = useCallback((e) => setNewSurname(e.target.value), []);
+    const setNewGenderChange = useCallback((e) => setNewGender(e.target.value), []);
+    const setNewAgeChange = useCallback((e) => setNewAge(Number(e.target.value)), []);
+    const setNewPhoneChange = useCallback((e) => setNewPhone(e.target.value), []);
 
     return (
         <div className="account-wrapper">
@@ -102,13 +121,15 @@ const Account = () => {
                         newSurname={newSurname}
                         newGender={newGender}
                         newAge={newAge}
-                        setNewName={(e) => setNewName(e.target.value)}
-                        setNewSurname={(e) => setNewSurname(e.target.value)}
-                        setNewGender={(e) => setNewGender(e.target.value)}
-                        setNewAge={(e) => setNewAge(Number(e.target.value))}
-                        setNewPhone={(e) => setNewPhone(e.target.value)}
+                        setNewName={setNewNameChange}
+                        setNewSurname={setNewSurnameChange}
+                        setNewGender={setNewGenderChange}
+                        setNewAge={setNewAgeChange}
+                        setNewPhone={setNewPhoneChange}
                         saveChange={saveChange}
                         goVerify={goVerify}
+                        deleteAccount={deleteAccount}
+                        resetChange={resetChange}
                     />
                 ) : (
                     <></>

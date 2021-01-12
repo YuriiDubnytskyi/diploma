@@ -1,9 +1,15 @@
-import React from "react";
+import React,{useEffect} from "react";
 import "./AccountOrders.scss";
 
 import { Link } from "react-router-dom";
 
 const AccountOrders = ({ data }) => {
+    useEffect(()=>{
+        console.log('account orders render')
+        return () =>{
+            console.log('account orders unmount')
+        }
+    })
     return (
         <div className="order account__order">
             <div className="order-box">

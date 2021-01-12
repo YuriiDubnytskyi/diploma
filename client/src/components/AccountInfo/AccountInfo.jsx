@@ -1,7 +1,13 @@
-import React from "react";
+import React,{useEffect} from "react";
 import "./AccountInfo.scss";
 
 const AccountInfo = ({ email, name, surname, gender, age, phone }) => {
+    useEffect(()=>{
+        console.log('account info render')
+        return () =>{
+            console.log('account info unmount')
+        }
+    })
     return (
         <div className="info account__info">
             <div className="info-box">

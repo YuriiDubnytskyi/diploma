@@ -1,7 +1,13 @@
-import React from "react";
+import React,{useEffect} from "react";
 import "./AccountSwitchBox.scss";
 
 const AccountSwitchBox = ({ showInfo, showSettings, showOrder, showInfoBox, showSettingsBox, showOrderBox }) => {
+    useEffect(()=>{
+        console.log('account switch render')
+        return () =>{
+            console.log('account switch unmount')
+        }
+    })
     return (
         <div className="account-switch account__switch">
             <div className="account-switch__content content">

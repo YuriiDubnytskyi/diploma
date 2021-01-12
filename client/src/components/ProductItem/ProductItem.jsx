@@ -6,7 +6,11 @@ const ProductItem = ({ isLike, likeProduct, buyProduct, image, more, name, price
         <div className="productslist__item productslist-item">
             <div className="productslist-item__img">
                 <div className="productslist-item__img-container">
-                    {isLike ? <></> : <i className="fa fa-heart productslist-item-like" onClick={likeProduct}></i>}
+                    {isLike ? (
+                        <i className="fa fa-trash productslist-item-delete" onClick={likeProduct}></i>
+                    ) : (
+                        <i className="fa fa-heart productslist-item-like" onClick={likeProduct}></i>
+                    )}
 
                     <img className="productslist-item-img" src={image} />
                     <i className="fa fa-shopping-basket productslist-item-buy" onClick={buyProduct}></i>

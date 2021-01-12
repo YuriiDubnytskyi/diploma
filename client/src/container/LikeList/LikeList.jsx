@@ -4,12 +4,13 @@ import TitlePager from "./../../components/TitlePager/TitlePager";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { fetchGetProductsLike } from "./../../store/actions/actionLike";
+import { fetchGetProductsLike, removeLikeProduct } from "./../../store/actions/actionLike";
 import ProductItem from "./../../components/ProductItem/ProductItem";
 
 const LikeList = () => {
     const productsLike = useSelector((state) => state.productLike);
     const userLikes = useSelector((state) => state.user.user.likeProducts);
+    const userId = useSelector((state) => state.user.user.id);
 
     const history = useHistory();
     const dispatch = useDispatch();
@@ -21,6 +22,13 @@ const LikeList = () => {
 
     const buyProduct = (one, two) => {
         history.push("/product/:" + one + "/FromLike List/:" + two);
+    };
+
+    const deleteLikeProduct = (id) => {
+        const newLike = [...userLikes];
+        const arr = newLike.filter((el) => el !== id);
+        console.log(arr);
+        dispatch(removeLikeProduct(arr, userId));
     };
 
     return (
@@ -42,7 +50,7 @@ const LikeList = () => {
                             <ProductItem
                                 key={el._id}
                                 isLike={true}
-                                likeProduct={false}
+                                likeProduct={() => deleteLikeProduct(el.idProduct)}
                                 buyProduct={() => buyProduct(el.idProduct, el.name)}
                                 image={el.image}
                                 more={() => history.push("/product/:" + el.idProduct + "/FromLike List/:" + el.name)}

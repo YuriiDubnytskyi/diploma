@@ -4,7 +4,13 @@ import TitlePager from "../../components/TitlePager/TitlePager";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchGetProductsBucket, addPlusProductBucket, addMinusProductBucket } from "../../store/actions/actionBucket";
+import {
+    fetchGetProductsBucket,
+    addPlusProductBucket,
+    addMinusProductBucket,
+    deleteProductBucket,
+} from "../../store/actions/actionBucket";
+import { deleteProductUser } from "../../store/actions/actionsUser";
 import BucketItem from "../../components/BucketItem/BucketItem";
 
 const BucketList = () => {
@@ -17,6 +23,11 @@ const BucketList = () => {
             dispatch(fetchGetProductsBucket(userBucket));
         }
     }, []);
+
+    const deleteItem = (id) => {
+        dispatch(deleteProductUser(id));
+        dispatch(deleteProductBucket(id));
+    };
 
     return (
         <>
@@ -44,6 +55,7 @@ const BucketList = () => {
                                 plus={() => dispatch(addPlusProductBucket(el.idProduct))}
                                 minus={() => dispatch(addMinusProductBucket(el.idProduct))}
                                 count={el.count}
+                                deleteItem={() => deleteItem(el.idProduct)}
                             />
                         ))}
                     </div>

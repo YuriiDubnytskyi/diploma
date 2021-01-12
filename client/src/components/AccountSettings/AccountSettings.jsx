@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./AccountSettings.scss";
 
 const AccountSettings = ({
@@ -17,7 +17,15 @@ const AccountSettings = ({
     newSurname,
     newGender,
     newAge,
+    deleteAccount,
+    resetChange,
 }) => {
+    useEffect(() => {
+        console.log("account settings render");
+        return () => {
+            console.log("account settings unmount");
+        };
+    });
     return (
         <div className="settings account__settings">
             <div className="settings-box">
@@ -50,6 +58,9 @@ const AccountSettings = ({
                 <p className="settings-submit" onClick={saveChange}>
                     Save Changes
                 </p>
+                <p className="settings-reset" onClick={resetChange}>
+                    Reset Changes
+                </p>
             </div>
             <div className="setting-box-options">
                 <div className="settings-box-email">
@@ -68,7 +79,9 @@ const AccountSettings = ({
                 </div>
                 <div className="settings-box-danger">
                     <h3 className="danger-zone">Danger Zone</h3>
-                    <p className="delete-account-btn">Delete Account</p>
+                    <p className="delete-account-btn" onClick={deleteAccount}>
+                        Delete Account
+                    </p>
                 </div>
             </div>
         </div>

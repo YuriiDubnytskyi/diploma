@@ -123,3 +123,17 @@ export const clearBucketUser = () => {
         type: actionTypes.CLEAR_BUCKET_USER,
     };
 };
+
+export const deleteProductUser = (id) => {
+    return {
+        type: actionTypes.DELETE_USER_PRODUCT,
+        id,
+    };
+};
+
+export const deleteProductLikeUser = (data) => {
+    return {
+        type: actionTypes.DELETE_LIKE_PRODUCT,
+        data,
+    };
+};

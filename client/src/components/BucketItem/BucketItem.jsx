@@ -1,7 +1,7 @@
 import React from "react";
 import "./BucketItem.scss";
 
-const BucketItem = ({ img, name, price, count, plus, minus, key }) => {
+const BucketItem = ({ img, name, price, count, plus, minus, key, deleteItem }) => {
     return (
         <div className="bucket-list__item item-bucket" key={key}>
             <img src={img} />
@@ -17,7 +17,9 @@ const BucketItem = ({ img, name, price, count, plus, minus, key }) => {
                 <button className="btn-bucket" onClick={minus}>
                     -
                 </button>
-                <button className="btn-bucket">X</button>
+                <button className="btn-bucket" onClick={deleteItem}>
+                    X
+                </button>
             </div>
         </div>
     );
