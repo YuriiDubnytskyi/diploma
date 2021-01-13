@@ -31,10 +31,20 @@
     "jwks-rsa": "^1.8.0",
     "mongoose": "^5.9.14",
     "nodemailer": "^6.4.14",
-    "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "socket.io": "^2.3.0",
     "ws": "^7.3.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-watch": "^7.0.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1"
   }
 }
