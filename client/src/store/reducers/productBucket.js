@@ -61,6 +61,16 @@ const getProductsBucketM = (data, id) => {
     });
 };
 
+const deletePrice = (data, id, totalPrice) => {
+    let price = totalPrice;
+    data.forEach((el) => {
+        if (el.idProduct === id) {
+            price = totalPrice - el.count * el.price;
+        }
+    });
+    return price;
+};
+
 const getProductsBucketD = (data, id) => {
     return data.filter((el) => el.idProduct !== id);
 };
@@ -97,7 +107,7 @@ const productBucket = (state = initialState, action) => {
             });
         case actionTypes.DELETE_BUCKET_PRODUCT:
             return updateObject(state, {
-                totalPrice: minusPrice(state.productsBucket, action.id, state.totalPrice),
+                totalPrice: deletePrice(state.productsBucket, action.id, state.totalPrice),
                 productsBucket: getProductsBucketD(state.productsBucket, action.id),
             });
         case actionTypes.CLEAR_BUCKET:

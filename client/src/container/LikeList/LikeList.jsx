@@ -21,7 +21,7 @@ const LikeList = () => {
     }, []);
 
     const buyProduct = (one, two) => {
-        history.push("/product/:" + one + "/FromLike List/:" + two);
+        history.push("/product/" + one + "/FromLike List/" + two);
     };
 
     const deleteLikeProduct = (id) => {
@@ -53,7 +53,7 @@ const LikeList = () => {
                                 likeProduct={() => deleteLikeProduct(el.idProduct)}
                                 buyProduct={() => buyProduct(el.idProduct, el.name)}
                                 image={el.image}
-                                more={() => history.push("/product/:" + el.idProduct + "/FromLike List/:" + el.name)}
+                                more={() => history.push("/product/" + el.idProduct + "/FromLike List/" + el.name)}
                                 name={el.name}
                                 price={el.price}
                             />

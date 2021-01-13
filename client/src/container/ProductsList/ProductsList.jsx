@@ -29,7 +29,7 @@ const ProductsList = () => {
         }
     };
     const buyProduct = (one, two) => {
-        history.push("/product/:" + one + "/" + name + "/:" + two);
+        history.push("/product/" + one + "/" + name + "/" + two);
     };
 
     return (
@@ -49,7 +49,7 @@ const ProductsList = () => {
                                 likeProduct={() => likeProduct(el.idProduct)}
                                 buyProduct={() => buyProduct(el.idProduct, el.name)}
                                 image={el.image}
-                                more={() => history.push("/product/:" + el.idProduct + "/" + name + "/:" + el.name)}
+                                more={() => history.push("/product/" + el.idProduct + "/" + name + "/" + el.name)}
                                 name={el.name}
                                 price={el.price}
                             />

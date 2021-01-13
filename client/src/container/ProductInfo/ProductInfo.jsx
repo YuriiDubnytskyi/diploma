@@ -18,7 +18,7 @@ const ProductInfo = () => {
 
     useEffect(() => {
         setLoading(true);
-        API.get("/user/getProduct/" + id).then((data) => {
+        API.get("/user/getProduct/:" + id).then((data) => {
             setData(data.data.data[0]);
             setLoading(false);
             console.log(data.data.data[0]);
@@ -50,7 +50,7 @@ const ProductInfo = () => {
 
     return (
         <>
-            <TitlePager title={`${name.slice(1)}--${productName.slice(1)}`} />
+            <TitlePager title={`${name}--${productName}`} />
             <div className="product__wrapper product-wrapper">
                 {loading ? (
                     <Slider />

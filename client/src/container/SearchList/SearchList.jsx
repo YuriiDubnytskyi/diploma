@@ -23,7 +23,7 @@ const SearchList = () => {
         }
     };
     const buyProduct = (one, two) => {
-        history.push("/product/:" + one + "/:Search/:" + two);
+        history.push("/product/" + one + "/Search/" + two);
     };
 
     return (
@@ -43,7 +43,7 @@ const SearchList = () => {
                                 likeProduct={() => likeProduct(el.idProduct)}
                                 buyProduct={() => buyProduct(el.idProduct, el.name)}
                                 image={el.image}
-                                more={() => history.push("/product/:" + el.idProduct + "/" + text + "/:" + el.name)}
+                                more={() => history.push("/product/" + el.idProduct + "/" + text + "/" + el.name)}
                                 name={el.name}
                                 price={el.price}
                             />
