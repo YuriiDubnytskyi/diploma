@@ -10,7 +10,9 @@ const http = require('http')
 const server = http.createServer(app)
 const dotenv = require('dotenv');
 dotenv.config();
-
+console.log(process.env.MONGO_DB_CONNECT);
+console.log(process.env.EMAIL_ADRESS);
+console.log(process.env.EMAIL_PASSWORD);
 mongoose.connect(process.env.MONGO_DB_CONNECT,
 {useNewUrlParser:true,useUnifiedTopology: true})
     .then(() => {console.log('Database is connected') },
