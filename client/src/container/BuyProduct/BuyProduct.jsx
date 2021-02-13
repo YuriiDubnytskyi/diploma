@@ -34,6 +34,7 @@ const BuyProduct = () => {
         setLoading(true);
         API.post("/user/buyProducts", {
             options: {
+                id: user.id,
                 name,
                 surname,
                 email,

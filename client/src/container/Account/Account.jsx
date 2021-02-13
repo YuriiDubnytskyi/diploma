@@ -20,7 +20,7 @@ const Account = () => {
         if (!auth) {
             history.push("/");
         } else {
-            API.get("/user/getCountSellProducts/" + email).then((res) => {
+            API.get("/user/getCountSellProducts/" + id).then((res) => {
                 setData(res.data.data);
             });
         }

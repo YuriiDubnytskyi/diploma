@@ -237,7 +237,7 @@ router.post("/buyProducts/", (req, res) => {
         `,
     };
 
-    createBuyListSell(options.email, products.productsBucket);
+    createBuyListSell(options.id, options.email, products.productsBucket);
 
     sellCountCalculate(products);
 

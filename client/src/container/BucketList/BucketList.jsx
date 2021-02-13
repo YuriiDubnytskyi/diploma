@@ -52,10 +52,10 @@ const BucketList = () => {
                                 img={el.image}
                                 name={el.name}
                                 price={el.price}
-                                plus={() => dispatch(addPlusProductBucket(el.idProduct))}
-                                minus={() => dispatch(addMinusProductBucket(el.idProduct))}
+                                plus={() => dispatch(addPlusProductBucket(el._id))}
+                                minus={() => dispatch(addMinusProductBucket(el._id))}
                                 count={el.count}
-                                deleteItem={() => deleteItem(el.idProduct)}
+                                deleteItem={() => deleteItem(el._id)}
                             />
                         ))}
                     </div>

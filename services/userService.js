@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const productTitleSchema = require("../models/productMain");
 const productSubTitleSchema = require("../models/productSubMain");
 const productListSchema = require("../models/productList");
@@ -6,6 +7,7 @@ const productInfoSchema = require("../models/productInfo");
 const userSchema = require("../models/users");
 const newsSchema = require("../models/news");
 const buyListSellSchema = require("../models/buyList");
+const ObjectId = mongoose.Types.ObjectId;
 
 const getProductTitle = async () => {
     try {
@@ -31,12 +33,12 @@ const getProductInfo = async (id) => {
     try {
         const Product = productInfoSchema;
         const product = await Product.aggregate([
-            { $match: { idProduct: id } },
+            { $match: { idProduct: ObjectId(id) } },
             {
                 $lookup: {
-                    from: "wereHouse",
+                    from: "storageHouse",
                     localField: "idProduct",
-                    foreignField: "idWereHouse",
+                    foreignField: "idStorageHouse",
                     as: "count",
                 },
             },
@@ -129,26 +131,35 @@ const addProduct = async (id, newLikeProducts) => {
 const getProductsLikeOrBuy = async (ids) => {
     try {
         const List = productListSchema;
+        ids = ids.map((userId) => new ObjectId(userId));
         const likeBuyList = await List.aggregate([
-            { $match: { idProduct: { $in: ids } } },
+            { $match: { _id: { $in: ids } } },
             {
                 $lookup: {
-                    from: "wereHouse",
-                    localField: "idProduct",
-                    foreignField: "idWereHouse",
+                    from: "storageHouse",
+                    localField: "_id",
+                    foreignField: "idStorageHouse",
                     as: "countOfProduct",
                 },
             },
         ]);
+        console.log(likeBuyList);
         return { err: false, data: likeBuyList };
     } catch (error) {
         return { err: true, errMess: error };
     }
 };
 
-const createBuyListSell = async (email, product) => {
+const createBuyListSell = async (userId, email, product) => {
     try {
-        const BuyListSell = new buyListSellSchema({ email, product, time: new Date() });
+        const BuyListSell = new buyListSellSchema({
+            userId,
+            status: "Pending",
+            isOld: false,
+            email,
+            product,
+            time: new Date(),
+        });
         await BuyListSell.save();
         return { err: false, success: false };
     } catch (error) {
@@ -160,15 +171,13 @@ const sellCountCalculate = async (products) => {
     try {
         const wereHouse = wereHouseSchema;
         await products.productsBucket.map((el) => {
-            wereHouse.find({ idWereHouse: el.idProduct }, function (err, product) {
+            wereHouse.find({ idWereHouse: el._id }, function (err, product) {
                 if (err) return console.log(err);
-                let sell = Number(product[0].sell);
                 let count = Number(product[0].count);
-                sell += el.count;
                 count -= el.count;
                 wereHouse.findOneAndUpdate(
-                    { idWereHouse: el.idProduct },
-                    { count: count, sell: sell },
+                    { idWereHouse: el._id },
+                    { count: count },
                     { new: true, useFindAndModify: false },
                     function (err) {
                         if (err) return console.log(err);
@@ -182,10 +191,10 @@ const sellCountCalculate = async (products) => {
     }
 };
 
-const getProductsSell = async (email) => {
+const getProductsSell = async (id) => {
     try {
         const BuyListSell = buyListSellSchema;
-        const buyProduct = await BuyListSell.find({ email: { $in: `${email}` } });
+        const buyProduct = await BuyListSell.find({ userId: { $in: ObjectId(id) } });
         return { err: false, data: buyProduct };
     } catch (error) {
         return { err: true, errMess: error };

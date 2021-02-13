@@ -10,10 +10,7 @@ const ProductInfoContent = ({ data, addBuy, likeProduct, user }) => {
             </div>
             <div className="product-short-info">
                 <h2 className="product-short-info-title">{data.name}</h2>
-                <p className="product-short-info-description">
-                    Description short Description short Description short Description short Description short
-                    Description short Description short Description short Description short Description short
-                </p>
+                <p className="product-short-info-description">{data.shortInfo}</p>
                 <hr className="product-short-info-line" />
                 <p className="product-short-info-price">Price -- {data.price}</p>
                 <hr className="product-short-info-line" />

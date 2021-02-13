@@ -50,10 +50,10 @@ const LikeList = () => {
                             <ProductItem
                                 key={el._id}
                                 isLike={true}
-                                likeProduct={() => deleteLikeProduct(el.idProduct)}
-                                buyProduct={() => buyProduct(el.idProduct, el.name)}
-                                image={el.image}
-                                more={() => history.push("/product/" + el.idProduct + "/FromLike List/" + el.name)}
+                                likeProduct={() => deleteLikeProduct(el._id)}
+                                buyProduct={() => buyProduct(el._id, el.name)}
+                                image={el.imageMain}
+                                more={() => history.push("/product/" + el._id + "/FromLike List/" + el.name)}
                                 name={el.name}
                                 price={el.price}
                             />

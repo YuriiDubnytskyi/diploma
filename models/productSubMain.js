@@ -1,12 +1,19 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const productSubTitleSchema = new Schema({
-    productSubTitle:String,
-    idProductSubTitle:String,
-    idProductTitle:String,
-},{
-    collection:"productSubTitle"
-})
+const productSubTitleSchema = new Schema(
+    {
+        productSubTitle: String,
+        idProductTitle: Schema.ObjectId,
+        isImg: Boolean,
+        imgSrc: String,
+        imgFolder: String,
+        isGroup: Boolean,
+        groupName: String,
+    },
+    {
+        collection: "productSubTitle",
+    }
+);
 
-module.exports = mongoose.model('productSubTitle', productSubTitleSchema);
+module.exports = mongoose.model("productSubTitle", productSubTitleSchema);

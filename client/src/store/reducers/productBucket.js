@@ -20,7 +20,7 @@ const getTotalPrice = (data) => {
 const plusPrice = (data, id, totalPrice) => {
     let price = totalPrice;
     data.forEach((el) => {
-        if (el.idProduct === id) {
+        if (el._id === id) {
             if (el.countOfProduct[0].count - (el.count + 1) >= 0) price += Number(el.price);
         }
     });
@@ -30,7 +30,7 @@ const plusPrice = (data, id, totalPrice) => {
 const minusPrice = (data, id, totalPrice) => {
     let price = totalPrice;
     data.forEach((el) => {
-        if (el.idProduct === id) {
+        if (el._id === id) {
             if (el.count - 1 !== 0) price -= Number(el.price);
         }
     });
@@ -42,7 +42,7 @@ const getProductsBucket = (data) => {
 };
 const getProductsBucketP = (data, id) => {
     return data.map((el) => {
-        if (el.idProduct === id) {
+        if (el._id === id) {
             if (el.countOfProduct[0].count - (el.count + 1) >= 0) return updateObject(el, { count: el.count + 1 });
             return el;
         } else {
@@ -52,7 +52,7 @@ const getProductsBucketP = (data, id) => {
 };
 const getProductsBucketM = (data, id) => {
     return data.map((el) => {
-        if (el.idProduct === id) {
+        if (el._id === id) {
             if (el.count - 1 !== 0) return updateObject(el, { count: el.count - 1 });
             return el;
         } else {
@@ -64,7 +64,7 @@ const getProductsBucketM = (data, id) => {
 const deletePrice = (data, id, totalPrice) => {
     let price = totalPrice;
     data.forEach((el) => {
-        if (el.idProduct === id) {
+        if (el._id === id) {
             price = totalPrice - el.count * el.price;
         }
     });
@@ -72,7 +72,7 @@ const deletePrice = (data, id, totalPrice) => {
 };
 
 const getProductsBucketD = (data, id) => {
-    return data.filter((el) => el.idProduct !== id);
+    return data.filter((el) => el._id !== id);
 };
 
 const productBucket = (state = initialState, action) => {
