@@ -8,6 +8,7 @@ const productListSchema = new Schema(
         idSubProduct: Schema.ObjectId,
         imageMain: String,
         shortInfo: String,
+        groupName: String,
     },
     {
         collection: "productList",

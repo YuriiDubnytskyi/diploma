@@ -8,6 +8,7 @@ const buyListSellSchema = new Schema(
         status: String,
         isOld: Boolean,
         time: String,
+        adress: String,
     },
     {
         collection: "buyListSell",

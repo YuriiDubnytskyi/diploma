@@ -150,7 +150,7 @@ const getProductsLikeOrBuy = async (ids) => {
     }
 };
 
-const createBuyListSell = async (userId, email, product) => {
+const createBuyListSell = async (userId, email, product, adress) => {
     try {
         const BuyListSell = new buyListSellSchema({
             userId,
@@ -158,6 +158,7 @@ const createBuyListSell = async (userId, email, product) => {
             isOld: false,
             email,
             product,
+            adress,
             time: new Date(),
         });
         await BuyListSell.save();
@@ -171,12 +172,12 @@ const sellCountCalculate = async (products) => {
     try {
         const wereHouse = wereHouseSchema;
         await products.productsBucket.map((el) => {
-            wereHouse.find({ idWereHouse: el._id }, function (err, product) {
+            wereHouse.find({ idStorageHouse: el._id }, function (err, product) {
                 if (err) return console.log(err);
                 let count = Number(product[0].count);
                 count -= el.count;
                 wereHouse.findOneAndUpdate(
-                    { idWereHouse: el._id },
+                    { idStorageHouse: el._id },
                     { count: count },
                     { new: true, useFindAndModify: false },
                     function (err) {

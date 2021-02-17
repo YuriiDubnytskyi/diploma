@@ -8,8 +8,8 @@ const productSubTitleSchema = new Schema(
         isImg: Boolean,
         imgSrc: String,
         imgFolder: String,
-        isGroup: Boolean,
-        groupName: String,
+        isGroup: Boolean
+        
     },
     {
         collection: "productSubTitle",

@@ -11,6 +11,7 @@ const productInfoSchema = new Schema(
         images: Array,
         idProduct: Schema.ObjectId,
         imgFolder: String,
+        groupName: String,
     },
     {
         collection: "productInfo",

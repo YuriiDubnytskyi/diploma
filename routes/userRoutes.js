@@ -230,14 +230,14 @@ router.post("/buyProducts/", (req, res) => {
                         <p>Name ${el.name}</p>
                         <p>Price ${el.price}</p>
                         <p>Count ${el.count}</p>
-                        <a href=http://localhost:3000/product/:${el.idProduct}/:FromMyBilling/:${el.name}>More</a>
+                        <a href=http://localhost:3000/product/${el._id}/:FromMyBilling/:${el.name}>More</a>
                     </div>
                     `;
         })}
         `,
     };
-
-    createBuyListSell(options.id, options.email, products.productsBucket);
+    const adress = `${options.city} ${options.novaPosta}`;
+    createBuyListSell(options.id, options.email, products.productsBucket, adress);
 
     sellCountCalculate(products);
 
