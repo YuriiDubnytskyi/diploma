@@ -46,10 +46,10 @@ const ProductsList = () => {
                             <ProductItem
                                 key={el._id}
                                 isLike={false}
-                                likeProduct={() => likeProduct(el.idProduct)}
-                                buyProduct={() => buyProduct(el.idProduct, el.name)}
-                                image={el.image}
-                                more={() => history.push("/product/" + el.idProduct + "/" + name + "/" + el.name)}
+                                likeProduct={() => likeProduct(el._id)}
+                                buyProduct={() => buyProduct(el._id, el.name)}
+                                image={el.imageMain}
+                                more={() => history.push("/product/" + el._id + "/" + name + "/" + el.name)}
                                 name={el.name}
                                 price={el.price}
                             />

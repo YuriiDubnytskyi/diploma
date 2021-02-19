@@ -1,11 +1,16 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const productTitleSchema = new Schema({
-    productTitle:String,
-    idProductTitle:String
-},{
-    collection:"productTitle"
-})
+const productTitleSchema = new Schema(
+    {
+        productTitle: String,
+        isImg: Boolean,
+        imgSrc: String,
+        imgFolder: String,
+    },
+    {
+        collection: "productTitle",
+    }
+);
 
-module.exports = mongoose.model('productTitle', productTitleSchema);
+module.exports = mongoose.model("productTitle", productTitleSchema);

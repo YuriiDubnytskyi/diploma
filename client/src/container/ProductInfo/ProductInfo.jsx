@@ -41,6 +41,8 @@ const ProductInfo = () => {
             alert("We dont have this product");
         } else if (user.auth !== true) {
             alert("You do not auth");
+        } else if (!user.emailVerify) {
+            alert("Please Verify your email");
         } else {
             const newId = oldId;
             newId.push(id);

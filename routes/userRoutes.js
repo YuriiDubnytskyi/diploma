@@ -1,3 +1,4 @@
+const emailjs = require("emailjs-com");
 const { Router } = require("express");
 const {
     getProductTitle,
@@ -19,6 +20,18 @@ const {
 } = require("../services/userService.js");
 const nodemailer = require("nodemailer");
 const router = Router();
+const { google } = require("googleapis");
+const OAuth2 = google.auth.OAuth2;
+
+const oauth2Client = new OAuth2(
+    process.env.EMAIL_ID,
+    process.env.EMAIL_SECRET,
+    "https://developers.google.com/oauthplayground"
+);
+
+oauth2Client.setCredentials({
+    refresh_token: process.env.EMAIL_REFRESH,
+});
 
 router.get("/getProductTitle", (req, res) => {
     getProductTitle().then((data) => {
@@ -64,12 +77,23 @@ router.get("/isAuth", (req, res) => {
 
 router.post("/sendText/", (req, res) => {
     const options = req.body.options;
-
+    const accessToken = oauth2Client.getAccessToken();
     const transporter = nodemailer.createTransport({
         service: "gmail",
+        // auth: {
+        //     user: process.env.EMAIL_ADRESS,
+        //     pass: process.env.EMAIL_PASSWORD,
+        // },
         auth: {
+            type: "OAuth2",
             user: process.env.EMAIL_ADRESS,
-            pass: process.env.EMAIL_PASSWORD,
+            clientId: process.env.EMAIL_ID,
+            clientSecret: process.env.EMAIL_SECRET,
+            refreshToken: process.env.EMAIL_REFRESH,
+            accessToken: accessToken,
+        },
+        tls: {
+            rejectUnauthorized: false,
         },
     });
 
@@ -202,12 +226,24 @@ router.post("/getProductsBucket/", (req, res) => {
 router.post("/buyProducts/", (req, res) => {
     const options = req.body.options;
     const products = req.body.products;
+    const accessToken = oauth2Client.getAccessToken();
 
     const transporter = nodemailer.createTransport({
         service: "gmail",
+        // auth: {
+        //     user: process.env.EMAIL_ADRESS,
+        //     pass: process.env.EMAIL_PASSWORD,
+        // },
         auth: {
+            type: "OAuth2",
             user: process.env.EMAIL_ADRESS,
-            pass: process.env.EMAIL_PASSWORD,
+            clientId: process.env.EMAIL_ID,
+            clientSecret: process.env.EMAIL_SECRET,
+            refreshToken: process.env.EMAIL_REFRESH,
+            accessToken: accessToken,
+        },
+        tls: {
+            rejectUnauthorized: false,
         },
     });
 
@@ -230,14 +266,14 @@ router.post("/buyProducts/", (req, res) => {
                         <p>Name ${el.name}</p>
                         <p>Price ${el.price}</p>
                         <p>Count ${el.count}</p>
-                        <a href=http://localhost:3000/product/:${el.idProduct}/:FromMyBilling/:${el.name}>More</a>
+                        <a href=${process.env.SERVER_API}/product/${el._id}/:FromMyBilling/:${el.name}>More</a>
                     </div>
                     `;
         })}
         `,
     };
-
-    createBuyListSell(options.email, products.productsBucket);
+    const adress = `${options.city} ${options.novaPosta}`;
+    createBuyListSell(options.id, options.email, products.productsBucket, adress);
 
     sellCountCalculate(products);
 
@@ -265,12 +301,23 @@ router.get("/getCountSellProducts/:email", (req, res) => {
 router.post("/emailVerify/", (req, res) => {
     const email = req.body.email;
     const id = req.body.id;
-
+    const accessToken = oauth2Client.getAccessToken();
     const transporter = nodemailer.createTransport({
         service: "gmail",
+        // auth: {
+        //     user: process.env.EMAIL_ADRESS,
+        //     pass: process.env.EMAIL_PASSWORD,
+        // },
         auth: {
+            type: "OAuth2",
             user: process.env.EMAIL_ADRESS,
-            pass: process.env.EMAIL_PASSWORD,
+            clientId: process.env.EMAIL_ID,
+            clientSecret: process.env.EMAIL_SECRET,
+            refreshToken: process.env.EMAIL_REFRESH,
+            accessToken: accessToken,
+        },
+        tls: {
+            rejectUnauthorized: false,
         },
     });
 
@@ -280,7 +327,7 @@ router.post("/emailVerify/", (req, res) => {
         subject: "Verify Email",
         html: `
         <p>Hi please verify email</p>
-        <a href=http://localhost:3000/callback/:${id}>Verify</a>
+        <a href=${process.env.SERVER_API}/callback/:${id}>Verify</a>
         `,
     };
 

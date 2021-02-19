@@ -26,11 +26,7 @@ const CategorieTitle = () => {
                     <></>
                 ) : (
                     data.map((el) => (
-                        <CategoriTitleItem
-                            key={el._id}
-                            idProductTitle={el.idProductTitle}
-                            productTitle={el.productTitle}
-                        />
+                        <CategoriTitleItem key={el._id} idProductTitle={el._id} productTitle={el.productTitle} />
                     ))
                 )}
             </div>
