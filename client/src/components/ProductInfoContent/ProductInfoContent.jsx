@@ -1,6 +1,7 @@
 import React from "react";
 import "./ProductInfoContent.scss";
-import Imagg from "../../container/ProductGallery/ProductGallery";
+// import Imagg from "../../container/ProductGallery/ProductGallery";
+const Imagg = React.lazy(() => import("../../container/ProductGallery/ProductGallery"));
 
 const ProductInfoContent = ({ data, addBuy, likeProduct, user }) => {
     return (
