@@ -14,6 +14,7 @@ import { Switch, Route } from "react-router-dom";
 // import SearchList from "../SearchList/SearchList";
 // import BuyProduct from "../BuyProduct/BuyProduct";
 // import CallbackPage from "../CallbackPage/CallbackPage";
+import Slider from "./../../components/Slider/Slider";
 const Welcome = React.lazy(() => import("../Welcome/Welcome"));
 const Categorie = React.lazy(() => import("../Categorie/Categorie"));
 const ProductsList = React.lazy(() => import("../ProductsList/ProductsList"));
@@ -28,7 +29,7 @@ const BlogItem = React.lazy(() => import("../BlogItem/BlogItem"));
 const SearchList = React.lazy(() => import("../SearchList/SearchList"));
 const BuyProduct = React.lazy(() => import("../BuyProduct/BuyProduct"));
 const CallbackPage = React.lazy(() => import("../CallbackPage/CallbackPage"));
-import Slider from "./../../components/Slider/Slider";
+
 
 const Main = () => {
     return (
