@@ -1,5 +1,6 @@
 import React from "react";
 import "./ProductItem.scss";
+import LazyLoad from "react-lazyload";
 
 const ProductItem = ({ isLike, likeProduct, buyProduct, image, more, name, price }) => {
     return (
@@ -11,8 +12,9 @@ const ProductItem = ({ isLike, likeProduct, buyProduct, image, more, name, price
                     ) : (
                         <i className="fa fa-heart productslist-item-like" onClick={likeProduct}></i>
                     )}
-
-                    <img className="productslist-item-img" src={image} />
+                    <LazyLoad height={200}>
+                        <img className="productslist-item-img" src={image} />
+                    </LazyLoad>
                     <i className="fa fa-shopping-basket productslist-item-buy" onClick={buyProduct}></i>
                 </div>
             </div>

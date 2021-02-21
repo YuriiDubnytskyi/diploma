@@ -266,7 +266,7 @@ router.post("/buyProducts/", (req, res) => {
                         <p>Name ${el.name}</p>
                         <p>Price ${el.price}</p>
                         <p>Count ${el.count}</p>
-                        <a href=${process.env.SERVER_API}/product/${el._id}/:FromMyBilling/:${el.name}>More</a>
+                        <a href=${process.env.SERVER_API}product/${el._id}/:FromMyBilling/:${el.name}>More</a>
                     </div>
                     `;
         })}
@@ -327,7 +327,7 @@ router.post("/emailVerify/", (req, res) => {
         subject: "Verify Email",
         html: `
         <p>Hi please verify email</p>
-        <a href=${process.env.SERVER_API}/callback/:${id}>Verify</a>
+        <a href=${process.env.SERVER_API}callback/:${id}>Verify</a>
         `,
     };
 
