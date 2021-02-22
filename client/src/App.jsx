@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
-import "antd/dist/antd.css";
+import React, { useEffect, Suspense } from "react";
 import "./App.scss";
 import { BrowserRouter } from "react-router-dom";
 import ChatWidget from "@papercups-io/chat-widget";
 import Header from "./container/Header/Header";
-import Main from "./container/Main/Main";
+
 import Footer from "./components/Footer/Footer";
 import API from "./API/API";
 import { addUserSuccess } from "./store/actions/actionsUser";
 import { useDispatch } from "react-redux";
+const Main = React.lazy(() => import("./container/Main/Main"));
 
 const App = () => {
     const dispatch = useDispatch();
@@ -24,7 +24,9 @@ const App = () => {
     return (
         <BrowserRouter>
             <Header />
-            <Main />
+            <Suspense fallback={<div>Loading ...</div>}>
+                <Main />
+            </Suspense>
             <Footer />
             <ChatWidget
                 title="Welcome to Dubnytskyi Corporation"
