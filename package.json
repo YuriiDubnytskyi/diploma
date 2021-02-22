@@ -30,6 +30,7 @@
     "express-jwt-authz": "^2.3.1",
     "express-session": "^1.17.1",
     "googleapis": "^67.1.0",
+    "gzipper": "^4.4.0",
     "jwks-rsa": "^1.8.0",
     "mongoose": "^5.9.14",
     "nodemailer": "^6.4.14",
