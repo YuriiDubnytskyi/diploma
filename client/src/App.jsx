@@ -24,7 +24,7 @@ const App = () => {
     return (
         <BrowserRouter>
             <Header />
-            <Suspense>
+            <Suspense fallback={<div>Loading ...</div>}>
                 <Main />
             </Suspense>
             <Footer />
