@@ -7,7 +7,7 @@ const buyListSellSchema = new Schema(
         userId: Schema.ObjectId,
         status: String,
         isOld: Boolean,
-        time: String,
+        time: Date,
         adress: String,
     },
     {
