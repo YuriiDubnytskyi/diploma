@@ -159,7 +159,7 @@ const createBuyListSell = async (userId, email, product, adress) => {
             email,
             product,
             adress,
-            time: new Date(),
+            time: new Date().toISOString(),
         });
         await BuyListSell.save();
         return { err: false, success: false };
