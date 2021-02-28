@@ -52,6 +52,7 @@ const ProductsList = () => {
                                 more={() => history.push("/product/" + el._id + "/" + name + "/" + el.name)}
                                 name={el.name}
                                 price={el.price}
+                                shortInfo={el.shortInfo}
                             />
                         ))
                     )}

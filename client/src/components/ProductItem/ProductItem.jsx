@@ -2,7 +2,7 @@ import React from "react";
 import "./ProductItem.scss";
 import LazyLoad from "react-lazyload";
 
-const ProductItem = ({ isLike, likeProduct, buyProduct, image, more, name, price }) => {
+const ProductItem = ({ isLike, likeProduct, buyProduct, image, more, name, price, shortInfo }) => {
     return (
         <div className="productslist__item productslist-item">
             <div className="productslist-item__img">
@@ -18,9 +18,10 @@ const ProductItem = ({ isLike, likeProduct, buyProduct, image, more, name, price
                     <i className="fa fa-shopping-basket productslist-item-buy" onClick={buyProduct}></i>
                 </div>
             </div>
-            <div onClick={more}>
+            <div className="productslist-item__info" onClick={more}>
                 <p className="productslist-item-name">{name}</p>
                 <p className="productslist-item-price">Price -- {price}</p>
+                <p className="productslist-item-shortingo">{shortInfo}</p>
             </div>
         </div>
     );

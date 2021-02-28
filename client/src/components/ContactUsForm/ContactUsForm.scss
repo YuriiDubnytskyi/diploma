@@ -1,74 +1,82 @@
-.contact__conatiner{
+.contact__conatiner {
     width: 80%;
     margin: 30px auto;
 }
-.contact-user{
+.contact-user {
     display: flex;
 }
-.contact-user-name,.contact-user-email{
+.contact-user-name,
+.contact-user-email {
     width: 50%;
     display: flex;
     flex-direction: column;
 }
-.input--contact-name{
+.input--contact-name {
     width: 90%;
 }
-.contact-subject,.contact-text{
+.contact-subject,
+.contact-text {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
-.input--contact-text{
+.input--contact-text {
     height: 150px;
 }
-.input{
+.input {
     background-color: rgb(153, 153, 153);
-    color:white;
+    color: white;
     padding: 10px;
-    border:none
+    border: none;
 }
-.contact-user,.contact-subject,.contact-text{
+.contact-user,
+.contact-subject,
+.contact-text {
     margin: 20px 0;
 }
-.contact-btn{
-    width: 100px;
+.contact-btn {
+    width: 99px;
+    border: 1px solid #00c48c;
     text-align: center;
     padding: 10px 20px;
     color: #ffffff;
-    background-color: #00C48C;
+    background-color: #00c48c;
+    transition: ease-in 0.3s;
 }
-.contact-btn:hover{
-    color: #00C48C;
-    border:1px solid #00C48C;
+.contact-btn:hover {
+    color: #00c48c;
+    border: 1px solid #00c48c;
     border-radius: 25px;
     font-weight: 700;
     cursor: pointer;
     background-color: #ffffff;
 }
-.contact-info{
+.contact-info {
     display: flex;
 }
-.contact-info-success,.contact-info-error{
-    width: 100px;
+.contact-info-success,
+.contact-info-error {
     text-align: center;
     padding: 10px 20px;
     color: #ffffff;
     margin: 0 20px;
 }
-.contact-info-success{
-    background-color: #00C48C;
+.contact-info-success {
+    background-color: #00c48c;
+    width: 100px;
 }
-.contact-info-error{
+.contact-info-error {
     background-color: #881111;
 }
-@media screen and (max-width:600px){
-    .contact-user{
-       flex-direction: column;
+@media screen and (max-width: 600px) {
+    .contact-user {
+        flex-direction: column;
     }
-    .contact-user-name,.contact-user-email{
+    .contact-user-name,
+    .contact-user-email {
         width: 100%;
     }
-    .input--contact-name{
+    .input--contact-name {
         width: 100%;
     }
 }

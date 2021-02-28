@@ -46,6 +46,7 @@ const SearchList = () => {
                                 more={() => history.push("/product/" + el._id + "/" + text + "/" + el.name)}
                                 name={el.name}
                                 price={el.price}
+                                shortInfo={el.shortInfo}
                             />
                         ))
                     )}
