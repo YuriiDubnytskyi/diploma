@@ -1,55 +1,70 @@
-.botton-header{
+.botton-header {
     background-color: #ffffff;
 }
-.botton-header__content{
+.botton-header__content {
     max-width: 80%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     min-height: 50px;
-    font-family: 'Roboto',sans-serif;
+    font-family: "Roboto", sans-serif;
 }
-.header-logo__text{
+.header-logo__text {
     font-size: 20px;
     margin: 0;
-
 }
-.navigation-link{
+.navigation-link {
     font-weight: 500;
     text-decoration: none;
     color: #000000;
     padding: 0 20px;
+    position: relative;
+
+    &:hover::before {
+        width: 90%;
+    }
 }
-.navigation-link:hover{
-    color:#00C48C;
+.navigation-link::before {
+    content: "";
+    position: absolute;
+    background-color: #00c48c;
+    height: 2px;
+    width: 0;
+    top: 20px;
+    transition: ease-in-out 0.4s;
 }
-.btns-container__input{
+.navigation-link:hover {
+    color: #00c48c;
+}
+.btns-container__input {
     border: none;
+    height: 30px;
+    padding-left: 5px;
 }
-.fa-search{
+.fa-search {
     font-size: 20px;
     padding: 0 10px 0 5px;
 }
-.btns-container-link{
+.btns-container-link {
     text-decoration: none;
     color: #000000;
     font-size: 20px;
     padding: 0 5px;
 }
-.fa-search:hover{
-    color: #00C48C;
+.fa-search:hover {
+    color: #00c48c;
     cursor: pointer;
 }
-.btns-container-link:hover{
-    color:#00C48C;
+.btns-container-link:hover {
+    color: #00c48c;
 }
-.btns-container{
+.btns-container {
     padding-bottom: 4px;
 }
 
 @media screen and (max-width: 950px) {
-    .botton-header{
+    .botton-header {
         display: none;
     }
 }

@@ -1,47 +1,89 @@
-.side-drawer{
+.side-drawer {
     height: 100%;
-    background: #2F2F2F;
-    width: 90%;
-    color:#fff;
+    background: #2f2f2f;
+    width: 70%;
+    color: #fff;
     position: fixed;
-    top:0;
-    left:0;
-    box-shadow: 2px 0 5px rgba(0,0,0,.5);
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
     z-index: 20;
     max-width: 400px;
     transform: translateX(-100%);
-    transition: transform .3s ease-out;
+    transition: transform 0.3s ease-out;
 }
-.side-drawer.open{
-  transform: translateX(0%);
-    
+.side-drawer.open {
+    transform: translateX(0%);
 }
-.side-drawer__logo{
-	text-align: center;
+.side-drawer__logo {
+    text-align: center;
+    padding-top: 20px;
 }
-.side-drawer__text{
-  	font-size: 25px;
+.side-drawer__text {
+    font-size: 25px;
 }
-.side-drawer__navigation{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.side-drawer__search {
+    text-align: center;
+    padding: 10px;
+
+    .side-drawer__input {
+        height: 20px;
+        padding: 5px;
+        margin-right: 10px;
+    }
 }
-.side-drawer-navigation__link{
-	padding: 10px 0;
-	color:#fff;
-	font-size: 20px;
-	font-weight: 100;
+.side-drawer__navigation {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+
+    .auth__links {
+        padding-top: 40px;
+        display: flex;
+        justify-content: space-around;
+
+        .auth-login:hover,
+        .auth-sign:hover,
+        .auth-account:hover {
+            color: #00c48c;
+            border: none;
+        }
+    }
 }
-.side-drawer__btns{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.side-drawer-navigation__link {
+    padding: 10px 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    text-decoration: none;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: #00c48c;
+        height: 2px;
+        width: 0;
+        top: 40px;
+        transition: ease-in-out 0.4s;
+    }
+
+    &:hover::before {
+        width: 50%;
+    }
 }
-.side-drawer-btns-container-link{
-	color:#fff;
-	font-size: 15px;
+
+.side-drawer__btns {
+    display: flex;
+    margin: 10px;
+    flex-direction: row;
+    justify-content: space-around;
 }
-.side-drawer-btns-container-link:hover,.side-drawer-navigation__link:hover{
-	color:#00C48C;
+.side-drawer-btns-container-link {
+    color: #fff;
+    font-size: 25px;
+}
+.side-drawer-btns-container-link:hover,
+.side-drawer-navigation__link:hover {
+    color: #00c48c;
 }
