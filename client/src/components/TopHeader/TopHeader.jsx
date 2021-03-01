@@ -19,15 +19,20 @@ const TopHeader = (props) => {
                 </div>
                 <div className="content-top__auth auth">
                     {props.auth ? (
-                        <Link className="auth-account" to="/account">
-                            <i className="fa fa-user-circle"></i>Account
-                        </Link>
+                        <>
+                            <Link className="auth-account" to="/account">
+                                <i className="fa fa-user-circle"></i>Account
+                            </Link>
+                            <Link className="auth-logout" onClick={props.logOut} to="/loginF">
+                                <i class="fa fa-sign-out"></i>LogOut
+                            </Link>
+                        </>
                     ) : (
                         <>
-                            <Link className="auth-login" to="/login">
+                            <Link className="auth-login" to="/loginF">
                                 Login
                             </Link>
-                            <Link className="auth-sign" to="/login">
+                            <Link className="auth-sign" to="/loginF">
                                 Sign up
                             </Link>
                         </>

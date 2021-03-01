@@ -5,6 +5,7 @@ import TitlePager from "../../components/TitlePager/TitlePager";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchAddLikeProduct } from "../../store/actions/actionsUser";
 import ProductItem from "../../components/ProductItem/ProductItem";
+import "../ProductsList/ProductsList.scss";
 
 const SearchList = () => {
     const { text } = useParams();

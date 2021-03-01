@@ -30,77 +30,76 @@ const SearchList = React.lazy(() => import("../SearchList/SearchList"));
 const BuyProduct = React.lazy(() => import("../BuyProduct/BuyProduct"));
 const CallbackPage = React.lazy(() => import("../CallbackPage/CallbackPage"));
 
-
 const Main = () => {
     return (
         <Switch>
             <Route exact path="/">
-                <Suspense fallback={<Slider/>}>
+                <Suspense fallback={<Slider />}>
                     <Welcome />
                 </Suspense>
             </Route>
             <Route path="/categorie">
-                <Suspense fallback={<Slider/>}>
+                <Suspense fallback={<Slider />}>
                     <Categorie />
                 </Suspense>
             </Route>
             <Route path="/productList/:id/:name">
-                <Suspense fallback={<Slider/>}>
+                <Suspense fallback={<Slider />}>
                     <ProductsList />
                 </Suspense>
             </Route>
             <Route path="/product/:id/:name/:productName">
-                <Suspense fallback={<Slider/>}>
+                <Suspense fallback={<Slider />}>
                     <ProductInfo />
                 </Suspense>
             </Route>
             <Route path="/contact">
-                <Suspense fallback={<Slider/>}>
+                <Suspense fallback={<Slider />}>
                     <ContactUs />
                 </Suspense>
             </Route>
-            <Route path="/login">
-                <Suspense fallback={<Slider/>}>
+            <Route path="/loginF">
+                <Suspense fallback={<Slider />}>
                     <Login />
                 </Suspense>
             </Route>
             <Route path="/blog">
-                <Suspense fallback={<Slider/>}>
+                <Suspense fallback={<Slider />}>
                     <Blog />
                 </Suspense>
             </Route>
             <Route path="/account">
-                <Suspense fallback={<Slider/>}>
+                <Suspense fallback={<Slider />}>
                     <Account />
                 </Suspense>
             </Route>
             <Route path="/like">
-                <Suspense fallback={<Slider/>}>
+                <Suspense fallback={<Slider />}>
                     <LikeList />
                 </Suspense>
             </Route>
             <Route path="/bucket">
-                <Suspense fallback={<Slider/>}>
+                <Suspense fallback={<Slider />}>
                     <BucketList />
                 </Suspense>
             </Route>
             <Route path="/newsID/:id">
-                <Suspense fallback={<Slider/>}>
+                <Suspense fallback={<Slider />}>
                     <BlogItem />
                 </Suspense>
             </Route>
             <Route path="/search/:text">
-                <Suspense fallback={<Slider/>}>
+                <Suspense fallback={<Slider />}>
                     <SearchList />
                 </Suspense>
             </Route>
             <Route path="/buyProduct">
-                <Suspense fallback={<Slider/>}>
+                <Suspense fallback={<Slider />}>
                     <BuyProduct />
                 </Suspense>
             </Route>
             <Route path="/callback/:id">
-                <Suspense fallback={<Slider/>}>
+                <Suspense fallback={<Slider />}>
                     <CallbackPage />
                 </Suspense>
             </Route>

@@ -33,6 +33,7 @@
 }
 .auth-login,
 .auth-sign,
+.auth-logout,
 .auth-account {
     text-decoration: none;
     color: #ffffff;
@@ -44,6 +45,7 @@
 }
 .auth-login:hover,
 .auth-sign:hover,
+.auth-logout:hover,
 .auth-account:hover {
     border-radius: 25px;
     border: 2px solid #00c48c;

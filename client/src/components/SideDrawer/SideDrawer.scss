@@ -41,14 +41,14 @@
         padding-top: 40px;
         display: flex;
         justify-content: space-around;
-
-        .auth-login:hover,
-        .auth-sign:hover,
-        .auth-account:hover {
-            color: #00c48c;
-            border: none;
-        }
     }
+}
+.side-auth-login:hover,
+.side-auth-sign:hover,
+.side-auth-logout:hover,
+.side-auth-account:hover {
+    color: #00c48c;
+    border: none;
 }
 .side-drawer-navigation__link {
     padding: 10px 0;

@@ -6,12 +6,16 @@ import Backdrop from "../../components/Backdrop/Backdrop";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchGetProductListSearch } from "../../store/actions/actionSearchList";
-
+import { logout } from "../../store/actions/actionsUser";
 const Header = () => {
     const history = useHistory();
     const auth = useSelector((state) => state.user.user.auth);
     const [searchValue, setSearchValue] = useState("");
     const dispatch = useDispatch();
+
+    const logOut = () => {
+        dispatch(logout());
+    };
 
     const searchSubmit = () => {
         console.log(searchValue);
@@ -23,7 +27,7 @@ const Header = () => {
 
     return (
         <div>
-            <TopHeader auth={auth} setHeader={() => setHeader(!header)} />
+            <TopHeader auth={auth} setHeader={() => setHeader(!header)} logOut={logOut} />
             <BottonHeader searchValue={searchValue} setSearchValue={setSearchValue} searchSubmit={searchSubmit} />
             <SideDrawer
                 show={header}
@@ -31,6 +35,7 @@ const Header = () => {
                 setSearchValue={setSearchValue}
                 searchSubmit={searchSubmit}
                 auth={auth}
+                logOut={logOut}
             />
             {header ? (
                 <>

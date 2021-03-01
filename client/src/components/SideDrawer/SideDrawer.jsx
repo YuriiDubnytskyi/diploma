@@ -35,15 +35,20 @@ const SideDrawer = (props) => {
                             Blog
                         </Link>
                         {props.auth ? (
-                            <Link className="auth-account side-drawer-navigation__link" to="/account">
-                                <i className="fa fa-user-circle"></i>Account
-                            </Link>
+                            <>
+                                <Link className="side-auth-account side-drawer-navigation__link" to="/account">
+                                    <i className="fa fa-user-circle"></i>Account
+                                </Link>
+                                <Link className="side-auth-logout side-drawer-navigation__link" onClick={props.logOut}>
+                                    <i class="fa fa-sign-out"></i>LogOut
+                                </Link>
+                            </>
                         ) : (
                             <div className="auth__links">
-                                <Link className="auth-login side-drawer-navigation__link" to="/login">
+                                <Link className="side-auth-login side-drawer-navigation__link" to="/login">
                                     Login
                                 </Link>
-                                <Link className="auth-sign side-drawer-navigation__link" to="/login">
+                                <Link className="side-auth-sign side-drawer-navigation__link" to="/login">
                                     Sign up
                                 </Link>
                             </div>
