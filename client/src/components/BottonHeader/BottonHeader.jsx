@@ -12,23 +12,23 @@ const BottonHeader = (props) => {
                 <div className="content-botton__nav header-nav">
                     <nav className="header-nav__navigation navigation">
                         <Link className="navigation-link" to="/">
-                            Home
+                            Головна
                         </Link>
                         <Link className="navigation-link" to="/categorie">
-                            Categories
+                            Категорії
                         </Link>
                         <Link className="navigation-link" to="/contact">
-                            Contact Us
+                            Звяжіться з нами
                         </Link>
                         <Link className="navigation-link" to="/blog">
-                            Blog
+                            Новини & Блог
                         </Link>
                     </nav>
                 </div>
                 <div className="content-botton__btns btns-container">
                     <input
                         className="btns-container__input"
-                        placeholder="Search"
+                        placeholder="Пошук..."
                         value={props.searchValue}
                         onChange={(e) => props.setSearchValue(e.target.value)}
                     />

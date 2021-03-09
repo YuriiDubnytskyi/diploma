@@ -19,19 +19,26 @@ const Blog = () => {
 
     return (
         <>
-            <TitlePager title="Our Blog" />
+            <TitlePager title="Новини та акції" />
             <div className="blog__list blog-list">
                 {news.news.length === 0 ? (
                     <></>
                 ) : (
                     news.news.map((el) => (
-                        <BlogListItem key={el._id} title={el.title} description={el.description} id={el._id} />
+                        <BlogListItem
+                            key={el._id}
+                            title={el.title}
+                            description={el.shortDescription}
+                            time={el.time}
+                            imgSrc={el.imageMain}
+                            id={el._id}
+                        />
                     ))
                 )}
                 {news.loading ? <Slider /> : <></>}
                 <div className={`blog-list__load blog-list-load ${news.maxNumber ? "load-list-max" : ""}`}>
                     <p className="blog-list-load-text" onClick={getMoreNews}>
-                        Load More
+                        Завантажити Більше
                     </p>
                 </div>
             </div>

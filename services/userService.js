@@ -195,7 +195,7 @@ const sellCountCalculate = async (products) => {
 const getProductsSell = async (id) => {
     try {
         const BuyListSell = buyListSellSchema;
-        const buyProduct = await BuyListSell.find({ userId: { $in: ObjectId(id) } });
+        const buyProduct = await BuyListSell.find({ userId: { $in: ObjectId(id) } }).sort({ time: -1 });
         return { err: false, data: buyProduct };
     } catch (error) {
         return { err: true, errMess: error };

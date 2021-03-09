@@ -8,27 +8,31 @@ const TopHeader = (props) => {
             <div className="top-header__content content-top">
                 <div className="content-top__call call-support">
                     <p className="call-support__info">
-                        Welcome to our store. Call
+                        Вітаємо Вас в нашому магазині. Є питання ? Подзвоніть
                         <a className="call-support__phone" href="tel:0687516148">
                             {" "}
                             +38 068 75 16 148{" "}
                         </a>
-                        for support.
                     </p>
                     <p className="call-support__info--responce">Vulka Electronic</p>
                 </div>
                 <div className="content-top__auth auth">
                     {props.auth ? (
-                        <Link className="auth-account" to="/account">
-                            <i className="fa fa-user-circle"></i>Account
-                        </Link>
+                        <>
+                            <Link className="auth-account" to="/account">
+                                <i className="fa fa-user-circle"></i>Акаунт
+                            </Link>
+                            <Link className="auth-logout" onClick={props.logOut} to="/login">
+                                <i class="fa fa-sign-out"></i>Вийти
+                            </Link>
+                        </>
                     ) : (
                         <>
                             <Link className="auth-login" to="/login">
-                                Login
+                                Увійти в кабінет
                             </Link>
                             <Link className="auth-sign" to="/login">
-                                Sign up
+                                Зареєструватись
                             </Link>
                         </>
                     )}

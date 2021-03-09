@@ -79,6 +79,7 @@ const user = (state = initialState, action) => {
                 errMess: "",
                 loadingLike: false,
                 errLike: false,
+                success: false,
                 errMessLike: "",
                 successLike: false,
             });

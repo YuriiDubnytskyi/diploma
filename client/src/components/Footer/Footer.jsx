@@ -18,9 +18,7 @@ const Footer = () => {
                 </div>
                 <hr className="footer-line" />
                 <div className="footer__content-dev">
-                    <p className="footer__content-dev__text">
-                        Develop by Yurii Dubnytskyi © 2021. All Rights Reserved.
-                    </p>
+                    <p className="footer__content-dev__text">Розробив Дубницький Юрій © 2021.</p>
                 </div>
             </div>
         </div>

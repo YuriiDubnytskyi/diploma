@@ -1,8 +1,7 @@
-
-.top-header{
-    background-color: #2F2F2F;
+.top-header {
+    background-color: #2f2f2f;
 }
-.top-header__content{
+.top-header__content {
     max-width: 80%;
     margin: 0 auto;
     display: flex;
@@ -10,80 +9,87 @@
 
     align-items: center;
 }
-.content-top{
-    font-family: 'Roboto', sans-serif;
+.content-top {
+    font-family: "Roboto", sans-serif;
     font-size: 13px;
-    color:#ffffff;
-
+    color: #ffffff;
 }
-.call-support__info{
+.call-support__info {
     padding: 10px;
     margin: 0;
 }
-.call-support__phone{
+.call-support__phone {
     text-decoration: none;
-    color:#00C48C
+    color: #00c48c;
 }
-.call-support__phone:hover{
-    color:#00C48C;
+.call-support__phone:hover {
+    color: #00c48c;
     text-decoration: underline;
 }
-.content-top__auth{
-    min-width: 100px;
+.content-top__auth {
+    min-width: 150px;
     display: flex;
     justify-content: space-between;
 }
-.auth-login,.auth-sign,.auth-account{
+.auth-login,
+.auth-sign,
+.auth-logout,
+.auth-account {
     text-decoration: none;
-    color:#ffffff;
+    color: #ffffff;
     text-transform: uppercase;
     padding: 5px 15px;
 }
-.fa-user-circle{
-    padding:2px 5px 0 0;
+.fa-user-circle {
+    padding: 2px 5px 0 0;
 }
-.auth-login:hover,.auth-sign:hover,.auth-account:hover{
+.auth-login:hover,
+.auth-sign:hover,
+.auth-logout:hover,
+.auth-account:hover {
     border-radius: 25px;
-    border: 2px solid #00C48C;
-    color:#00C48C;
+    border: 2px solid #00c48c;
+    color: #00c48c;
 }
-.call-support__info--responce{
+.call-support__info--responce {
     display: none;
 }
-.content-top__menu{
+.content-top__menu {
     display: none;
 }
-
 
 @media screen and (max-width: 950px) {
-    .content-top__auth,.call-support__info{
+    .content-top__auth,
+    .call-support__info {
         display: none;
     }
-    .call-support__info--responce{
+    .call-support__info--responce {
         display: block;
         padding: 10px;
         margin: 0;
+        font-size: 15px;
     }
-    .content-top__menu{
+    .content-top__menu {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 23px;
         width: 25px;
     }
-    .line1,.line2,.line3{
+    .line1,
+    .line2,
+    .line3 {
         background: white;
         width: 25px;
         height: 3px;
     }
-    .content-top__menu:hover{
+    .content-top__menu:hover {
         cursor: pointer;
     }
-    .content-top__menu:hover .line1{
+    .content-top__menu:hover .line1 {
         transform: rotateZ(45deg);
     }
-    .content-top__menu:hover .line3{
+    .content-top__menu:hover .line3 {
         transform: rotateZ(90deg);
     }
-
-} 
+}

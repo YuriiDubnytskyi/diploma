@@ -15,7 +15,7 @@ const ContactUs = () => {
 
     const sendEmail = () => {
         if (name === "" || title === "" || email === "" || text === "") {
-            setErr("Please enter all information");
+            setErr("Заповніть усю інформацію");
             return;
         }
         setLoading(true);
@@ -41,7 +41,7 @@ const ContactUs = () => {
 
     return (
         <>
-            <TitlePager title="Contact US" />
+            <TitlePager title="Звяжіться з нами" />
             <ContactUsForm
                 name={name}
                 email={email}

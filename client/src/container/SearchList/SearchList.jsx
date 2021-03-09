@@ -5,6 +5,7 @@ import TitlePager from "../../components/TitlePager/TitlePager";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchAddLikeProduct } from "../../store/actions/actionsUser";
 import ProductItem from "../../components/ProductItem/ProductItem";
+import "../ProductsList/ProductsList.scss";
 
 const SearchList = () => {
     const { text } = useParams();
@@ -19,7 +20,7 @@ const SearchList = () => {
             newId.push(id);
             dispatch(fetchAddLikeProduct(user.id, newId));
         } else {
-            alert("You do not autorizate");
+            alert("Ви не авторизовані");
         }
     };
     const buyProduct = (one, two) => {
@@ -28,7 +29,7 @@ const SearchList = () => {
 
     return (
         <>
-            <TitlePager title={`Search -- ${text}`} />
+            <TitlePager title={text} />
             <div className="productslist__wrapper productslist-wrapper">
                 <div className="productslist__list productslist-list">
                     {data.loadingList ? (
@@ -46,6 +47,7 @@ const SearchList = () => {
                                 more={() => history.push("/product/" + el._id + "/" + text + "/" + el.name)}
                                 name={el.name}
                                 price={el.price}
+                                shortInfo={el.shortInfo}
                             />
                         ))
                     )}

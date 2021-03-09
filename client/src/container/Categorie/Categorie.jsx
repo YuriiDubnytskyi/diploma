@@ -7,7 +7,7 @@ import CategorieSubTitle from "../CategorieSubTitle/CategorieSubTitle";
 const Categorie = () => {
     return (
         <div className="categorie__container categorie-container">
-            <TitlePager title="Welcome to our Catalog" />
+            <TitlePager title="Каталог Товарів" />
             <Switch>
                 <Route exact path="/categorie">
                     <CategorieTitle />

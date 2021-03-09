@@ -26,8 +26,8 @@ const BuyProduct = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const onFinish = () => {
-        if (name === "" || surname === "" || city === "" || novaPosta === "" || phone === "" || note === "") {
-            setError("Please enter all information");
+        if (name === "" || surname === "" || city === "" || novaPosta === "" || phone === "") {
+            setError("Заповніть інформацію");
             return;
         }
         setError("");
@@ -56,7 +56,7 @@ const BuyProduct = () => {
     };
     return (
         <>
-            <TitlePager title="Billing Details" />
+            <TitlePager title="Деталі покупки" />
             <div className="billing_container">
                 <BillingForm
                     surname={surname}

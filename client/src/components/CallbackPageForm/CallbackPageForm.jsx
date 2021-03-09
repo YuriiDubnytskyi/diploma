@@ -18,11 +18,11 @@ const CallbackPageForm = ({
         <div className="verify-email__container">
             <div className="login__form">
                 <div className="login-user-email">
-                    <label>Your Email</label>
+                    <label>Ваша пошта</label>
                     <input className="input input--login-email" onChange={setLoginEmail} value={loginEmail} />
                 </div>
                 <div className="login-user-password">
-                    <label>Your Password</label>
+                    <label>Пароль</label>
                     <input
                         type="password"
                         className="input input--login-password"
@@ -31,7 +31,7 @@ const CallbackPageForm = ({
                     />
                 </div>
                 <div className="login-user-password">
-                    <label>Your Password Again</label>
+                    <label>Повторіть пароль</label>
                     <input
                         type="password"
                         className="input input--login-password"
@@ -48,7 +48,7 @@ const CallbackPageForm = ({
                     <></>
                 )}
                 <p className="login-submit" onClick={loginSubmit}>
-                    Vefify
+                    Підтвердити
                 </p>
             </div>
         </div>
