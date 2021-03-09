@@ -13,11 +13,11 @@ const ProductInfoContent = ({ data, addBuy, likeProduct, user }) => {
                 <h2 className="product-short-info-title">{data.name}</h2>
                 <p className="product-short-info-description">{data.shortInfo}</p>
                 <hr className="product-short-info-line" />
-                <p className="product-short-info-price">Price -- {data.price}</p>
+                <p className="product-short-info-price">Ціна - {data.price}</p>
                 <hr className="product-short-info-line" />
                 <div className="product-short-info-btn">
                     <p className="product-short-info-buy" onClick={() => addBuy(data.idProduct, user.bucketProducts)}>
-                        <i className="fa fa-shopping-bag"></i>add to cart
+                        <i className="fa fa-shopping-bag"></i>додати до кошика
                     </p>
                     <p
                         className="product-short-info-like"
@@ -26,15 +26,15 @@ const ProductInfoContent = ({ data, addBuy, likeProduct, user }) => {
                     </p>
                 </div>
                 <hr className="product-short-info-line" />
-                <p className="product-short-info-producer">Producer -- {data.producer}</p>
+                <p className="product-short-info-producer">Країна виробник -- {data.producer}</p>
             </div>
             <div className="product__info">
                 <div className="product-info">
-                    <h3 className="product-info-title">Description</h3>
+                    <h3 className="product-info-title">Опис Товару</h3>
                     <p className="product-info-description">{data.info}</p>
                 </div>
                 <div className="product-properties">
-                    <h3 className="product-info-properties">Properties</h3>
+                    <h3 className="product-info-properties">Характеристики</h3>
                     <div className="product-properties__container">
                         {data.properties.map((el, i) => {
                             return (

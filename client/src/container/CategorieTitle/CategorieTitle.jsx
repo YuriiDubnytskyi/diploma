@@ -13,7 +13,6 @@ const CategorieTitle = () => {
         API.get("/user/getProductTitle").then((data) => {
             setData(data.data.data);
             setLoading(false);
-            console.log(data.data.data);
         });
     }, []);
 

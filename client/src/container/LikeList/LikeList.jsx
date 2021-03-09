@@ -28,19 +28,18 @@ const LikeList = () => {
     const deleteLikeProduct = (id) => {
         const newLike = [...userLikes];
         const arr = newLike.filter((el) => el !== id);
-        console.log(arr);
         dispatch(removeLikeProduct(arr, userId));
     };
 
     return (
         <>
-            <TitlePager title="WishList" />
+            <TitlePager title="Список побажань" />
             {userLikes.length === 0 ? (
                 <div className="wish__container wish">
                     <div className="wish__empty wish-empty">
-                        <h3 className="wish-empty-title">Your wish list is currently empty.</h3>
+                        <h3 className="wish-empty-title">Ваш список побажань пустий але це можна виправити.</h3>
                         <p className="wish-empty-btn">
-                            <Link to="/categorie">Shop now</Link>
+                            <Link to="/categorie">Купити Зараз</Link>
                         </p>
                     </div>
                 </div>

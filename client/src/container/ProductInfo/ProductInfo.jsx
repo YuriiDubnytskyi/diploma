@@ -21,7 +21,6 @@ const ProductInfo = () => {
         API.get("/user/getProduct/:" + id).then((data) => {
             setData(data.data.data[0]);
             setLoading(false);
-            console.log(data.data.data[0]);
         });
     }, []);
 
@@ -36,13 +35,12 @@ const ProductInfo = () => {
     };
 
     const addBuy = (id, oldId) => {
-        console.log(123);
         if (data.count[0].count === "0") {
-            alert("We dont have this product");
+            alert("Нажаль товару в наявності немає");
         } else if (user.auth !== true) {
-            alert("You do not auth");
+            alert("Ви не Авторизовані");
         } else if (!user.emailVerify) {
-            alert("Please Verify your email");
+            alert("Підтвердіть пошту для здійснення покупок");
         } else {
             const newId = oldId;
             newId.push(id);

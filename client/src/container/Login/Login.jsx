@@ -28,13 +28,13 @@ const Login = () => {
     const loginSubmit = () => {
         if (!emailTest.test(String(loginEmail).toLowerCase())) {
             setLocalErrL(true);
-            setLocalErrTextL("Your Email Fail");
+            setLocalErrTextL("У вас неправильна пошта");
         } else if (loginPass != loginPassAgain) {
             setLocalErrL(true);
-            setLocalErrTextL("Your password do not similar");
+            setLocalErrTextL("Ваші паролі мають бути однакові");
         } else if (loginEmail == "" || loginPass == "" || loginPassAgain == "") {
             setLocalErrL(true);
-            setLocalErrTextL("enter All fields");
+            setLocalErrTextL("Усі поля повинні бути заповненні");
         } else {
             setLocalErrL(false);
             setLocalErrTextL("");
@@ -44,13 +44,13 @@ const Login = () => {
     const signSubmit = () => {
         if (!emailTest.test(String(signEmail).toLowerCase())) {
             setLocalErrS(true);
-            setLocalErrTextS("Your Email Fail");
+            setLocalErrTextS("У вас неправильна пошта");
         } else if (signName == "" || signPass == "" || signPassAgain == "" || signEmail == "") {
             setLocalErrS(true);
-            setLocalErrTextS("enter All fields");
+            setLocalErrTextS("Усі поля повинні бути заповненні");
         } else if (signPass != signPassAgain) {
             setLocalErrS(true);
-            setLocalErrTextS("Your password do not similar");
+            setLocalErrTextS("Ваші паролі мають бути однакові");
         } else {
             setLocalErrL(false);
             setLocalErrTextL("");
@@ -60,7 +60,7 @@ const Login = () => {
 
     return (
         <>
-            <TitlePager title="Sign UP / Sign IN" />
+            <TitlePager title="Авторизація & Реєстрація" />
             <LoginForm
                 user={user}
                 loginEmail={loginEmail}

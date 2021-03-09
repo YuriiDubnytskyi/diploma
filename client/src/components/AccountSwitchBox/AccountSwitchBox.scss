@@ -2,11 +2,12 @@
     background-color: #f3f3f3;
     border-radius: 20px;
     border: 7px #00c48c dashed;
-    height: 220px;
+    height: 250px;
 }
 .content {
     padding: 20px;
-    min-width: 300px;
+    min-width: 250px;
+    max-width: 300px;
 }
 .content-title {
     font-weight: 700;
@@ -18,7 +19,7 @@
 .content-btn {
     padding: 10px 0;
     font-weight: 600;
-    max-width: 100px;
+    max-width: 150px;
     position: relative;
 }
 .content-btn:hover {

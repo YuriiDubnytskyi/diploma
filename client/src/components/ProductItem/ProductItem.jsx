@@ -20,7 +20,7 @@ const ProductItem = ({ isLike, likeProduct, buyProduct, image, more, name, price
             </div>
             <div className="productslist-item__info" onClick={more}>
                 <p className="productslist-item-name">{name}</p>
-                <p className="productslist-item-price">Price -- {price}</p>
+                <p className="productslist-item-price">Ціна - {price}</p>
                 <p className="productslist-item-shortingo">{shortInfo}</p>
             </div>
         </div>

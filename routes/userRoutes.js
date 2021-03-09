@@ -103,11 +103,10 @@ router.post("/sendText/", (req, res) => {
         to: process.env.EMAIL_ADRESS,
         subject: "Help",
         html: `
-        <p>Hi Messsege</p>
-        <p>Name ${options.name}</p>
+        <p>Імя ${options.name}</p>
         <p>Email ${options.email}</p>
-        <p>Title: ${options.title}</p>
-        <p>Text: ${options.text}</p>
+        <p>Тема: ${options.title}</p>
+        <p>Повідомлення: ${options.text}</p>
         `,
     };
     transporter.sendMail(mailOptions, function (error, info) {
@@ -136,7 +135,7 @@ router.put("/changeInfo", (req, res) => {
     const phone = req.body.phone;
     const gender = req.body.gender;
     const surname = req.body.surname;
-    const age = req.body.age;
+    const age = typeof req.body.age === "number" ? req.body.age : "";
     const id = req.body.id;
     updateUser(name, phone, gender, surname, age, id).then((data) => {
         if (data.err) {
@@ -251,23 +250,23 @@ router.post("/buyProducts/", (req, res) => {
     const mailOptions = {
         from: process.env.EMAIL_ADRESS,
         to: `${options.email},${process.env.EMAIL_ADRESS}`,
-        subject: "Buy Check",
+        subject: "Покупки",
         html: `
-        <p>Hi this is your check list</p>
-        <p>Name ${options.name}</p>
-        <p>Surname ${options.surname}</p>
-        <p>Phone ${options.phone}</p>
-        <p>Adress City ${options.city}</p>
-        <p>Poshta ${options.novaPosta}</p>
-        <p>Note ${options.note}</p>
-        <p>You Buy</p>
+        <p>Вітаємо з покупками</p>
+        <p>Імя ${options.name}</p>
+        <p>Прізвище ${options.surname}</p>
+        <p>Телефон ${options.phone}</p>
+        <p>Адреса доставки ${options.city}</p>
+        <p>Відділення пошти ${options.novaPosta}</p>
+        <p>Побажання ${options.note}</p>
+        <p>Ви купили</p>
         ${products.productsBucket.map((el) => {
             return `
                     <div>
-                        <p>Name ${el.name}</p>
-                        <p>Price ${el.price}</p>
-                        <p>Count ${el.count}</p>
-                        <a href=${process.env.SERVER_API}product/${el._id}/:FromMyBilling/:${el.name}>More</a>
+                        <p>Назва товару ${el.name}</p>
+                        <p>Ціна товару ${el.price}</p>
+                        <p>Кількість товару ${el.count}</p>
+                        <a href=${process.env.SERVER_API}product/${el._id}/З покупок/${el.name}>Детальніше про товар</a>
                     </div>
                     `;
         })}
@@ -325,10 +324,10 @@ router.post("/emailVerify/", (req, res) => {
     const mailOptions = {
         from: process.env.EMAIL_ADRESS,
         to: `${email}`,
-        subject: "Verify Email",
+        subject: "Підтвердження пошти",
         html: `
-        <p>Hi please verify email</p>
-        <a href=${process.env.SERVER_API}callback/:${id}>Verify</a>
+        <p>Вітаю, будь-ласка підтвердіть електронну пошту.</p>
+        <a href=${process.env.SERVER_API}callback/:${id}>Підтвердити</a>
         `,
     };
 

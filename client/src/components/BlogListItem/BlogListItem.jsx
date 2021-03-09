@@ -21,16 +21,6 @@ const BlogListItem = ({ title, description, id, time, imgSrc }) => {
                 </figcaption>
                 <Link to={`/newsID/${id}`}></Link>
             </figure>
-            {/* <div className="blog-item-image"></div>
-            <div className="blog-item-info item-info" onClick={() => history.push("/newsID/" + id)}>
-                <h3 className="item-info-title">{title}</h3>
-                <p className="item-info-description">
-                    {description}
-                    Description Description Description Description Description Description Description Description
-                    Description Description Description Description Description Description Description Description
-                    Description Description Description Description
-                </p>
-            </div> */}
         </div>
     );
 };

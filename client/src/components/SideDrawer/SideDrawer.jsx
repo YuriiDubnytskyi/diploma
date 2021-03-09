@@ -13,7 +13,7 @@ const SideDrawer = (props) => {
                     <div>
                         <input
                             className="side-drawer__input"
-                            placeholder="Search"
+                            placeholder="Пошук..."
                             value={props.searchValue}
                             onChange={(e) => props.setSearchValue(e.target.value)}
                         />
@@ -23,33 +23,33 @@ const SideDrawer = (props) => {
                 <div className="side-drawer__nav side-drawer-nav">
                     <nav className="side-drawer__navigation side-drawer-navigation">
                         <Link className="side-drawer-navigation__link" to="/">
-                            Home
+                            Головна
                         </Link>
                         <Link className="side-drawer-navigation__link" to="/categorie">
-                            Categories
+                            Категорія
                         </Link>
                         <Link className="side-drawer-navigation__link" to="/contact">
-                            Contact Us
+                            Звяжіться з нами
                         </Link>
                         <Link className="side-drawer-navigation__link " to="/blog">
-                            Blog
+                            Новини & Блог
                         </Link>
                         {props.auth ? (
                             <>
                                 <Link className="side-auth-account side-drawer-navigation__link" to="/account">
-                                    <i className="fa fa-user-circle"></i>Account
+                                    <i className="fa fa-user-circle"></i>Акаунт
                                 </Link>
                                 <Link className="side-auth-logout side-drawer-navigation__link" onClick={props.logOut}>
-                                    <i class="fa fa-sign-out"></i>LogOut
+                                    <i class="fa fa-sign-out"></i>Вийти
                                 </Link>
                             </>
                         ) : (
                             <div className="auth__links">
                                 <Link className="side-auth-login side-drawer-navigation__link" to="/login">
-                                    Login
+                                    Увійти в кабінет
                                 </Link>
                                 <Link className="side-auth-sign side-drawer-navigation__link" to="/login">
-                                    Sign up
+                                    Зареєструватись
                                 </Link>
                             </div>
                         )}

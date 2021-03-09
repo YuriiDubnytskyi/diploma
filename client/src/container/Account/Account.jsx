@@ -90,7 +90,7 @@ const Account = () => {
 
     return (
         <div className="account-wrapper">
-            <TitlePager title="Account" />
+            <TitlePager title="Особистий кабінет" />
             <div className="account__container account">
                 <AccountSwitchBox
                     showInfo={showInfo}

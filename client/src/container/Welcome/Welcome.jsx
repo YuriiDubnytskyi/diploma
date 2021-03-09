@@ -17,11 +17,11 @@ const Welcome = () => {
             <div className="welcome__shop shop-categorie">
                 <div className="welcome__shop__content">
                     <div className="welcome__text">
-                        <h2 className="welcome-title">Welcome to our store</h2>
+                        <h2 className="welcome-title">Вітаємо у нашому магазині</h2>
                     </div>
                     <div className="welcome__shop__box">
                         <p className="welcome-box-text">
-                            <Link to="/categorie">Go to Cataloge</Link>
+                            <Link to="/categorie">Каталог товарів</Link>
                         </p>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ const Welcome = () => {
             </div>
             <div className="welcome__partners">
                 <div className="welcome__partners__text">
-                    <h2 className="welcome-title">Our Partners</h2>
+                    <h2 className="welcome-title">Наші партнери</h2>
                 </div>
                 <div className="welcome__partners__container">
                     <img alt="logo1" className="welcome__partners-img" src={logo1}></img>

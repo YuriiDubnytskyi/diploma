@@ -25,7 +25,7 @@ const ProductsList = () => {
             newId.push(id);
             dispatch(fetchAddLikeProduct(user.id, newId));
         } else {
-            alert("You do not autorizate");
+            alert("Ви не авторизовані");
         }
     };
     const buyProduct = (one, two) => {

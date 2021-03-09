@@ -4,34 +4,37 @@ import "./AccountOrders.scss";
 import { Link } from "react-router-dom";
 
 const AccountOrders = ({ data }) => {
-    useEffect(() => {
-        console.log("account orders render");
-        return () => {
-            console.log("account orders unmount");
-        };
-    });
     return (
         <div className="order account__order">
             <div className="order-box">
-                <h3 className="order-title">Orders list</h3>
+                <h3 className="order-title">Список покупок</h3>
             </div>
             <div className="order__list order-list">
                 {data === false ? (
                     <div className="order__empty">
-                        <p className="order-empty">You do not buy nothing</p>
+                        <p className="order-empty">Ви нічого ще не купили</p>
                     </div>
                 ) : (
                     data.map((el) => (
                         <div className="order-item" key={el._id}>
-                            <p className="order-time">You buy it on {el.time}</p>
-                            <p className="order-status">Status {el.status}</p>
+                            <p className="order-time">
+                                Час покупки{" "}
+                                {`${new Date(el.time).getHours()}:
+                                ${new Date(el.time).getMinutes()} -   
+                                ${new Date(el.time).getDate()}:
+                                ${new Date(el.time).getMonth() + 1}: 
+                                ${new Date(el.time).getFullYear()}`}
+                            </p>
+                            <p className="order-status">Статус покупки {el.status}</p>
                             {el.product.map((pr) => (
                                 <div className="order-product" key={pr.idProduct}>
-                                    <p className="order-name">You buy {pr.name}</p>
-                                    <p className="order-count">Count {pr.count}</p>
-                                    <p className="order-price">Price {pr.price * pr.count}</p>
+                                    <p className="order-name">Ви купили {pr.name}</p>
+                                    <p className="order-count">Кількість {pr.count}</p>
+                                    <p className="order-price">Ціна {pr.price * pr.count}</p>
                                     <p className="order-link">
-                                        <Link to={`/product/${pr._id}/:FromOrderList/:${pr.name}`}>More</Link>
+                                        <Link to={`/product/${pr._id}/Здійснена покупка/${pr.name}`}>
+                                            Дутальніше про продукт
+                                        </Link>
                                     </p>
                                 </div>
                             ))}

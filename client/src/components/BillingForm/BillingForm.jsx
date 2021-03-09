@@ -21,36 +21,36 @@ const BillingForm = ({
     return (
         <div className="billing__form">
             <div className="billing-user-name">
-                <label>Your Name</label>
+                <label>Ваше Імя</label>
                 <input className="input input--billing-name" onChange={setName} value={name} />
             </div>
             <div className="billing-user-surname">
-                <label>Your Surname</label>
+                <label>Ваше Прізвище</label>
                 <input className="input input--billing-surname" onChange={setSurname} value={surname} />
             </div>
             <div className="billing-user-email">
-                <label>Your Email</label>
+                <label>Ваша електронна пошта</label>
                 <input className="input input--billing-email" disabled value={email} />
             </div>
             <div className="billing-user-city">
-                <label>Your City</label>
+                <label>Ваше місто</label>
                 <input className="input input--billing-city" onChange={setCity} value={city} />
             </div>
             <div className="billing-user-novaPosta">
-                <label>Your Nova Poshta</label>
+                <label>Відділення нової пошти</label>
                 <input className="input input--billing-poshta" onChange={setNovaPosta} value={novaPosta} />
             </div>
             <div className="billing-user-phone">
-                <label>Your Phone</label>
+                <label>Ваш телефон</label>
                 <input className="input input--billing-phone" onChange={setPhone} value={phone} />
             </div>
             <div className="billing-user-note">
-                <label>Your Note</label>
+                <label>Ваші побажання</label>
                 <textarea className="input input--billing-note" onChange={setNote} value={note} />
             </div>
             {error !== "" ? <p className="billing-error">{error}</p> : <></>}
             <p className="billing-submit" onClick={onFinish}>
-                Submit
+                Здійснити покупку
             </p>
         </div>
     );

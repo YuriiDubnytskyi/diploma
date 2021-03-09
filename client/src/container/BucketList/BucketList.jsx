@@ -31,13 +31,13 @@ const BucketList = () => {
 
     return (
         <>
-            <TitlePager title="BucketList" />
+            <TitlePager title="Кошик" />
             {userBucket.length === 0 ? (
                 <div className="bucket__container bucket">
                     <div className="bucket__empty bucket-empty">
-                        <h3 className="bucket-empty-title">Your bucket list is currently empty.</h3>
+                        <h3 className="bucket-empty-title">Ваш кошик пустий але це не біда.</h3>
                         <p className="bucket-empty-btn">
-                            <Link to="/categorie">Shop now</Link>
+                            <Link to="/categorie">Купити Зараз</Link>
                         </p>
                     </div>
                 </div>

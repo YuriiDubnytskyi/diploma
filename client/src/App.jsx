@@ -3,7 +3,6 @@ import "./App.scss";
 import { BrowserRouter } from "react-router-dom";
 import ChatWidget from "@papercups-io/chat-widget";
 import Header from "./container/Header/Header";
-
 import Footer from "./components/Footer/Footer";
 import API from "./API/API";
 import { addUserSuccess } from "./store/actions/actionsUser";

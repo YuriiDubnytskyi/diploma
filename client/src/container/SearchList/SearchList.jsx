@@ -20,7 +20,7 @@ const SearchList = () => {
             newId.push(id);
             dispatch(fetchAddLikeProduct(user.id, newId));
         } else {
-            alert("You do not autorizate");
+            alert("Ви не авторизовані");
         }
     };
     const buyProduct = (one, two) => {
@@ -29,7 +29,7 @@ const SearchList = () => {
 
     return (
         <>
-            <TitlePager title={`Search -- ${text}`} />
+            <TitlePager title={text} />
             <div className="productslist__wrapper productslist-wrapper">
                 <div className="productslist__list productslist-list">
                     {data.loadingList ? (

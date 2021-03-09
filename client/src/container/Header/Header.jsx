@@ -21,7 +21,7 @@ const Header = () => {
         console.log(searchValue);
         dispatch(fetchGetProductListSearch(searchValue));
 
-        history.push(`/search/${searchValue === "" ? "all" : searchValue}`);
+        history.push(`/search/${searchValue === "" ? "всі товари" : searchValue}`);
     };
     const [header, setHeader] = useState(false);
 
