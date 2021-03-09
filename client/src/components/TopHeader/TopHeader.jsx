@@ -23,16 +23,16 @@ const TopHeader = (props) => {
                             <Link className="auth-account" to="/account">
                                 <i className="fa fa-user-circle"></i>Account
                             </Link>
-                            <Link className="auth-logout" onClick={props.logOut} to="/loginF">
+                            <Link className="auth-logout" onClick={props.logOut} to="/login">
                                 <i class="fa fa-sign-out"></i>LogOut
                             </Link>
                         </>
                     ) : (
                         <>
-                            <Link className="auth-login" to="/loginF">
+                            <Link className="auth-login" to="/login">
                                 Login
                             </Link>
-                            <Link className="auth-sign" to="/loginF">
+                            <Link className="auth-sign" to="/login">
                                 Sign up
                             </Link>
                         </>

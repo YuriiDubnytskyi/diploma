@@ -1,25 +1,47 @@
-.account-switch{
-    background-color: #ffffff;
+.account-switch {
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    border: 7px #00c48c dashed;
+    height: 220px;
 }
-.content{
+.content {
     padding: 20px;
     min-width: 300px;
 }
-.content-title{
+.content-title {
     font-weight: 700;
 }
-.content-subtitle{
+.content-subtitle {
     color: #969696;
     padding: 5px 0 20px;
 }
-.content-btn{
-    padding: 10px 0 ;
+.content-btn {
+    padding: 10px 0;
     font-weight: 600;
     max-width: 100px;
+    position: relative;
 }
-.content-btn:hover{
-    cursor: pointer;   
+.content-btn:hover {
+    cursor: pointer;
+
+    &::before {
+        width: 100%;
+    }
 }
-.active-content-btn{
-    color:#00C48C;
+.active-content-btn {
+    color: #00c48c;
+}
+.content-btn::before {
+    content: "";
+    position: absolute;
+    background-color: #00c48c;
+    height: 2px;
+    width: 0;
+    top: 30px;
+    transition: ease-in-out 0.4s;
+}
+@media screen and (max-width: 501px) {
+    .account-switch {
+        margin-bottom: 50px;
+    }
 }

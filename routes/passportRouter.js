@@ -41,7 +41,7 @@ module.exports = (passport) => {
         req.logout();
         console.log(req.session);
         req.session.destroy();
-        res.redirect("/loginF");
+        res.redirect("/login");
     });
 
     return router;

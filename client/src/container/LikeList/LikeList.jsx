@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./LikeList.scss";
+import "../ProductsList/ProductsList.scss";
 import TitlePager from "./../../components/TitlePager/TitlePager";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -56,6 +57,7 @@ const LikeList = () => {
                                 more={() => history.push("/product/" + el._id + "/FromLike List/" + el.name)}
                                 name={el.name}
                                 price={el.price}
+                                shortInfo={el.shortInfo}
                             />
                         ))}
                     </div>

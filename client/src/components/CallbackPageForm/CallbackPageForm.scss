@@ -1,11 +1,59 @@
-.verify-email__container{
+.verify-email__container {
     width: 50%;
     margin: 0 auto;
 }
+.input {
+    background-color: rgb(153, 153, 153);
+    color: white;
+    padding: 10px;
+    border: none;
+}
+.login__container {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+}
+.line-login {
+    height: 300px;
+}
+.login-user-email,
+.login-user-password {
+    display: flex;
+    flex-direction: column;
+}
+.input {
+    background-color: rgb(153, 153, 153);
+    color: white;
+    padding: 10px;
+    border: none;
+}
+.login-submit {
+    margin-top: 20px;
+    max-width: 100px;
+    text-align: center;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #00c48c;
+    transition: 0.2s;
+}
+.login-submit:hover {
+    color: #00c48c;
+    border: 1px solid #00c48c;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+.login-error {
+    margin: 10px 0;
+    padding: 5px;
+    color: #ffffff;
+    background-color: rgb(131, 15, 15);
+}
 
-@media screen and (max-width:501px){
-    .verify-email__container{
+@media screen and (max-width: 501px) {
+    .verify-email__container {
         width: 90%;
-       
     }
 }

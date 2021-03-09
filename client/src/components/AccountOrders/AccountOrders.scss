@@ -1,22 +1,32 @@
-.account__order{
+.account__order {
     width: 65%;
     border: 1px solid #000000;
     border-radius: 10px;
 }
-.order-box{
+.order-box {
     padding: 20px;
 }
-.order-title{
+.order-title {
     padding-bottom: 10px;
     font-size: 20px;
     font-weight: 700;
 }
-.order-list{
+.order-list {
     margin: 20px;
 }
-.order-item{
+.order-item {
     padding: 20px;
     margin: 10px 0;
-    border:1px solid #000000;
+    border: 1px solid #000000;
     border-radius: 20px;
+}
+@media screen and (max-width: 501px) {
+    .account__order {
+        width: 100%;
+        border: none;
+
+        .order-title {
+            text-align: center;
+        }
+    }
 }

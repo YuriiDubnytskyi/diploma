@@ -69,6 +69,14 @@
     background-color: #881111;
 }
 @media screen and (max-width: 600px) {
+    .contact-info {
+        flex-direction: column-reverse;
+        align-items: center;
+
+        .contact-btn {
+            margin: 10px;
+        }
+    }
     .contact-user {
         flex-direction: column;
     }
@@ -77,6 +85,6 @@
         width: 100%;
     }
     .input--contact-name {
-        width: 100%;
+        width: 95%;
     }
 }

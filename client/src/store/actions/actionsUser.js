@@ -13,7 +13,7 @@ export const fetchUserSign = (email, password, name) => {
         dispatch(addUser());
         return API.post("/auth/sign", { email, password, name, username: "q" }).then((user) => {
             if (user.data.err) {
-                dispatch(addUserFail(user.data.errMess));
+                dispatch(addUserFail(user.data.message));
             } else {
                 dispatch(
                     addUserSuccess({
@@ -37,7 +37,7 @@ export const fetchUserLogin = (email, password) => {
         dispatch(addUser());
         return API.post("/auth/login", { email, password, username: "q" }).then((user) => {
             if (user.data.err) {
-                dispatch(addUserFail(user.data.errMess));
+                dispatch(addUserFail(user.data.message));
             } else {
                 dispatch(
                     addUserSuccess({

@@ -29,7 +29,7 @@ const AccountSettings = ({
     return (
         <div className="settings account__settings">
             <div className="settings-box">
-                <h3 className="settings-title">Setting</h3>
+                <h3 className="settings-title">Setting {newName}</h3>
                 <div className="settings-user-name">
                     <label>Your Name</label>
                     <input className="input input--settings-name" value={newName} onChange={setNewName} />
@@ -55,12 +55,14 @@ const AccountSettings = ({
                     <label>Your Gender</label>
                     <input className="input input--settings-gender" value={newGender} onChange={setNewGender} />
                 </div>
-                <p className="settings-submit" onClick={saveChange}>
-                    Save Changes
-                </p>
-                <p className="settings-reset" onClick={resetChange}>
-                    Reset Changes
-                </p>
+                <div className="settings-btn__container">
+                    <p className="settings-submit" onClick={saveChange}>
+                        Save Changes
+                    </p>
+                    <p className="settings-reset" onClick={resetChange}>
+                        Reset Changes
+                    </p>
+                </div>
             </div>
             <div className="setting-box-options">
                 <div className="settings-box-email">

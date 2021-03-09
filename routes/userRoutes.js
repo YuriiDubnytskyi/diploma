@@ -71,6 +71,7 @@ router.get("/isAuth", (req, res) => {
     if (req.session.passport === undefined) {
         res.json({ status: 400 });
     } else if (req.session.passport.user !== undefined) {
+        console.log(req.session.passport.user);
         res.json({ status: 200, user: req.session.passport.user });
     }
 });

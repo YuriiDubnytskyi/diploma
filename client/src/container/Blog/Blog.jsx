@@ -25,7 +25,14 @@ const Blog = () => {
                     <></>
                 ) : (
                     news.news.map((el) => (
-                        <BlogListItem key={el._id} title={el.title} description={el.description} id={el._id} />
+                        <BlogListItem
+                            key={el._id}
+                            title={el.title}
+                            description={el.shortDescription}
+                            time={el.time}
+                            imgSrc={el.imageMain}
+                            id={el._id}
+                        />
                     ))
                 )}
                 {news.loading ? <Slider /> : <></>}

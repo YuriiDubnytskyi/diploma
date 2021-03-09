@@ -35,7 +35,7 @@ const BucketList = () => {
             {userBucket.length === 0 ? (
                 <div className="bucket__container bucket">
                     <div className="bucket__empty bucket-empty">
-                        <h3 className="bucket-empty-title">Your wish list is currently empty.</h3>
+                        <h3 className="bucket-empty-title">Your bucket list is currently empty.</h3>
                         <p className="bucket-empty-btn">
                             <Link to="/categorie">Shop now</Link>
                         </p>
@@ -49,7 +49,7 @@ const BucketList = () => {
                         {productsBucket.productsBucket.map((el) => (
                             <BucketItem
                                 key={el._id}
-                                img={el.image}
+                                img={el.imageMain}
                                 name={el.name}
                                 price={el.price}
                                 plus={() => dispatch(addPlusProductBucket(el._id))}
@@ -61,6 +61,7 @@ const BucketList = () => {
                     </div>
                     <div className="total__container">
                         <div className="bucket-list__total">Загальна ціна становить -- {productsBucket.totalPrice}</div>
+                        <div className="bucket-list__delivery">Ціна доставки за цінами перевізника</div>
                         <button className="bucket-list__buy-btn" onClick={() => history.push("/buyProduct")}>
                             Купити
                         </button>

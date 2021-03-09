@@ -58,7 +58,7 @@ const Main = () => {
                     <ContactUs />
                 </Suspense>
             </Route>
-            <Route path="/loginF">
+            <Route path="/login">
                 <Suspense fallback={<Slider />}>
                     <Login />
                 </Suspense>

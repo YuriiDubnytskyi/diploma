@@ -36,6 +36,8 @@ const Login = () => {
             setLocalErrL(true);
             setLocalErrTextL("enter All fields");
         } else {
+            setLocalErrL(false);
+            setLocalErrTextL("");
             dispatch(fetchUserLogin(loginEmail, loginPass));
         }
     };
@@ -50,6 +52,8 @@ const Login = () => {
             setLocalErrS(true);
             setLocalErrTextS("Your password do not similar");
         } else {
+            setLocalErrL(false);
+            setLocalErrTextL("");
             dispatch(fetchUserSign(signEmail, signPass, signName));
         }
     };
