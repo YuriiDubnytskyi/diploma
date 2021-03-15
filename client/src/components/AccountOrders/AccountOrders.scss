@@ -20,6 +20,22 @@
     border: 1px solid #000000;
     border-radius: 20px;
 }
+.order-btn {
+    background-color: chocolate;
+    padding: 10px 20px;
+    max-width: 200px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 10px;
+    transition: ease-in 0.2s;
+    border: 3px solid chocolate;
+
+    &:hover {
+        cursor: pointer;
+        border: 3px solid chocolate;
+        background-color: #ffffff;
+    }
+}
 @media screen and (max-width: 501px) {
     .account__order {
         width: 100%;

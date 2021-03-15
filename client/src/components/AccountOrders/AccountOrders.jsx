@@ -3,7 +3,7 @@ import "./AccountOrders.scss";
 
 import { Link } from "react-router-dom";
 
-const AccountOrders = ({ data }) => {
+const AccountOrders = ({ data, cancelBuy, returnBuy }) => {
     return (
         <div className="order account__order">
             <div className="order-box">
@@ -38,6 +38,17 @@ const AccountOrders = ({ data }) => {
                                     </p>
                                 </div>
                             ))}
+                            {el.status === "Success" ? (
+                                <p className="order-btn" onClick={() => returnBuy(el.product, el._id)}>
+                                    Повернути повар
+                                </p>
+                            ) : el.status === "Pending" ? (
+                                <p className="order-btn" onClick={() => cancelBuy(el.product, el._id)}>
+                                    Скасувати покупку
+                                </p>
+                            ) : (
+                                <></>
+                            )}
                         </div>
                     ))
                 )}

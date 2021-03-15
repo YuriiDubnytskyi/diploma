@@ -88,6 +88,17 @@ const Account = () => {
         dispatch(removeUser());
     }, []);
 
+    const cancelBuy = (product, id) => {
+        API.put("/user/cancel", { product, id }).then((res) => {
+            setData(res.data.data);
+        });
+    };
+    const returnBuy = (product, id) => {
+        API.put("/user/return", { product, id }).then((res) => {
+            setData(res.data.data);
+        });
+    };
+
     return (
         <div className="account-wrapper">
             <TitlePager title="Особистий кабінет" />
@@ -129,7 +140,7 @@ const Account = () => {
                 ) : (
                     <></>
                 )}
-                {showOrder ? <AccountOrders data={data} /> : <></>}
+                {showOrder ? <AccountOrders cancelBuy={cancelBuy} returnBuy={returnBuy} data={data} /> : <></>}
             </div>
         </div>
     );
