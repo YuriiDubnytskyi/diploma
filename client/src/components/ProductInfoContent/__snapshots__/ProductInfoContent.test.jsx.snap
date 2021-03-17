@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test HTML in ProductInfoContent with props Should contain info 1`] = `
+<div
+  className="product__container product-container "
+>
+  <div
+    className="product-img"
+  >
+    <lazy
+      images={Array []}
+    />
+  </div>
+  <div
+    className="product-short-info"
+  >
+    <h2
+      className="product-short-info-title"
+    >
+      Nokia
+    </h2>
+    <p
+      className="product-short-info-description"
+    >
+      Nokia phone
+    </p>
+    <hr
+      className="product-short-info-line"
+    />
+    <p
+      className="product-short-info-price"
+    >
+      Ціна - 
+      122
+    </p>
+    <hr
+      className="product-short-info-line"
+    />
+    <div
+      className="product-short-info-btn"
+    >
+      <p
+        className="product-short-info-buy"
+        onClick={[Function]}
+      >
+        <i
+          className="fa fa-shopping-bag"
+        />
+        додати до кошика
+      </p>
+      <p
+        className="product-short-info-like"
+        onClick={[Function]}
+      >
+        <i
+          className="fa fa-heart"
+        />
+      </p>
+    </div>
+    <hr
+      className="product-short-info-line"
+    />
+    <p
+      className="product-short-info-producer"
+    >
+      Країна виробник -- 
+      Ukraine
+    </p>
+  </div>
+  <div
+    className="product__info"
+  >
+    <div
+      className="product-info"
+    >
+      <h3
+        className="product-info-title"
+      >
+        Опис Товару
+      </h3>
+      <p
+        className="product-info-description"
+      >
+        Опис
+      </p>
+    </div>
+    <div
+      className="product-properties"
+    >
+      <h3
+        className="product-info-properties"
+      >
+        Характеристики
+      </h3>
+      <div
+        className="product-properties__container"
+      >
+        <div
+          className="product-properties-item"
+          key="0"
+        >
+          <p
+            className="item-property"
+          >
+            Память
+          </p>
+          <p
+            className="item-value"
+          >
+            125
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

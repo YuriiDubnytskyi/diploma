@@ -10,6 +10,7 @@ import { logout } from "../../store/actions/actionsUser";
 const Header = () => {
     const history = useHistory();
     const auth = useSelector((state) => state.user.user.auth);
+    const [header, setHeader] = useState(false);
     const [searchValue, setSearchValue] = useState("");
     const dispatch = useDispatch();
 
@@ -23,7 +24,6 @@ const Header = () => {
 
         history.push(`/search/${searchValue === "" ? "всі товари" : searchValue}`);
     };
-    const [header, setHeader] = useState(false);
 
     return (
         <div>

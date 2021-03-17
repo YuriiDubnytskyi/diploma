@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test HTML in Conact Form Contact Form without error or success 1`] = `
+<div
+  className="contact__conatiner contact"
+>
+  <div
+    className="contact__user contact-user"
+  >
+    <div
+      className="contact-user-name"
+    >
+      <label>
+        Ваше Імя
+      </label>
+      <input
+        className="input input--contact-name"
+      />
+    </div>
+    <div
+      className="contact-user-email"
+    >
+      <label>
+        Ваша пошта
+      </label>
+      <input
+        className="input input--contact-email"
+      />
+    </div>
+  </div>
+  <div
+    className="contact-subject"
+  >
+    <label>
+      Тема
+    </label>
+    <input
+      className="input input--contact-subject"
+    />
+  </div>
+  <div
+    className="contact-text"
+  >
+    <label>
+      Повідомлення
+    </label>
+    <textarea
+      className="input input--contact-text"
+    />
+  </div>
+  <div
+    className="contact-info"
+  >
+    <p
+      className="contact-btn"
+    >
+      Надіслати
+    </p>
+  </div>
+</div>
+`;
