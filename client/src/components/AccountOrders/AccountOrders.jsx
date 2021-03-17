@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./AccountOrders.scss";
 
 import { Link } from "react-router-dom";

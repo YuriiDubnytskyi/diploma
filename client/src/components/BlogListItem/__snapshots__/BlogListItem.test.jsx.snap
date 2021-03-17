@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test HTML in BlogListItem Should contain title, description 1`] = `
+<div
+  className="blog__item blog-item"
+>
+  <figure
+    class="snip1527"
+  >
+    <div
+      class="image"
+    >
+      <img
+        alt="News"
+      />
+    </div>
+    <figcaption>
+      <div
+        class="date"
+      >
+        <span
+          class="day"
+        >
+          NaN
+        </span>
+        <span
+          class="month"
+        >
+          NaN
+        </span>
+      </div>
+      <h3>
+        News
+      </h3>
+      <p>
+        Desc
+      </p>
+    </figcaption>
+    <Link
+      to="/newsID/undefined"
+    />
+  </figure>
+</div>
+`;

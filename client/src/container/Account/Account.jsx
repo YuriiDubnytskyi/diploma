@@ -49,7 +49,7 @@ const Account = () => {
     const [newName, setNewName] = useState(name);
     const [newSurname, setNewSurname] = useState(surname);
     const [newGender, setNewGender] = useState(gender || "");
-    const [newAge, setNewAge] = useState(age || "");
+    const [newAge, setNewAge] = useState(age === null ? "" : age);
     const [newPhone, setNewPhone] = useState(phone || "");
 
     const saveChange = () => {

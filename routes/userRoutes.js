@@ -143,7 +143,8 @@ router.put("/changeInfo", (req, res) => {
     const phone = req.body.phone;
     const gender = req.body.gender;
     const surname = req.body.surname;
-    const age = typeof req.body.age === "number" ? req.body.age : "";
+    const age = typeof Number(req.body.age) === "number" ? req.body.age : "";
+
     const id = req.body.id;
     updateUser(name, phone, gender, surname, age, id).then((data) => {
         if (data.err) {

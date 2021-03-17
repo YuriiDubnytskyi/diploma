@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test HTML in BucketItem Should contain BucketItem with props 1`] = `
+<div
+  className="bucket-list__item item-bucket"
+>
+  <img />
+  <div
+    className="item-bucket__info"
+  >
+    <h3
+      className="item-bucket__title"
+    >
+      Назва товару - 
+      Nokia
+    </h3>
+    <p
+      className="item-bucket__price"
+    >
+      Ціна - 
+      777
+    </p>
+  </div>
+  <div
+    className="item-bucket__btn"
+  >
+    <button
+      className="btn-bucket"
+    >
+      +
+    </button>
+    <button
+      className="btn-bucket"
+    >
+      3
+    </button>
+    <button
+      className="btn-bucket"
+    >
+      -
+    </button>
+    <button
+      className="btn-bucket"
+    >
+      X
+    </button>
+  </div>
+</div>
+`;
