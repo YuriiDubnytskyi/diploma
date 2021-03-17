@@ -1,24 +1,24 @@
-const login = require('./login');
-const signup = require('./signup');
+const login = require("./login");
+const signup = require("./signup");
 
-const User = require('../models/users');
+const User = require("../models/users");
 
-module.exports = function(passport){
-
-	// Passport needs to be able to serialize and deserialize users to support persistent login sessions
-    passport.serializeUser(function(user, done) {
-        console.log('serializing user: ');console.log(user);
+module.exports = function (passport) {
+    // Passport needs to be able to serialize and deserialize users to support persistent login sessions
+    passport.serializeUser(function (user, done) {
+        console.log("serializing user: ");
+        console.log(user);
         done(null, user);
     });
 
-    passport.deserializeUser(function(id, done) {
-        User.findById(id, function(err, user) {
-            console.log('deserializing user:',user);
-            done(err, user);
+    passport.deserializeUser(function (id, done) {
+        User.findOne({ _id: id }, function (err, user) {
+            console.log("deserializing user:", user);
+            return done(err, user);
         });
     });
 
     // Setting up Passport Strategies for Login and SignUp/Registration
     login(passport);
     signup(passport);
-}
+};

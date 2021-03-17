@@ -6,20 +6,21 @@ import { useParams } from "react-router-dom";
 
 const BlogItem = () => {
     const { id } = useParams();
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
+    const [data, setData] = useState("");
 
     useEffect(() => {
         API.get("/user/getNewsID/" + id).then((res) => {
-            setTitle(res.data.data.title);
-            setDescription(res.data.data.description);
+            setData(res.data.data);
         });
     }, []);
 
     return (
         <>
-            <TitlePager title={title} />
-            {description}
+            <TitlePager title={data.title} />
+            <div className="blog__container">
+                <img className="blog-img" src={data.imageMain} alt={data.title} />
+                <p className="blog__info blog-info">{data.fullDescription}</p>
+            </div>
         </>
     );
 };

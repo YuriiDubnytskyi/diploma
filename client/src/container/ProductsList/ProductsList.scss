@@ -1,10 +1,19 @@
-.productslist__wrapper{
+.productslist__wrapper {
     width: 80%;
     margin: 0 auto;
     padding: 20px 0;
 }
-.productslist__list{
+.productslist__list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+@media screen and (max-width: 501px) {
+    .productslist__wrapper {
+        width: 95%;
+
+        .productslist__list {
+            width: 100%;
+        }
+    }
 }

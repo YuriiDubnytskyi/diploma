@@ -1,29 +1,31 @@
-.shop-about__container,.shop-about__img{
+.shop-about__container,
+.shop-about__img {
     max-width: 45%;
     min-width: 40%;
-    font-family: 'Roboto',sans-serif;
+    font-family: "Roboto", sans-serif;
 }
-.shop-about__text{
-    border:2px solid #000000
+.shop-about__text {
+    border: 2px solid #000000;
 }
-.shop-about-title{
+.shop-about-title {
     font-size: 25px;
+    padding-bottom: 10px;
 }
-.shop-about__text-wrapper{
+.shop-about__text-wrapper {
     padding: 10px 10px 10px 50px;
 }
-.shop-about__img{
-    border:2px solid #8d8d8d;
-    background-color: #F5F5F5;
+.shop-about__img {
+    border: 2px solid #8d8d8d;
+    background-color: #f5f5f5;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 @media screen and (max-width: 900px) {
-    .shop-about__img{
+    .shop-about__img {
         display: none;
     }
-    .shop-about__container{
+    .shop-about__container {
         max-width: 100%;
     }
 }

@@ -75,6 +75,16 @@ const updateUser = async (name, phone, gender, surname, age, id) => {
     }
 };
 
+const getUser = async (id) => {
+    try {
+        const User = userSchema;
+        const data = await User.find({ _id: id });
+        return { err: false, data: data };
+    } catch (error) {
+        return { err: true, errMess: error };
+    }
+};
+
 const getNewsID = async (id) => {
     try {
         const News = newsSchema;
@@ -162,7 +172,7 @@ const createBuyListSell = async (userId, email, product, adress) => {
             time: new Date().toISOString(),
         });
         await BuyListSell.save();
-        return { err: false, success: false };
+        return { err: false, success: true };
     } catch (error) {
         return { err: true, errMess: error };
     }
@@ -195,7 +205,7 @@ const sellCountCalculate = async (products) => {
 const getProductsSell = async (id) => {
     try {
         const BuyListSell = buyListSellSchema;
-        const buyProduct = await BuyListSell.find({ userId: { $in: ObjectId(id) } });
+        const buyProduct = await BuyListSell.find({ userId: { $in: ObjectId(id) } }).sort({ time: -1 });
         return { err: false, data: buyProduct };
     } catch (error) {
         return { err: true, errMess: error };
@@ -226,6 +236,70 @@ const deleteAccount = async (id) => {
     }
 };
 
+const returnProduct = async (product, id) => {
+    try {
+        const Storage = wereHouseSchema;
+        let check = 0;
+        let a = product.map(async (el) => {
+            return await Storage.findOneAndUpdate(
+                { idStorageHouse: ObjectId(el._id) },
+                { count: el.countOfProduct[0].count + el.count },
+                { new: true, useFindAndModify: false }
+            ).then(async (res) => {
+                check = check + 1;
+                if (check === product.length) {
+                    const BuyList = buyListSellSchema;
+                    return await BuyList.findOneAndUpdate(
+                        { _id: id },
+                        { status: "Returned" },
+                        { new: true, useFindAndModify: false },
+                        (err, res) => {
+                            if (err) return console.log(err);
+                        }
+                    );
+                }
+            });
+        });
+        return Promise.all(a).then((values) => {
+            return { status: values[values.length - 1].status, userId: values[values.length - 1].userId };
+        });
+    } catch (error) {
+        return { err: true, errMess: error };
+    }
+};
+
+const cancelProduct = async (product, id) => {
+    try {
+        const Storage = wereHouseSchema;
+        let check = 0;
+        let a = product.map(async (el) => {
+            return await Storage.findOneAndUpdate(
+                { idStorageHouse: ObjectId(el._id) },
+                { count: el.countOfProduct[0].count + el.count },
+                { new: true, useFindAndModify: false }
+            ).then(async (res) => {
+                check = check + 1;
+                if (check === product.length) {
+                    const BuyList = buyListSellSchema;
+                    return await BuyList.findOneAndUpdate(
+                        { _id: id },
+                        { status: "Canceled" },
+                        { new: true, useFindAndModify: false },
+                        (err, res) => {
+                            if (err) return console.log(err);
+                        }
+                    );
+                }
+            });
+        });
+        return Promise.all(a).then((values) => {
+            return { status: values[values.length - 1].status, userId: values[values.length - 1].userId };
+        });
+    } catch (error) {
+        return { err: true, errMess: error };
+    }
+};
+
 module.exports = {
     getProductTitle,
     getProductsSubtitle,
@@ -243,4 +317,7 @@ module.exports = {
     getProductsSell,
     verifyUser,
     deleteAccount,
+    getUser,
+    returnProduct,
+    cancelProduct,
 };

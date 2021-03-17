@@ -13,6 +13,12 @@
     display: flex;
     flex-direction: column;
 }
+.input {
+    background-color: rgb(153, 153, 153);
+    color: white;
+    padding: 10px;
+    border: none;
+}
 .login-submit,.sign-submit{
     margin-top: 20px;
     max-width: 100px;

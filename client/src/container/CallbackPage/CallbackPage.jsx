@@ -10,7 +10,6 @@ import { emailTest } from "./../../helpers/helpers";
 const CallbackPage = () => {
     const { id } = useParams();
     const user = useSelector((state) => state.user);
-    //--------login state
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPass, setLoginPass] = useState("");
     const [loginPassAgain, setLoginPassAgain] = useState("");
@@ -19,13 +18,13 @@ const CallbackPage = () => {
     const loginSubmit = () => {
         if (!emailTest.test(String(loginEmail).toLowerCase())) {
             setLocalErrL(true);
-            setLocalErrTextL("Your Email Fail");
+            setLocalErrTextL("Ваша електронна адреса неправильна");
         } else if (loginPass != loginPassAgain) {
             setLocalErrL(true);
-            setLocalErrTextL("Your password do not similar");
+            setLocalErrTextL("Паролі не співпадають");
         } else if (loginEmail == "" || loginPass == "" || loginPassAgain == "") {
             setLocalErrL(true);
-            setLocalErrTextL("enter All fields");
+            setLocalErrTextL("Заповніть всі поля");
         } else {
             API.post("/auth/login", { email: loginEmail, password: loginPass, username: "q" }).then((user) => {
                 if (user.status === 200 && id.slice(1) === user.data._id) {
@@ -36,7 +35,7 @@ const CallbackPage = () => {
     };
     return (
         <>
-            <TitlePager title="Verify Email" />
+            <TitlePager title="Підтвердження пошти" />
             <CallbackPageForm
                 loginSubmit={loginSubmit}
                 errMess={user.errMess}

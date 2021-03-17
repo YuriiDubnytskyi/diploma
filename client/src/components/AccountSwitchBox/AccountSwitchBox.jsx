@@ -1,28 +1,22 @@
-import React,{useEffect} from "react";
+import React from "react";
 import "./AccountSwitchBox.scss";
 
 const AccountSwitchBox = ({ showInfo, showSettings, showOrder, showInfoBox, showSettingsBox, showOrderBox }) => {
-    useEffect(()=>{
-        console.log('account switch render')
-        return () =>{
-            console.log('account switch unmount')
-        }
-    })
     return (
         <div className="account-switch account__switch">
             <div className="account-switch__content content">
-                <h3 className="content-title">Setting account</h3>
-                <p className="content-subtitle">You can change information</p>
+                <h3 className="content-title">Налаштування акаунту</h3>
+                <p className="content-subtitle">Ви можете переглядати і змінювати інформацію</p>
                 <hr />
                 <p className={`content-btn ${showInfo ? "active-content-btn" : ""}`} onClick={showInfoBox}>
-                    User Profile
+                    Інформація
                 </p>
                 <p className={`content-btn ${showSettings ? "active-content-btn" : ""}`} onClick={showSettingsBox}>
-                    User Setting
+                    Зміна інформації
                 </p>
 
                 <p className={`content-btn ${showOrder ? "active-content-btn" : ""}`} onClick={showOrderBox}>
-                    User Orders
+                    Покупки
                 </p>
             </div>
         </div>

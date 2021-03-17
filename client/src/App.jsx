@@ -3,7 +3,6 @@ import "./App.scss";
 import { BrowserRouter } from "react-router-dom";
 import ChatWidget from "@papercups-io/chat-widget";
 import Header from "./container/Header/Header";
-
 import Footer from "./components/Footer/Footer";
 import API from "./API/API";
 import { addUserSuccess } from "./store/actions/actionsUser";
@@ -16,7 +15,20 @@ const App = () => {
     useEffect(() => {
         API.get("/user/isAuth").then((res) => {
             if (res.data.status == 200) {
-                dispatch(addUserSuccess(res.data.user));
+                const { email, likeProducts, gender, name, surname, phone, age, emailVerify } = res.data.data.data[0];
+                dispatch(
+                    addUserSuccess({
+                        email,
+                        likeProducts,
+                        id: res.data.data.data[0]._id,
+                        gender,
+                        name,
+                        surname,
+                        phone,
+                        age,
+                        emailVerify,
+                    })
+                );
             }
         });
     }, []);

@@ -17,6 +17,8 @@ const {
     getProductsSell,
     verifyUser,
     deleteAccount,
+    getUser,
+    returnProduct,
 } = require("../services/userService.js");
 const nodemailer = require("nodemailer");
 const router = Router();
@@ -71,7 +73,14 @@ router.get("/isAuth", (req, res) => {
     if (req.session.passport === undefined) {
         res.json({ status: 400 });
     } else if (req.session.passport.user !== undefined) {
-        res.json({ status: 200, user: req.session.passport.user });
+        console.log(req.session.passport.user);
+        getUser(req.session.passport.user._id).then((data) => {
+            if (data.err) {
+                res.json({ err: true, errMess: data.errMess });
+            } else {
+                res.json({ data, status: 200 });
+            }
+        });
     }
 });
 
@@ -102,11 +111,10 @@ router.post("/sendText/", (req, res) => {
         to: process.env.EMAIL_ADRESS,
         subject: "Help",
         html: `
-        <p>Hi Messsege</p>
-        <p>Name ${options.name}</p>
+        <p>Імя ${options.name}</p>
         <p>Email ${options.email}</p>
-        <p>Title: ${options.title}</p>
-        <p>Text: ${options.text}</p>
+        <p>Тема: ${options.title}</p>
+        <p>Повідомлення: ${options.text}</p>
         `,
     };
     transporter.sendMail(mailOptions, function (error, info) {
@@ -135,9 +143,50 @@ router.put("/changeInfo", (req, res) => {
     const phone = req.body.phone;
     const gender = req.body.gender;
     const surname = req.body.surname;
-    const age = req.body.age;
+    const age = typeof Number(req.body.age) === "number" ? req.body.age : "";
+
     const id = req.body.id;
     updateUser(name, phone, gender, surname, age, id).then((data) => {
+        if (data.err) {
+            res.json({ err: true, errMess: data.errMess });
+        } else {
+            res.json(data);
+        }
+    });
+});
+
+router.put("/return", async (req, res) => {
+    const product = req.body.product;
+    const id = req.body.id;
+    let returnP = await returnProduct(product, id).then((data) =>
+        data.status === "Returned" ? data.userId : { err: true }
+    );
+    if (!returnP) {
+        return;
+    }
+
+    await getProductsSell(returnP).then((data) => {
+        console.log(data);
+        if (data.err) {
+            res.json({ err: true, errMess: data.errMess });
+        } else {
+            res.json(data);
+        }
+    });
+});
+
+router.put("/cancel", async (req, res) => {
+    const product = req.body.product;
+    const id = req.body.id;
+    let cancelP = await returnProduct(product, id).then((data) =>
+        data.status === "Canceled" ? data.userId : { err: true }
+    );
+    if (!cancelP) {
+        return;
+    }
+
+    await getProductsSell(cancelP).then((data) => {
+        console.log(data);
         if (data.err) {
             res.json({ err: true, errMess: data.errMess });
         } else {
@@ -223,7 +272,7 @@ router.post("/getProductsBucket/", (req, res) => {
     });
 });
 
-router.post("/buyProducts/", (req, res) => {
+router.post("/buyProducts/", async (req, res) => {
     const options = req.body.options;
     const products = req.body.products;
     const accessToken = oauth2Client.getAccessToken();
@@ -250,46 +299,50 @@ router.post("/buyProducts/", (req, res) => {
     const mailOptions = {
         from: process.env.EMAIL_ADRESS,
         to: `${options.email},${process.env.EMAIL_ADRESS}`,
-        subject: "Buy Check",
+        subject: "Покупки",
         html: `
-        <p>Hi this is your check list</p>
-        <p>Name ${options.name}</p>
-        <p>Surname ${options.surname}</p>
-        <p>Phone ${options.phone}</p>
-        <p>Adress City ${options.city}</p>
-        <p>Poshta ${options.novaPosta}</p>
-        <p>Note ${options.note}</p>
-        <p>You Buy</p>
+        <p>Вітаємо з покупками</p>
+        <p>Імя ${options.name}</p>
+        <p>Прізвище ${options.surname}</p>
+        <p>Телефон ${options.phone}</p>
+        <p>Адреса доставки ${options.city}</p>
+        <p>Відділення пошти ${options.novaPosta}</p>
+        <p>Побажання ${options.note}</p>
+        <p>Ви купили</p>
         ${products.productsBucket.map((el) => {
             return `
                     <div>
-                        <p>Name ${el.name}</p>
-                        <p>Price ${el.price}</p>
-                        <p>Count ${el.count}</p>
-                        <a href=${process.env.SERVER_API}product/${el._id}/:FromMyBilling/:${el.name}>More</a>
+                        <p>Назва товару ${el.name}</p>
+                        <p>Ціна товару ${el.price}</p>
+                        <p>Кількість товару ${el.count}</p>
+                        <a href=${process.env.SERVER_API}product/${el._id}/З покупок/${el.name}>Детальніше про товар</a>
                     </div>
                     `;
         })}
         `,
     };
     const adress = `${options.city} ${options.novaPosta}`;
-    createBuyListSell(options.id, options.email, products.productsBucket, adress);
+    let list = await createBuyListSell(options.id, options.email, products.productsBucket, adress);
 
-    sellCountCalculate(products);
+    let sell = await sellCountCalculate(products);
 
-    transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-            console.log(error);
-            res.json({ err: false, status: 404, comment: "User not found" });
-        } else {
-            res.json({ success: true });
-        }
-    });
+    if (list.success && sell.success) {
+        await transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+                res.json({ err: false, status: 404, comment: "User not found" });
+            } else {
+                res.json({ success: true });
+            }
+        });
+    } else {
+        res.json({ err: false, errMess: [list.errMess, sell.errMess] });
+    }
 });
 
-router.get("/getCountSellProducts/:email", (req, res) => {
-    const email = req.params.email;
-    getProductsSell(email).then((data) => {
+router.get("/getCountSellProducts/:id", (req, res) => {
+    const id = req.params.id;
+    getProductsSell(id).then((data) => {
         if (data.err) {
             res.json({ err: true, errMess: data.errMess });
         } else {
@@ -324,10 +377,10 @@ router.post("/emailVerify/", (req, res) => {
     const mailOptions = {
         from: process.env.EMAIL_ADRESS,
         to: `${email}`,
-        subject: "Verify Email",
+        subject: "Підтвердження пошти",
         html: `
-        <p>Hi please verify email</p>
-        <a href=${process.env.SERVER_API}callback/:${id}>Verify</a>
+        <p>Вітаю, будь-ласка підтвердіть електронну пошту.</p>
+        <a href=${process.env.SERVER_API}callback/:${id}>Підтвердити</a>
         `,
     };
 

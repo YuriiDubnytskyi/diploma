@@ -14,24 +14,35 @@
     font-size: 20px;
     font-weight: 700;
 }
-.settings-submit,
-.settings-reset {
-    background-color: #00c48c;
-    max-width: 200px;
-    padding: 10px 20px;
-    text-align: center;
-    color: #ffffff;
+.input {
+    background-color: rgb(153, 153, 153);
+    color: white;
+    padding: 10px;
+    border: none;
+}
+.settings-btn__container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
 
-    &:hover {
-        cursor: pointer;
-        color: #00c48c;
-        background-color: #ffffff;
-        font-weight: 600;
-        padding: 9px 20px;
-        border: 1px solid #00c48c;
+    .settings-submit,
+    .settings-reset {
+        background-color: #00c48c;
+        max-width: 200px;
+        padding: 10px 20px;
+        text-align: center;
+        color: #ffffff;
+
+        &:hover {
+            cursor: pointer;
+            color: #00c48c;
+            background-color: #ffffff;
+            font-weight: 600;
+            padding: 9px 20px;
+            border: 1px solid #00c48c;
+        }
     }
 }
-
 .settings-user-name,
 .settings-user-surename,
 .settings-user-email,
@@ -47,23 +58,75 @@
 .setting-box-options {
     display: flex;
     flex-direction: column;
-    max-width: 35%;
-    width: 100%;
-    margin: 30px 0 10px;
+    max-width: 100%;
+    width: 35%;
+    margin: auto 0;
 }
 .settings-box-danger {
     margin-top: 30px;
-    border: 1px solid rgb(207, 0, 0);
     padding: 10px;
+    text-align: center;
     background-color: rgba(235, 0, 0, 0.678);
 }
 .delete-account-btn {
     background-color: rgb(105, 17, 17);
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    text-align: center;
     color: #ffffff;
+    border-radius: 20px;
+    margin-top: 10px;
+
     &:hover {
         cursor: pointer;
+        background-color: lighten($color: rgb(105, 17, 17), $amount: 20);
     }
 }
 .settings-box-email {
-    background-color: rgb(81, 55, 124);
+    background-color: rgba(81, 55, 124, 0.6);
+    padding: 15px;
+    text-align: center;
+
+    .email-support-text {
+        padding: 5px 0 15px;
+    }
+    .email-support-btn {
+        background-color: #00c48c;
+        max-width: 100px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        text-align: center;
+        color: #ffffff;
+        border-radius: 20px;
+
+        &:hover {
+            cursor: pointer;
+            color: #00c48c;
+            background-color: #ffffff;
+            font-weight: 600;
+            padding: 9px 20px;
+            border: 1px solid #00c48c;
+        }
+    }
+}
+
+@media screen and (max-width: "501px") {
+    .account__settings {
+        width: 100%;
+        margin: 0 auto;
+        border: none;
+        flex-direction: column;
+
+        .setting-box-options {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+
+            .settings-box-danger {
+                margin: 0;
+            }
+        }
+    }
 }

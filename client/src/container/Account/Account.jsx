@@ -48,32 +48,33 @@ const Account = () => {
 
     const [newName, setNewName] = useState(name);
     const [newSurname, setNewSurname] = useState(surname);
-    const [newGender, setNewGender] = useState(gender);
-    const [newAge, setNewAge] = useState(age);
-    const [newPhone, setNewPhone] = useState(phone);
+    const [newGender, setNewGender] = useState(gender || "");
+    const [newAge, setNewAge] = useState(age === null ? "" : age);
+    const [newPhone, setNewPhone] = useState(phone || "");
 
-    const saveChange = useCallback(() => {
+    const saveChange = () => {
         const user = {
-            name: newName || name,
-            surname: newSurname || surname,
-            gender: newGender || gender,
-            age: newAge || age,
-            phone: newPhone || phone,
+            name: newName,
+            surname: newSurname,
+            gender: newGender,
+            age: newAge,
+            phone: newPhone,
             id: id,
         };
 
         API.put("/user/changeInfo", user).then((res) => {
             dispatch(addUserSuccess(res.data.data));
+            showInfoBox();
         });
-    }, []);
+    };
 
-    const resetChange = useCallback(() => {
+    const resetChange = () => {
         setNewName(name);
         setNewSurname(surname);
         setNewGender(gender);
         setNewAge(age);
         setNewPhone(phone);
-    }, []);
+    };
 
     const [sendEmail, setSetEmail] = useState(false);
 
@@ -87,15 +88,20 @@ const Account = () => {
         dispatch(removeUser());
     }, []);
 
-    const setNewNameChange = useCallback((e) => setNewName(e.target.value), []);
-    const setNewSurnameChange = useCallback((e) => setNewSurname(e.target.value), []);
-    const setNewGenderChange = useCallback((e) => setNewGender(e.target.value), []);
-    const setNewAgeChange = useCallback((e) => setNewAge(Number(e.target.value)), []);
-    const setNewPhoneChange = useCallback((e) => setNewPhone(e.target.value), []);
+    const cancelBuy = (product, id) => {
+        API.put("/user/cancel", { product, id }).then((res) => {
+            setData(res.data.data);
+        });
+    };
+    const returnBuy = (product, id) => {
+        API.put("/user/return", { product, id }).then((res) => {
+            setData(res.data.data);
+        });
+    };
 
     return (
         <div className="account-wrapper">
-            <TitlePager title="Account" />
+            <TitlePager title="Особистий кабінет" />
             <div className="account__container account">
                 <AccountSwitchBox
                     showInfo={showInfo}
@@ -121,11 +127,11 @@ const Account = () => {
                         newSurname={newSurname}
                         newGender={newGender}
                         newAge={newAge}
-                        setNewName={setNewNameChange}
-                        setNewSurname={setNewSurnameChange}
-                        setNewGender={setNewGenderChange}
-                        setNewAge={setNewAgeChange}
-                        setNewPhone={setNewPhoneChange}
+                        setNewName={(e) => setNewName(e.target.value)}
+                        setNewSurname={(e) => setNewSurname(e.target.value)}
+                        setNewGender={(e) => setNewGender(e.target.value)}
+                        setNewAge={(e) => setNewAge(e.target.value)}
+                        setNewPhone={(e) => setNewPhone(e.target.value)}
                         saveChange={saveChange}
                         goVerify={goVerify}
                         deleteAccount={deleteAccount}
@@ -134,7 +140,7 @@ const Account = () => {
                 ) : (
                     <></>
                 )}
-                {showOrder ? <AccountOrders data={data} /> : <></>}
+                {showOrder ? <AccountOrders cancelBuy={cancelBuy} returnBuy={returnBuy} data={data} /> : <></>}
             </div>
         </div>
     );

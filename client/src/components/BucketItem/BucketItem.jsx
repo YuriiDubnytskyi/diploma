@@ -6,8 +6,8 @@ const BucketItem = ({ img, name, price, count, plus, minus, key, deleteItem }) =
         <div className="bucket-list__item item-bucket" key={key}>
             <img src={img} />
             <div className="item-bucket__info">
-                <h3 className="item-bucket__title">Найменування товару -- {name}</h3>
-                <p className="item-bucket__price">Ціна -- {price}</p>
+                <h3 className="item-bucket__title">Назва товару - {name}</h3>
+                <p className="item-bucket__price">Ціна - {price}</p>
             </div>
             <div className="item-bucket__btn">
                 <button className="btn-bucket" onClick={plus}>
