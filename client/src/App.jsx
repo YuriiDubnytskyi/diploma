@@ -15,17 +15,18 @@ const App = () => {
     useEffect(() => {
         API.get("/user/isAuth").then((res) => {
             if (res.data.status == 200) {
+                const { email, likeProducts, gender, name, surname, phone, age, emailVerify } = res.data.data.data[0];
                 dispatch(
                     addUserSuccess({
-                        email: res.data.user.email,
-                        likeProducts: res.data.user.likeProducts,
-                        id: res.data.user._id,
-                        gender: res.data.user.gender,
-                        name: res.data.user.name,
-                        surname: res.data.user.surname,
-                        phone: res.data.user.phone,
-                        age: res.data.user.age,
-                        emailVerify: res.data.user.emailVerify,
+                        email,
+                        likeProducts,
+                        id: res.data.data.data[0]._id,
+                        gender,
+                        name,
+                        surname,
+                        phone,
+                        age,
+                        emailVerify,
                     })
                 );
             }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./AccountSwitchBox.scss";
 
 const AccountSwitchBox = ({ showInfo, showSettings, showOrder, showInfoBox, showSettingsBox, showOrderBox }) => {

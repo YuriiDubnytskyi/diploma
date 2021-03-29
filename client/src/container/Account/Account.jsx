@@ -49,7 +49,7 @@ const Account = () => {
     const [newName, setNewName] = useState(name);
     const [newSurname, setNewSurname] = useState(surname);
     const [newGender, setNewGender] = useState(gender || "");
-    const [newAge, setNewAge] = useState(age || "");
+    const [newAge, setNewAge] = useState(age === null ? "" : age);
     const [newPhone, setNewPhone] = useState(phone || "");
 
     const saveChange = () => {
@@ -87,6 +87,17 @@ const Account = () => {
         API.delete("/user/deleteAccount/" + id);
         dispatch(removeUser());
     }, []);
+
+    const cancelBuy = (product, id) => {
+        API.put("/user/cancel", { product, id }).then((res) => {
+            setData(res.data.data);
+        });
+    };
+    const returnBuy = (product, id) => {
+        API.put("/user/return", { product, id }).then((res) => {
+            setData(res.data.data);
+        });
+    };
 
     return (
         <div className="account-wrapper">
@@ -129,7 +140,7 @@ const Account = () => {
                 ) : (
                     <></>
                 )}
-                {showOrder ? <AccountOrders data={data} /> : <></>}
+                {showOrder ? <AccountOrders cancelBuy={cancelBuy} returnBuy={returnBuy} data={data} /> : <></>}
             </div>
         </div>
     );

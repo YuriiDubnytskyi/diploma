@@ -15,6 +15,8 @@ const LoginForm = (props) => {
                 <div className="login-user-email">
                     <label>Ваша пошта</label>
                     <input
+                        type="email"
+                        name="email"
                         className="input input--login-email"
                         onChange={props.setLoginEmail}
                         value={props.loginEmail}
@@ -55,8 +57,14 @@ const LoginForm = (props) => {
             </div>
             <div className="sign__form">
                 <div className="sign-user-email">
-                    <label>Пошта</label>
-                    <input className="input input--sign-email" onChange={props.setSignEmail} value={props.signEmail} />
+                    <label for="email">Пошта</label>
+                    <input
+                        type="email"
+                        name="email"
+                        className="input input--sign-email"
+                        onChange={props.setSignEmail}
+                        value={props.signEmail}
+                    />
                 </div>
                 <div className="sign-user-name">
                     <label>Імя</label>

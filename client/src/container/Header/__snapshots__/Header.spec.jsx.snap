@@ -1,0 +1,1476 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Header with auth Should contain render with auth false  1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Memo(Header)>
+      <div>
+        <Memo(TopHeader)
+          auth={false}
+          logOut={[Function]}
+          setHeader={[Function]}
+        >
+          <div
+            className="top-header__container top-header"
+          >
+            <div
+              className="top-header__content content-top"
+            >
+              <div
+                className="content-top__call call-support"
+              >
+                <p
+                  className="call-support__info"
+                >
+                  Вітаємо Вас в нашому магазині. Є питання ? Подзвоніть
+                  <a
+                    className="call-support__phone"
+                    href="tel:0687516148"
+                  >
+                     
+                    +38 068 75 16 148
+                     
+                  </a>
+                </p>
+                <p
+                  className="call-support__info--responce"
+                >
+                  Vulka Electronic
+                </p>
+              </div>
+              <div
+                className="content-top__auth auth"
+              >
+                <Link
+                  className="auth-login"
+                  to="/login"
+                >
+                  <LinkAnchor
+                    className="auth-login"
+                    href="/login"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="auth-login"
+                      href="/login"
+                      onClick={[Function]}
+                    >
+                      Увійти в кабінет
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  className="auth-sign"
+                  to="/login"
+                >
+                  <LinkAnchor
+                    className="auth-sign"
+                    href="/login"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="auth-sign"
+                      href="/login"
+                      onClick={[Function]}
+                    >
+                      Зареєструватись
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </div>
+              <div
+                className="content-top__menu"
+                onClick={[Function]}
+              >
+                <span
+                  className="line1"
+                />
+                <span
+                  className="line2"
+                />
+                <span
+                  className="line3"
+                />
+              </div>
+            </div>
+          </div>
+        </Memo(TopHeader)>
+        <Memo(BottonHeader)
+          searchSubmit={[Function]}
+          searchValue=""
+          setSearchValue={[Function]}
+        >
+          <div
+            className="botton-header__container botton-header"
+          >
+            <div
+              className="botton-header__content content-botton"
+            >
+              <div
+                className="content-botton__logo header-logo"
+              >
+                <p
+                  className="header-logo__text"
+                >
+                  Vulka Electronic
+                </p>
+              </div>
+              <div
+                className="content-botton__nav header-nav"
+              >
+                <nav
+                  className="header-nav__navigation navigation"
+                >
+                  <Link
+                    className="navigation-link"
+                    to="/"
+                  >
+                    <LinkAnchor
+                      className="navigation-link"
+                      href="/"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="navigation-link"
+                        href="/"
+                        onClick={[Function]}
+                      >
+                        Головна
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="navigation-link"
+                    to="/categorie"
+                  >
+                    <LinkAnchor
+                      className="navigation-link"
+                      href="/categorie"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="navigation-link"
+                        href="/categorie"
+                        onClick={[Function]}
+                      >
+                        Категорії
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="navigation-link"
+                    to="/contact"
+                  >
+                    <LinkAnchor
+                      className="navigation-link"
+                      href="/contact"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="navigation-link"
+                        href="/contact"
+                        onClick={[Function]}
+                      >
+                        Звяжіться з нами
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="navigation-link"
+                    to="/blog"
+                  >
+                    <LinkAnchor
+                      className="navigation-link"
+                      href="/blog"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="navigation-link"
+                        href="/blog"
+                        onClick={[Function]}
+                      >
+                        Новини & Блог
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                </nav>
+              </div>
+              <div
+                className="content-botton__btns btns-container"
+              >
+                <input
+                  className="btns-container__input"
+                  onChange={[Function]}
+                  placeholder="Пошук..."
+                  value=""
+                />
+                <i
+                  className="fa fa-search"
+                  onClick={[Function]}
+                />
+                <Link
+                  className="btns-container-link"
+                  to="/like"
+                >
+                  <LinkAnchor
+                    className="btns-container-link"
+                    href="/like"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="btns-container-link"
+                      href="/like"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fa fa-heart"
+                      />
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  className="btns-container-link"
+                  to="/bucket"
+                >
+                  <LinkAnchor
+                    className="btns-container-link"
+                    href="/bucket"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="btns-container-link"
+                      href="/bucket"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fa fa-shopping-bag"
+                      />
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Memo(BottonHeader)>
+        <Memo(SideDrawer)
+          auth={false}
+          logOut={[Function]}
+          searchSubmit={[Function]}
+          searchValue=""
+          setSearchValue={[Function]}
+          show={false}
+        >
+          <div
+            className="side-drawer"
+          >
+            <div
+              className="side-drawer__content content-sider"
+            >
+              <div
+                className="side-drawer__logo side-drawer-logo"
+              >
+                <p
+                  className="side-drawer__text"
+                >
+                  Vulka Electronic
+                </p>
+              </div>
+              <div
+                className="side-drawer__search"
+              >
+                <div>
+                  <input
+                    className="side-drawer__input"
+                    onChange={[Function]}
+                    placeholder="Пошук..."
+                    value=""
+                  />
+                  <i
+                    className="fa fa-search side-drawer-btns-search"
+                    onClick={[Function]}
+                  />
+                </div>
+              </div>
+              <div
+                className="side-drawer__nav side-drawer-nav"
+              >
+                <nav
+                  className="side-drawer__navigation side-drawer-navigation"
+                >
+                  <Link
+                    className="side-drawer-navigation__link"
+                    to="/"
+                  >
+                    <LinkAnchor
+                      className="side-drawer-navigation__link"
+                      href="/"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="side-drawer-navigation__link"
+                        href="/"
+                        onClick={[Function]}
+                      >
+                        Головна
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="side-drawer-navigation__link"
+                    to="/categorie"
+                  >
+                    <LinkAnchor
+                      className="side-drawer-navigation__link"
+                      href="/categorie"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="side-drawer-navigation__link"
+                        href="/categorie"
+                        onClick={[Function]}
+                      >
+                        Категорія
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="side-drawer-navigation__link"
+                    to="/contact"
+                  >
+                    <LinkAnchor
+                      className="side-drawer-navigation__link"
+                      href="/contact"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="side-drawer-navigation__link"
+                        href="/contact"
+                        onClick={[Function]}
+                      >
+                        Звяжіться з нами
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="side-drawer-navigation__link "
+                    to="/blog"
+                  >
+                    <LinkAnchor
+                      className="side-drawer-navigation__link "
+                      href="/blog"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="side-drawer-navigation__link "
+                        href="/blog"
+                        onClick={[Function]}
+                      >
+                        Новини & Блог
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <div
+                    className="auth__links"
+                  >
+                    <Link
+                      className="side-auth-login side-drawer-navigation__link"
+                      to="/login"
+                    >
+                      <LinkAnchor
+                        className="side-auth-login side-drawer-navigation__link"
+                        href="/login"
+                        navigate={[Function]}
+                      >
+                        <a
+                          className="side-auth-login side-drawer-navigation__link"
+                          href="/login"
+                          onClick={[Function]}
+                        >
+                          Увійти в кабінет
+                        </a>
+                      </LinkAnchor>
+                    </Link>
+                    <Link
+                      className="side-auth-sign side-drawer-navigation__link"
+                      to="/login"
+                    >
+                      <LinkAnchor
+                        className="side-auth-sign side-drawer-navigation__link"
+                        href="/login"
+                        navigate={[Function]}
+                      >
+                        <a
+                          className="side-auth-sign side-drawer-navigation__link"
+                          href="/login"
+                          onClick={[Function]}
+                        >
+                          Зареєструватись
+                        </a>
+                      </LinkAnchor>
+                    </Link>
+                  </div>
+                </nav>
+              </div>
+              <div
+                className="side-drawer__btns side-drawer-btns"
+              >
+                <Link
+                  className="side-drawer-btns-container-link"
+                  to="/like"
+                >
+                  <LinkAnchor
+                    className="side-drawer-btns-container-link"
+                    href="/like"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="side-drawer-btns-container-link"
+                      href="/like"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fa fa-heart"
+                      />
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  className="side-drawer-btns-container-link"
+                  to="/bucket"
+                >
+                  <LinkAnchor
+                    className="side-drawer-btns-container-link"
+                    href="/bucket"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="side-drawer-btns-container-link"
+                      href="/bucket"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fa fa-shopping-bag"
+                      />
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Memo(SideDrawer)>
+      </div>
+    </Memo(Header)>
+  </Router>
+</BrowserRouter>
+`;
+
+exports[`Test Header with auth Should contain render with auth true  1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Memo(Header)>
+      <div>
+        <Memo(TopHeader)
+          auth={true}
+          logOut={[Function]}
+          setHeader={[Function]}
+        >
+          <div
+            className="top-header__container top-header"
+          >
+            <div
+              className="top-header__content content-top"
+            >
+              <div
+                className="content-top__call call-support"
+              >
+                <p
+                  className="call-support__info"
+                >
+                  Вітаємо Вас в нашому магазині. Є питання ? Подзвоніть
+                  <a
+                    className="call-support__phone"
+                    href="tel:0687516148"
+                  >
+                     
+                    +38 068 75 16 148
+                     
+                  </a>
+                </p>
+                <p
+                  className="call-support__info--responce"
+                >
+                  Vulka Electronic
+                </p>
+              </div>
+              <div
+                className="content-top__auth auth"
+              >
+                <Link
+                  className="auth-account"
+                  to="/account"
+                >
+                  <LinkAnchor
+                    className="auth-account"
+                    href="/account"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="auth-account"
+                      href="/account"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fa fa-user-circle"
+                      />
+                      Акаунт
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  className="auth-logout"
+                  onClick={[Function]}
+                  to="/login"
+                >
+                  <LinkAnchor
+                    className="auth-logout"
+                    href="/login"
+                    navigate={[Function]}
+                    onClick={[Function]}
+                  >
+                    <a
+                      className="auth-logout"
+                      href="/login"
+                      onClick={[Function]}
+                    >
+                      <i
+                        class="fa fa-sign-out"
+                      />
+                      Вийти
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </div>
+              <div
+                className="content-top__menu"
+                onClick={[Function]}
+              >
+                <span
+                  className="line1"
+                />
+                <span
+                  className="line2"
+                />
+                <span
+                  className="line3"
+                />
+              </div>
+            </div>
+          </div>
+        </Memo(TopHeader)>
+        <Memo(BottonHeader)
+          searchSubmit={[Function]}
+          searchValue=""
+          setSearchValue={[Function]}
+        >
+          <div
+            className="botton-header__container botton-header"
+          >
+            <div
+              className="botton-header__content content-botton"
+            >
+              <div
+                className="content-botton__logo header-logo"
+              >
+                <p
+                  className="header-logo__text"
+                >
+                  Vulka Electronic
+                </p>
+              </div>
+              <div
+                className="content-botton__nav header-nav"
+              >
+                <nav
+                  className="header-nav__navigation navigation"
+                >
+                  <Link
+                    className="navigation-link"
+                    to="/"
+                  >
+                    <LinkAnchor
+                      className="navigation-link"
+                      href="/"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="navigation-link"
+                        href="/"
+                        onClick={[Function]}
+                      >
+                        Головна
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="navigation-link"
+                    to="/categorie"
+                  >
+                    <LinkAnchor
+                      className="navigation-link"
+                      href="/categorie"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="navigation-link"
+                        href="/categorie"
+                        onClick={[Function]}
+                      >
+                        Категорії
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="navigation-link"
+                    to="/contact"
+                  >
+                    <LinkAnchor
+                      className="navigation-link"
+                      href="/contact"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="navigation-link"
+                        href="/contact"
+                        onClick={[Function]}
+                      >
+                        Звяжіться з нами
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="navigation-link"
+                    to="/blog"
+                  >
+                    <LinkAnchor
+                      className="navigation-link"
+                      href="/blog"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="navigation-link"
+                        href="/blog"
+                        onClick={[Function]}
+                      >
+                        Новини & Блог
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                </nav>
+              </div>
+              <div
+                className="content-botton__btns btns-container"
+              >
+                <input
+                  className="btns-container__input"
+                  onChange={[Function]}
+                  placeholder="Пошук..."
+                  value=""
+                />
+                <i
+                  className="fa fa-search"
+                  onClick={[Function]}
+                />
+                <Link
+                  className="btns-container-link"
+                  to="/like"
+                >
+                  <LinkAnchor
+                    className="btns-container-link"
+                    href="/like"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="btns-container-link"
+                      href="/like"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fa fa-heart"
+                      />
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  className="btns-container-link"
+                  to="/bucket"
+                >
+                  <LinkAnchor
+                    className="btns-container-link"
+                    href="/bucket"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="btns-container-link"
+                      href="/bucket"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fa fa-shopping-bag"
+                      />
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Memo(BottonHeader)>
+        <Memo(SideDrawer)
+          auth={true}
+          logOut={[Function]}
+          searchSubmit={[Function]}
+          searchValue=""
+          setSearchValue={[Function]}
+          show={false}
+        >
+          <div
+            className="side-drawer"
+          >
+            <div
+              className="side-drawer__content content-sider"
+            >
+              <div
+                className="side-drawer__logo side-drawer-logo"
+              >
+                <p
+                  className="side-drawer__text"
+                >
+                  Vulka Electronic
+                </p>
+              </div>
+              <div
+                className="side-drawer__search"
+              >
+                <div>
+                  <input
+                    className="side-drawer__input"
+                    onChange={[Function]}
+                    placeholder="Пошук..."
+                    value=""
+                  />
+                  <i
+                    className="fa fa-search side-drawer-btns-search"
+                    onClick={[Function]}
+                  />
+                </div>
+              </div>
+              <div
+                className="side-drawer__nav side-drawer-nav"
+              >
+                <nav
+                  className="side-drawer__navigation side-drawer-navigation"
+                >
+                  <Link
+                    className="side-drawer-navigation__link"
+                    to="/"
+                  >
+                    <LinkAnchor
+                      className="side-drawer-navigation__link"
+                      href="/"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="side-drawer-navigation__link"
+                        href="/"
+                        onClick={[Function]}
+                      >
+                        Головна
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="side-drawer-navigation__link"
+                    to="/categorie"
+                  >
+                    <LinkAnchor
+                      className="side-drawer-navigation__link"
+                      href="/categorie"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="side-drawer-navigation__link"
+                        href="/categorie"
+                        onClick={[Function]}
+                      >
+                        Категорія
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="side-drawer-navigation__link"
+                    to="/contact"
+                  >
+                    <LinkAnchor
+                      className="side-drawer-navigation__link"
+                      href="/contact"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="side-drawer-navigation__link"
+                        href="/contact"
+                        onClick={[Function]}
+                      >
+                        Звяжіться з нами
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="side-drawer-navigation__link "
+                    to="/blog"
+                  >
+                    <LinkAnchor
+                      className="side-drawer-navigation__link "
+                      href="/blog"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="side-drawer-navigation__link "
+                        href="/blog"
+                        onClick={[Function]}
+                      >
+                        Новини & Блог
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="side-auth-account side-drawer-navigation__link"
+                    to="/account"
+                  >
+                    <LinkAnchor
+                      className="side-auth-account side-drawer-navigation__link"
+                      href="/account"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="side-auth-account side-drawer-navigation__link"
+                        href="/account"
+                        onClick={[Function]}
+                      >
+                        <i
+                          className="fa fa-user-circle"
+                        />
+                        Акаунт
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="side-auth-logout side-drawer-navigation__link"
+                    onClick={[Function]}
+                    to="/"
+                  >
+                    <LinkAnchor
+                      className="side-auth-logout side-drawer-navigation__link"
+                      href="/"
+                      navigate={[Function]}
+                      onClick={[Function]}
+                    >
+                      <a
+                        className="side-auth-logout side-drawer-navigation__link"
+                        href="/"
+                        onClick={[Function]}
+                      >
+                        <i
+                          class="fa fa-sign-out"
+                        />
+                        Вийти
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                </nav>
+              </div>
+              <div
+                className="side-drawer__btns side-drawer-btns"
+              >
+                <Link
+                  className="side-drawer-btns-container-link"
+                  to="/like"
+                >
+                  <LinkAnchor
+                    className="side-drawer-btns-container-link"
+                    href="/like"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="side-drawer-btns-container-link"
+                      href="/like"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fa fa-heart"
+                      />
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  className="side-drawer-btns-container-link"
+                  to="/bucket"
+                >
+                  <LinkAnchor
+                    className="side-drawer-btns-container-link"
+                    href="/bucket"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="side-drawer-btns-container-link"
+                      href="/bucket"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fa fa-shopping-bag"
+                      />
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Memo(SideDrawer)>
+      </div>
+    </Memo(Header)>
+  </Router>
+</BrowserRouter>
+`;
+
+exports[`Test Header with auth Should contain render with backdrop  1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Memo(Header)>
+      <div>
+        <Memo(TopHeader)
+          auth={false}
+          logOut={[Function]}
+          setHeader={[Function]}
+        >
+          <div
+            className="top-header__container top-header"
+          >
+            <div
+              className="top-header__content content-top"
+            >
+              <div
+                className="content-top__call call-support"
+              >
+                <p
+                  className="call-support__info"
+                >
+                  Вітаємо Вас в нашому магазині. Є питання ? Подзвоніть
+                  <a
+                    className="call-support__phone"
+                    href="tel:0687516148"
+                  >
+                     
+                    +38 068 75 16 148
+                     
+                  </a>
+                </p>
+                <p
+                  className="call-support__info--responce"
+                >
+                  Vulka Electronic
+                </p>
+              </div>
+              <div
+                className="content-top__auth auth"
+              >
+                <Link
+                  className="auth-login"
+                  to="/login"
+                >
+                  <LinkAnchor
+                    className="auth-login"
+                    href="/login"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="auth-login"
+                      href="/login"
+                      onClick={[Function]}
+                    >
+                      Увійти в кабінет
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  className="auth-sign"
+                  to="/login"
+                >
+                  <LinkAnchor
+                    className="auth-sign"
+                    href="/login"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="auth-sign"
+                      href="/login"
+                      onClick={[Function]}
+                    >
+                      Зареєструватись
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </div>
+              <div
+                className="content-top__menu"
+                onClick={[Function]}
+              >
+                <span
+                  className="line1"
+                />
+                <span
+                  className="line2"
+                />
+                <span
+                  className="line3"
+                />
+              </div>
+            </div>
+          </div>
+        </Memo(TopHeader)>
+        <Memo(BottonHeader)
+          searchSubmit={[Function]}
+          searchValue=""
+          setSearchValue={[Function]}
+        >
+          <div
+            className="botton-header__container botton-header"
+          >
+            <div
+              className="botton-header__content content-botton"
+            >
+              <div
+                className="content-botton__logo header-logo"
+              >
+                <p
+                  className="header-logo__text"
+                >
+                  Vulka Electronic
+                </p>
+              </div>
+              <div
+                className="content-botton__nav header-nav"
+              >
+                <nav
+                  className="header-nav__navigation navigation"
+                >
+                  <Link
+                    className="navigation-link"
+                    to="/"
+                  >
+                    <LinkAnchor
+                      className="navigation-link"
+                      href="/"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="navigation-link"
+                        href="/"
+                        onClick={[Function]}
+                      >
+                        Головна
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="navigation-link"
+                    to="/categorie"
+                  >
+                    <LinkAnchor
+                      className="navigation-link"
+                      href="/categorie"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="navigation-link"
+                        href="/categorie"
+                        onClick={[Function]}
+                      >
+                        Категорії
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="navigation-link"
+                    to="/contact"
+                  >
+                    <LinkAnchor
+                      className="navigation-link"
+                      href="/contact"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="navigation-link"
+                        href="/contact"
+                        onClick={[Function]}
+                      >
+                        Звяжіться з нами
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="navigation-link"
+                    to="/blog"
+                  >
+                    <LinkAnchor
+                      className="navigation-link"
+                      href="/blog"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="navigation-link"
+                        href="/blog"
+                        onClick={[Function]}
+                      >
+                        Новини & Блог
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                </nav>
+              </div>
+              <div
+                className="content-botton__btns btns-container"
+              >
+                <input
+                  className="btns-container__input"
+                  onChange={[Function]}
+                  placeholder="Пошук..."
+                  value=""
+                />
+                <i
+                  className="fa fa-search"
+                  onClick={[Function]}
+                />
+                <Link
+                  className="btns-container-link"
+                  to="/like"
+                >
+                  <LinkAnchor
+                    className="btns-container-link"
+                    href="/like"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="btns-container-link"
+                      href="/like"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fa fa-heart"
+                      />
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  className="btns-container-link"
+                  to="/bucket"
+                >
+                  <LinkAnchor
+                    className="btns-container-link"
+                    href="/bucket"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="btns-container-link"
+                      href="/bucket"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fa fa-shopping-bag"
+                      />
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Memo(BottonHeader)>
+        <Memo(SideDrawer)
+          auth={false}
+          logOut={[Function]}
+          searchSubmit={[Function]}
+          searchValue=""
+          setSearchValue={[Function]}
+          show={true}
+        >
+          <div
+            className="side-drawer open"
+          >
+            <div
+              className="side-drawer__content content-sider"
+            >
+              <div
+                className="side-drawer__logo side-drawer-logo"
+              >
+                <p
+                  className="side-drawer__text"
+                >
+                  Vulka Electronic
+                </p>
+              </div>
+              <div
+                className="side-drawer__search"
+              >
+                <div>
+                  <input
+                    className="side-drawer__input"
+                    onChange={[Function]}
+                    placeholder="Пошук..."
+                    value=""
+                  />
+                  <i
+                    className="fa fa-search side-drawer-btns-search"
+                    onClick={[Function]}
+                  />
+                </div>
+              </div>
+              <div
+                className="side-drawer__nav side-drawer-nav"
+              >
+                <nav
+                  className="side-drawer__navigation side-drawer-navigation"
+                >
+                  <Link
+                    className="side-drawer-navigation__link"
+                    to="/"
+                  >
+                    <LinkAnchor
+                      className="side-drawer-navigation__link"
+                      href="/"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="side-drawer-navigation__link"
+                        href="/"
+                        onClick={[Function]}
+                      >
+                        Головна
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="side-drawer-navigation__link"
+                    to="/categorie"
+                  >
+                    <LinkAnchor
+                      className="side-drawer-navigation__link"
+                      href="/categorie"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="side-drawer-navigation__link"
+                        href="/categorie"
+                        onClick={[Function]}
+                      >
+                        Категорія
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="side-drawer-navigation__link"
+                    to="/contact"
+                  >
+                    <LinkAnchor
+                      className="side-drawer-navigation__link"
+                      href="/contact"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="side-drawer-navigation__link"
+                        href="/contact"
+                        onClick={[Function]}
+                      >
+                        Звяжіться з нами
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <Link
+                    className="side-drawer-navigation__link "
+                    to="/blog"
+                  >
+                    <LinkAnchor
+                      className="side-drawer-navigation__link "
+                      href="/blog"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="side-drawer-navigation__link "
+                        href="/blog"
+                        onClick={[Function]}
+                      >
+                        Новини & Блог
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                  <div
+                    className="auth__links"
+                  >
+                    <Link
+                      className="side-auth-login side-drawer-navigation__link"
+                      to="/login"
+                    >
+                      <LinkAnchor
+                        className="side-auth-login side-drawer-navigation__link"
+                        href="/login"
+                        navigate={[Function]}
+                      >
+                        <a
+                          className="side-auth-login side-drawer-navigation__link"
+                          href="/login"
+                          onClick={[Function]}
+                        >
+                          Увійти в кабінет
+                        </a>
+                      </LinkAnchor>
+                    </Link>
+                    <Link
+                      className="side-auth-sign side-drawer-navigation__link"
+                      to="/login"
+                    >
+                      <LinkAnchor
+                        className="side-auth-sign side-drawer-navigation__link"
+                        href="/login"
+                        navigate={[Function]}
+                      >
+                        <a
+                          className="side-auth-sign side-drawer-navigation__link"
+                          href="/login"
+                          onClick={[Function]}
+                        >
+                          Зареєструватись
+                        </a>
+                      </LinkAnchor>
+                    </Link>
+                  </div>
+                </nav>
+              </div>
+              <div
+                className="side-drawer__btns side-drawer-btns"
+              >
+                <Link
+                  className="side-drawer-btns-container-link"
+                  to="/like"
+                >
+                  <LinkAnchor
+                    className="side-drawer-btns-container-link"
+                    href="/like"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="side-drawer-btns-container-link"
+                      href="/like"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fa fa-heart"
+                      />
+                    </a>
+                  </LinkAnchor>
+                </Link>
+                <Link
+                  className="side-drawer-btns-container-link"
+                  to="/bucket"
+                >
+                  <LinkAnchor
+                    className="side-drawer-btns-container-link"
+                    href="/bucket"
+                    navigate={[Function]}
+                  >
+                    <a
+                      className="side-drawer-btns-container-link"
+                      href="/bucket"
+                      onClick={[Function]}
+                    >
+                      <i
+                        className="fa fa-shopping-bag"
+                      />
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Memo(SideDrawer)>
+        <Memo(Backdrop)
+          click={[Function]}
+        >
+          <div
+            className="backdrop"
+            onClick={[Function]}
+          />
+        </Memo(Backdrop)>
+      </div>
+    </Memo(Header)>
+  </Router>
+</BrowserRouter>
+`;

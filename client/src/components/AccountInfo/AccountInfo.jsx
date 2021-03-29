@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./AccountInfo.scss";
 
 const AccountInfo = ({ email, name, surname, gender, age, phone }) => {

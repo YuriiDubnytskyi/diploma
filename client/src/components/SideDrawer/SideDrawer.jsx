@@ -39,7 +39,10 @@ const SideDrawer = (props) => {
                                 <Link className="side-auth-account side-drawer-navigation__link" to="/account">
                                     <i className="fa fa-user-circle"></i>Акаунт
                                 </Link>
-                                <Link className="side-auth-logout side-drawer-navigation__link" onClick={props.logOut}>
+                                <Link
+                                    className="side-auth-logout side-drawer-navigation__link"
+                                    to="/"
+                                    onClick={props.logOut}>
                                     <i class="fa fa-sign-out"></i>Вийти
                                 </Link>
                             </>
