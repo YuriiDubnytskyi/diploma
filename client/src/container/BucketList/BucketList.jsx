@@ -12,6 +12,7 @@ import {
 } from "../../store/actions/actionBucket";
 import { deleteProductUser } from "../../store/actions/actionsUser";
 import BucketItem from "../../components/BucketItem/BucketItem";
+import { Helmet } from "react-helmet";
 
 const BucketList = () => {
     const productsBucket = useSelector((state) => state.productBucket);
@@ -31,6 +32,12 @@ const BucketList = () => {
 
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Bucket</title>
+                <meta name="description" content="Ваш кошик." />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Helmet>
             <TitlePager title="Кошик" />
             {userBucket.length === 0 ? (
                 <div className="bucket__container bucket">

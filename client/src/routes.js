@@ -7,6 +7,8 @@ const Routes = () => {
             <Route path="/categorie" />
             <Route path="/productList/:id/:name" />
             <Route path="/product/:id/:name/:productName" />
+            <Route path="/categorie" />
+            <Route path="/categorie/subtitle:id" />
             <Route path="/contact" />
             <Route path="/login" />
             <Route path="/blog" />

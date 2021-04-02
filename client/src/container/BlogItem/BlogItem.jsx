@@ -3,6 +3,7 @@ import "./BlogItem.scss";
 import TitlePager from "../../components/TitlePager/TitlePager";
 import API from "../../API/API";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const BlogItem = () => {
     const { id } = useParams();
@@ -16,6 +17,12 @@ const BlogItem = () => {
 
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Blog Item</title>
+                <meta name="description" content={data.fullDescription} />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Helmet>
             <TitlePager title={data.title} />
             <div className="blog__container">
                 <img className="blog-img" src={data.imageMain} alt={data.title} />

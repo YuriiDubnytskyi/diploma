@@ -3,6 +3,7 @@ import TitlePager from "../../components/TitlePager/TitlePager";
 import "./ContactUs.scss";
 import API from "./../../API/API";
 import ContactUsForm from "./../../components/ContactUsForm/ContactUsForm";
+import { Helmet } from "react-helmet";
 
 const ContactUs = () => {
     const [name, setName] = useState("");
@@ -41,6 +42,15 @@ const ContactUs = () => {
 
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Contact US</title>
+                <meta
+                    name="description"
+                    content="Зворотній зв'язок. Зв'яжіться з нами якщо маєте якісь помилки повідомте нас."
+                />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Helmet>
             <TitlePager title="Звяжіться з нами" />
             <ContactUsForm
                 name={name}

@@ -7,6 +7,7 @@ import TitlePager from "../../components/TitlePager/TitlePager";
 import { fetchAddLikeProduct, addBuyProduct } from "../../store/actions/actionsUser";
 import { useDispatch, useSelector } from "react-redux";
 import ProductInfoContent from "../../components/ProductInfoContent/ProductInfoContent";
+import { Helmet } from "react-helmet";
 
 const ProductInfo = () => {
     const { id, name, productName } = useParams();
@@ -50,6 +51,11 @@ const ProductInfo = () => {
 
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Product Info</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Helmet>
             <TitlePager title={`${name}--${productName}`} />
             <div className="product__wrapper product-wrapper">
                 {loading ? (

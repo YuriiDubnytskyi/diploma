@@ -1,11 +1,18 @@
 import React from "react";
 import "./ProductInfoContent.scss";
+import { Helmet } from "react-helmet";
 // import Imagg from "../../container/ProductGallery/ProductGallery";
 const Imagg = React.lazy(() => import("../../container/ProductGallery/ProductGallery"));
 
 const ProductInfoContent = ({ data, addBuy, likeProduct, user }) => {
     return (
         <div className="product__container product-container ">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Product Info</title>
+                <meta name="description" content={data.info.slice(0, 160)} />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Helmet>
             <div className="product-img">
                 <Imagg images={data.images} />
             </div>

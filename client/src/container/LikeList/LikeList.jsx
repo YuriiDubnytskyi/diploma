@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchGetProductsLike, removeLikeProduct } from "./../../store/actions/actionLike";
 import ProductItem from "./../../components/ProductItem/ProductItem";
+import { Helmet } from "react-helmet";
 
 const LikeList = () => {
     const productsLike = useSelector((state) => state.productLike);
@@ -33,6 +34,12 @@ const LikeList = () => {
 
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Like list</title>
+                <meta name="description" content="Список товарів які сподобались вам." />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Helmet>
             <TitlePager title="Список побажань" />
             {userLikes.length === 0 ? (
                 <div className="wish__container wish">
