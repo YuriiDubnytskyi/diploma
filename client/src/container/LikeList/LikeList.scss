@@ -16,3 +16,8 @@
     color: #ffffff;
     text-decoration: none;
 }
+@media screen and (max-width: 501px) {
+    .wish__empty {
+        padding: 100px 0 0 0;
+    }
+}
