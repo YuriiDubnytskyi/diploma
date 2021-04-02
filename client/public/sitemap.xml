@@ -5,6 +5,8 @@
 <url> <loc>https://diplom-work-client.herokuapp.com/categorie</loc> </url>
 <url> <loc>https://diplom-work-client.herokuapp.com/productList/:id/:name</loc> </url>
 <url> <loc>https://diplom-work-client.herokuapp.com/product/:id/:name/:productName</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/categorie</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/categorie/subtitle:id</loc> </url>
 <url> <loc>https://diplom-work-client.herokuapp.com/contact</loc> </url>
 <url> <loc>https://diplom-work-client.herokuapp.com/login</loc> </url>
 <url> <loc>https://diplom-work-client.herokuapp.com/blog</loc> </url>

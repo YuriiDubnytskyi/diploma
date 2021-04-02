@@ -6,4 +6,4 @@ require("babel-register")({
 const Sitemap = require("react-router-sitemap").default;
 const router = require("./routes").default;
 
-new Sitemap(router()).build("https://diplom-work-client.herokuapp.com").save("../build/sitemap.xml");
+new Sitemap(router()).build("https://diplom-work-client.herokuapp.com").save("../public/sitemap.xml");
