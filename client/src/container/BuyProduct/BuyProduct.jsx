@@ -7,6 +7,7 @@ import { clearBucketUser } from "./../../store/actions/actionsUser";
 import API from "./../../API/API";
 import "./BuyProduct.scss";
 import BillingForm from "./../../components/BillingForm/BillingForm";
+import { Helmet } from "react-helmet";
 
 const BuyProduct = () => {
     const user = useSelector((state) => state.user.user);
@@ -56,6 +57,12 @@ const BuyProduct = () => {
     };
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>BuyProduct</title>
+                <meta name="description" content="Оформлення замовлення у нашому магазині" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Helmet>
             <TitlePager title="Деталі покупки" />
             <div className="billing_container">
                 <BillingForm

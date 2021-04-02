@@ -5,6 +5,7 @@ import "./Blog.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGetNews, getNewsMore } from "../../store/actions/actionNews";
 import Slider from "../../components/Slider/Slider";
+import { Helmet } from "react-helmet";
 
 const Blog = () => {
     const dispatch = useDispatch();
@@ -19,6 +20,15 @@ const Blog = () => {
 
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Site Blog</title>
+                <meta
+                    name="description"
+                    content="Останні новини у цифровому світі тільки в нас. Цікаві, сучасні, іноваційні і захоплюючі технології."
+                />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Helmet>
             <TitlePager title="Новини та акції" />
             <div className="blog__list blog-list">
                 {news.news.length === 0 ? (

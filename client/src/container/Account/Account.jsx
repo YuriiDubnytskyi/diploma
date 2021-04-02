@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import API from "../../API/API";
 import { addUserSuccess, removeUser } from "../../store/actions/actionsUser";
 import { useHistory } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Account = () => {
     const dispatch = useDispatch();
@@ -101,6 +102,12 @@ const Account = () => {
 
     return (
         <div className="account-wrapper">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Account Settings</title>
+                <meta name="description" content="На цій сторінці ви зможете змінити налаштування акаунту." />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Helmet>
             <TitlePager title="Особистий кабінет" />
             <div className="account__container account">
                 <AccountSwitchBox

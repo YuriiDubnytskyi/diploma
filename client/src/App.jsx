@@ -13,6 +13,8 @@ const App = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        console.log(process.env.NODE_ENV);
+        console.log(process.env.REACT_APP_SERVER_API);
         API.get("/user/isAuth").then((res) => {
             if (res.data.status == 200) {
                 const { email, likeProducts, gender, name, surname, phone, age, emailVerify } = res.data.data.data[0];

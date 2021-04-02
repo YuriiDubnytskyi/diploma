@@ -60,3 +60,9 @@
         width: 80%;
     }
 }
+
+@media screen and (max-width: 501px) {
+    .bucket__empty {
+        padding: 100px 0 0 0;
+    }
+}

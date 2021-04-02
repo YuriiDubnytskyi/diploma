@@ -5,6 +5,7 @@ import LoginForm from "./../../components/LoginForm/LoginForm";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUserSign, fetchUserLogin } from "./../../store/actions/actionsUser";
 import { emailTest } from "./../../helpers/helpers";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const user = useSelector((state) => state.user);
@@ -60,6 +61,12 @@ const Login = () => {
 
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>LogIN</title>
+                <meta name="description" content="Увійдіть в особистий кабінет або зареєструйтесь у нашому магазині." />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Helmet>
             <TitlePager title="Авторизація & Реєстрація" />
             <LoginForm
                 user={user}
