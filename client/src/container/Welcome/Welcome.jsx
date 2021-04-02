@@ -7,10 +7,17 @@ import logo1 from "./../../image/126px-Huawei_Standard_logo.svg.png";
 import logo2 from "./../../image/200px-Xiaomi_logo.svg.webp";
 import logo3 from "./../../image/505px-Apple_logo_black.svg.png";
 import logo4 from "./../../image/Nokia_wordmark.svg.png";
+import { Helmet } from "react-helmet";
 
 const Welcome = () => {
     return (
         <div className="welcome__container welcome">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Welcome</title>
+                <meta name="description" content="Вітаєму у нашому магазині. Vulka Electronic." />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Helmet>
             <div className="welcome__about shop-about">
                 <WelcomeAbout />
             </div>

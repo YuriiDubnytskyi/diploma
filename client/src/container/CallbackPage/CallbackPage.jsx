@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import API from "./../../API/API";
 import CallbackPageForm from "./../../components/CallbackPageForm/CallbackPageForm";
 import { emailTest } from "./../../helpers/helpers";
+import { Helmet } from "react-helmet";
 
 const CallbackPage = () => {
     const { id } = useParams();
@@ -35,6 +36,12 @@ const CallbackPage = () => {
     };
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Callback</title>
+                <meta name="description" content="Підтвердження електронної пошти для здійснення покупок." />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Helmet>
             <TitlePager title="Підтвердження пошти" />
             <CallbackPageForm
                 loginSubmit={loginSubmit}
