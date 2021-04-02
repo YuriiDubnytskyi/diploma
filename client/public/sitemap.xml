@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://diplom-work-client.herokuapp.com/</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/categorie</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/productList/:id/:name</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/product/:id/:name/:productName</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/contact</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/login</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/blog</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/account</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/like</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/bucket</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/newsID/:id</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/search/:text</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/buyProduct</loc> </url>
+<url> <loc>https://diplom-work-client.herokuapp.com/callback/:id</loc> </url>
+</urlset>
