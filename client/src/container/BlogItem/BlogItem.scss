@@ -14,3 +14,17 @@
 .blog-info {
     font-size: 20px;
 }
+
+@media screen and (max-width: 501px) {
+    .blog__container {
+        width: 95%;
+    }
+    .blog-img {
+        min-width: 200px;
+        max-width: 200px;
+    }
+
+    .blog-info {
+        padding: 10vw;
+    }
+}

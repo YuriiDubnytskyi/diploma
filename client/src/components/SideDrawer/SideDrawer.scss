@@ -1,7 +1,7 @@
 .side-drawer {
     height: 100%;
     background: #2f2f2f;
-    width: 70%;
+    width: 80%;
     color: #fff;
     position: fixed;
     top: 0;
@@ -40,7 +40,7 @@
     .auth__links {
         padding-top: 40px;
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
     }
 }
 .side-auth-login:hover,
@@ -81,7 +81,7 @@
 }
 .side-drawer-btns-container-link {
     color: #fff;
-    font-size: 25px;
+    font-size: 20px;
 }
 .side-drawer-btns-container-link:hover,
 .side-drawer-navigation__link:hover {
