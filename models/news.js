@@ -7,7 +7,7 @@ const newsSchema = new Schema(
         shortDescription: String,
         fullDescription: String,
         imageMain: String,
-        time: String,
+        time: Date,
     },
     {
         collection: "news",
