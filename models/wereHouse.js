@@ -6,6 +6,7 @@ const wereHouseSchema = new Schema(
         name: String,
         idStorageHouse: Schema.ObjectId,
         count: Number,
+        isSelling: Boolean,
     },
     {
         collection: "storageHouse",
