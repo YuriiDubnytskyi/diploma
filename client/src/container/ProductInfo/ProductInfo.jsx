@@ -30,8 +30,9 @@ const ProductInfo = () => {
             const newId = oldId;
             newId.push(id);
             dispatch(fetchAddLikeProduct(user.id, newId));
+            alert("Додано в список");
         } else {
-            alert("You do not autorizate");
+            alert("Ви не авторизовані");
         }
     };
 
@@ -43,6 +44,7 @@ const ProductInfo = () => {
         } else if (!user.emailVerify) {
             alert("Підтвердіть пошту для здійснення покупок");
         } else {
+            alert("Додано в кошик");
             const newId = oldId;
             newId.push(id);
             dispatch(addBuyProduct(newId));

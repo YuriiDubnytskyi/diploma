@@ -30,6 +30,7 @@ const CallbackPage = () => {
             API.post("/auth/login", { email: loginEmail, password: loginPass, username: "q" }).then((user) => {
                 if (user.status === 200 && id.slice(1) === user.data._id) {
                     API.put("/user/verify", { id: id.slice(1) });
+                    alert("Пошта підтвердженна");
                 }
             });
         }

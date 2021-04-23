@@ -19,6 +19,7 @@ const SearchList = () => {
             const newId = user.likeProducts;
             newId.push(id);
             dispatch(fetchAddLikeProduct(user.id, newId));
+            alert("Додано в список");
         } else {
             alert("Ви не авторизовані");
         }
