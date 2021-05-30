@@ -98,7 +98,7 @@ const getNewsID = async (id) => {
 const getProductListSearch = async (str) => {
     try {
         const List = productListSchema;
-        const searchList = await List.find({ name: { $regex: ".*" + str + ".*" } });
+        const searchList = await List.find({ name: { $regex: ".*" + str + ".*", $options: "-i" } });
         return { err: false, data: searchList };
     } catch (error) {
         return { err: true, errMess: error };

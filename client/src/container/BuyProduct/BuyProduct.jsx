@@ -51,6 +51,7 @@ const BuyProduct = () => {
                 dispatch(clearBucketUser());
                 setLoading(false);
                 setSuccess(true);
+                alert("Покупка успішно пішла в обробку");
             }
         });
         history.push("/");
