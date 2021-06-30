@@ -315,7 +315,7 @@ router.post("/buyProducts/", async (req, res) => {
                         <p>Назва товару ${el.name}</p>
                         <p>Ціна товару ${el.price}</p>
                         <p>Кількість товару ${el.count}</p>
-                        <a href=${process.env.SERVER_API}product/${el._id}/З покупок/${el.name}>Детальніше про товар</a>
+                        <a href=${process.env.SERVER_API}product/${el._id}/З_покупок/${el.name}>Детальніше про товар</a>
                     </div>
                     `;
         })}

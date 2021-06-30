@@ -86,6 +86,7 @@ const Account = () => {
 
     const deleteAccount = useCallback(() => {
         API.delete("/user/deleteAccount/" + id);
+        alert("Ваш аккаунт видалений");
         dispatch(removeUser());
     }, []);
 

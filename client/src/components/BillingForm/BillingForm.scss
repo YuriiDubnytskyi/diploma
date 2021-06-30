@@ -35,3 +35,22 @@
     border: 1px solid #ffffff;
     cursor: pointer;
 }
+.input {
+    background-color: rgb(153, 153, 153);
+    color: white;
+    padding: 10px;
+    border: none;
+}
+@media screen and (max-width: 501px) {
+    .billing-user-name,
+    .billing-user-surname,
+    .billing-user-email,
+    .billing-user-city,
+    .billing-user-novaPosta,
+    .billing-user-phone,
+    .billing-user-note {
+        align-items: stretch;
+        max-width: 350px;
+        flex-direction: column;
+    }
+}
